@@ -3,6 +3,8 @@ package EXO_03;
 import java.math.BigDecimal;
 
 public class Monnaie {
+	private static final float price = 0.1f;
+	
     public static void main(String[] args) {
     	System.out.println(2.00 - 1.1);
     	
@@ -10,25 +12,25 @@ public class Monnaie {
     	
     	float moneyFloat = 1.0f;
     	int nbCandy = 0;
-    	while(moneyFloat - 0.1f * (nbCandy+1) > 0.0f){
+    	while(moneyFloat - price * (nbCandy+1) > 0.0f){
     		nbCandy++;
-    		moneyFloat -= 0.1f * nbCandy;
+    		moneyFloat -= price * nbCandy;
     	}
     	System.out.println("Money : "+moneyFloat+" / Candy : "+nbCandy);
     	
     	int moneyInt = 100;
     	nbCandy = 0;
-    	while(moneyInt - 10 * (nbCandy+1) > 0){
+    	while(moneyInt - price*100 * (nbCandy+1) > 0){
     		nbCandy++;
-    		moneyInt -= 10 * nbCandy;
+    		moneyInt -= price*100 * nbCandy;
     	}
     	System.out.println("Money : "+moneyInt/100f+" / Candy : "+nbCandy);
     	
     	BigDecimal moneyBD = new BigDecimal("1.0");
     	nbCandy = 0;
-    	while(moneyBD.subtract(new BigDecimal("0.1").multiply(new BigDecimal(Integer.toString(nbCandy+1)))).compareTo(new BigDecimal("0")) > 0){
+    	while(moneyBD.subtract(new BigDecimal(Float.toString(price)).multiply(new BigDecimal(Integer.toString(nbCandy+1)))).compareTo(new BigDecimal("0")) > 0){
     		nbCandy++;
-    		moneyBD = moneyBD.subtract(new BigDecimal("0.1").multiply(new BigDecimal(Integer.toString(nbCandy))));
+    		moneyBD = moneyBD.subtract(new BigDecimal(Float.toString(price)).multiply(new BigDecimal(Integer.toString(nbCandy))));
     	}
     	System.out.println("Money : "+moneyBD+" / Candy : "+nbCandy);
     }
