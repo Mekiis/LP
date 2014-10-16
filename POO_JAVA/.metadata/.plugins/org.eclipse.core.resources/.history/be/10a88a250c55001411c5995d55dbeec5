@@ -1,0 +1,19 @@
+package EXO_03;
+
+import java.math.BigDecimal;
+
+public class Monnaie {
+    public static void main(String[] args) {
+    	System.out.println(2.00 - 1.1);
+    	
+    	System.out.println(new BigDecimal("2.0").subtract(new BigDecimal("1.1")));
+    	
+    	float money = 1.0f;
+    	int nbCandy = 0;
+    	while(money - 0.1f * (nbCandy+1) > 0.0f){
+    		nbCandy++;
+    		money -= 0.1f * nbCandy;
+    	}
+    	System.out.println("Money : "+money+" / Candy : "+nbCandy);
+    }
+}

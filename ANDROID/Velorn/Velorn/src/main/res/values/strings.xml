@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Velorn</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="accueil_btn_menu_list">List of born</string>
+    <string name="accueil_btn_menu_ville">City</string>
+    <string name="ville_btn_validate">Validate</string>
+    <string name="ville_txt_entrer_ville">Enter a city</string>
+    <string name="ville_etxt_ville_hint">City</string>
+    <string name="title_activity_ville">Ville</string>
+    <string name="title_activity_stations">Stations</string>
+    <string name="title_activity_station">Station</string>
+    <string name="ville_validate_msg">Your city is correctly registered</string><string name="view_stations_txt_error">No stations can be found...</string>
+
+</resources>
