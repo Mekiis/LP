@@ -10,7 +10,7 @@ public class Main {
 		
 		String s = "";
 		for(int i = 0; i < planets.length; i++){
-			s += "Poids sur "+planets[i]+" : "+planets[i].surfaceWeight(mass)+"\n";
+			s += "Poids sur "+planets[i]+" : "+planets[i].surfaceWeight(mass)/Planet.TERRE.surfaceGravity()+"\n";
 		}
 		
 		JOptionPane.showMessageDialog(null, s);
