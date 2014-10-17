@@ -1,0 +1,74 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/view_stations_ll_options"
+        android:id="@+id/map"
+        tools:context="com.velorn.ViewStationsMap"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_below="@+id/view_stations_tv_name_city" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/view_stations_loadBar"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_stations_txt_error"
+        android:id="@+id/view_stations_txt_error"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/view_stations_tv_name_city"
+        android:background="@color/abc_search_url_text_selected"
+        android:textColor="@color/common_signin_btn_dark_text_default"
+        android:textSize="30dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/view_stations_ll_options"
+        android:gravity="center">
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/view_stations_rb_take"
+                android:id="@+id/view_stations_rb_take"
+                android:onClick="searchChange"
+                android:checked="true" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/view_stations_rb_return"
+                android:id="@+id/view_stations_rb_return"
+                android:onClick="searchChange"/>
+
+            </RadioGroup>
+
+    </LinearLayout>
+</RelativeLayout>
+

@@ -9,8 +9,8 @@ public class Station {
     String name = "";
     String address = "";
     public class Position{
-        public float lat = -1;
-        public float lng = -1;
+        public double lat = -1.0;
+        public double lng = -1;
     }
     Position pos = new Position();
     boolean banking = false;

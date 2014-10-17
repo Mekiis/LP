@@ -14,6 +14,7 @@ import android.os.Build;
 import android.widget.Toast;
 
 public class Accueil extends ActionBarActivity {
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +25,11 @@ public class Accueil extends ActionBarActivity {
     public void onClick(View v){
         switch(v.getId()){
             case R.id.accueil_menu_list:
-                Toast.makeText(getApplicationContext(), "WIP", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this, ViewStations.class);
+                startActivity(intent);
                 break;
             case R.id.accueil_menu_ville:
-                Intent intent = new Intent(this, Ville.class);
+                intent = new Intent(this, Ville.class);
                 startActivity(intent);
                 break;
         }

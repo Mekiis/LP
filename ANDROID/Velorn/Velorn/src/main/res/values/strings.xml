@@ -12,6 +12,11 @@
     <string name="title_activity_ville">Ville</string>
     <string name="title_activity_stations">Stations</string>
     <string name="title_activity_station">Station</string>
-    <string name="ville_validate_msg">Your city is correctly registered</string><string name="view_stations_txt_error">No stations can be found...</string>
+    <string name="ville_validate_msg">Your city is correctly registered</string>
+    <string name="view_stations_txt_error">No stations can be found...</string>
+    <string name="title_activity_view_stations_map">Map</string>
+    <string name="view_stations_rb_take">Take a bike</string>
+    <string name="view_stations_rb_return">Return a bike</string>
+    <string name="view_stations_tv_name_no_city">All cities</string>
 
 </resources>

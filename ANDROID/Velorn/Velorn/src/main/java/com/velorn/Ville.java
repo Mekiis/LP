@@ -17,12 +17,15 @@ import android.widget.Toast;
 
 public class Ville extends ActionBarActivity {
 
+    public static final String CITY_PREF = "VILLE_PREF";
+    public static final String CITIES = "VILLE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ville);
 
-        String ville = getPref("VILLE", "VILLE_PREF", "");
+        String ville = getPref(CITIES, CITY_PREF, "");
         if(!ville.equalsIgnoreCase("")){
             ville = ville.substring(0, 1).toUpperCase() + ville.substring(1).toLowerCase();
         }
@@ -34,19 +37,19 @@ public class Ville extends ActionBarActivity {
         switch(v.getId()){
             case R.id.ville_btn_validate:
                 String ville = ((EditText) findViewById(R.id.ville_etxt_ville)).getText().toString();
-                setPref("VILLE", "VILLE_PREF", ville);
+                setPref(CITIES, CITY_PREF, ville);
                 Toast.makeText(getApplicationContext(), getResources().getString(R.string.ville_validate_msg), Toast.LENGTH_SHORT).show();
                 break;
         }
     }
 
-    protected String getPref(String file, String key, String defaulValue) {
+    private String getPref(String file, String key, String defaulValue) {
         String s = key;
         SharedPreferences preferences = getSharedPreferences(file, 0);
         return preferences.getString(s, defaulValue);
     }
 
-    protected void setPref(String file, String key, String value) {
+    private void setPref(String file, String key, String value) {
         SharedPreferences preferences = getSharedPreferences(file, 0);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(key, value);
