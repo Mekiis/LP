@@ -17,6 +17,8 @@
     <string name="title_activity_view_stations_map">Map</string>
     <string name="view_stations_rb_take">Take a bike</string>
     <string name="view_stations_rb_return">Return a bike</string>
-    <string name="view_stations_tv_name_no_city">All cities</string>
+    <string name="view_stations_tv_city_name_none">All cities</string>
+    <string name="view_stations_tv_city">City : </string>
+    <string name="view_stations_tv_city_name_hint">City</string>
 
 </resources>

@@ -1,31 +1,27 @@
 package com.velorn;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.maps.android.clustering.ClusterItem;
 import com.google.maps.android.clustering.ClusterManager;
+import com.velorn.container.Station;
+import com.velorn.parser.StationParser;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -33,7 +29,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ViewStations extends ActionBarActivity {
@@ -69,19 +64,25 @@ public class ViewStations extends ActionBarActivity {
         if(!city.equalsIgnoreCase(""))
             ((TextView) findViewById(R.id.view_stations_tv_name_city)).setText(city);
         else
-            ((TextView) findViewById(R.id.view_stations_tv_name_city)).setText(getResources().getText(R.string.view_stations_tv_name_no_city));
+            ((TextView) findViewById(R.id.view_stations_tv_name_city)).setText(getResources().getString(R.string.view_stations_tv_city_name_none));
+
         setUpMapIfNeeded();
 
-        new LoaderStations().execute("https://api.jcdecaux.com/vls/v1/stations?apiKey=416ddf2bf645df9eea6d7c874904e5626ae62ffd");
+        new LoaderJson().execute("https://api.jcdecaux.com/vls/v1/stations?apiKey=416ddf2bf645df9eea6d7c874904e5626ae62ffd", new LoaderJSonRunnable() {
+            @Override
+            public void run() {
+
+            }
+        });
     }
 
-    protected String getPref(String file, String key, String defaulValue) {
+    String getPref(String file, String key, String defaulValue) {
         String s = key;
         SharedPreferences preferences = getSharedPreferences(file, 0);
         return preferences.getString(s, defaulValue);
     }
 
-    public void displayStations(ArrayList<Station> stations){
+    void displayStations(ArrayList<Station> stations){
         if(stations == null || stations.size() == 0)
             return;
 
@@ -91,20 +92,22 @@ public class ViewStations extends ActionBarActivity {
         msgError.setVisibility(View.GONE);
     }
 
-    public void displayErrorMsg(){
+    void displayErrorMsg(){
         loaderBar.setVisibility(View.GONE);
         msgError.setVisibility(View.VISIBLE);
     }
 
-    private class LoaderStations extends AsyncTask<Object, Void, Object>{
+    class LoaderJson extends AsyncTask<Object, Void, Object>{
         private InputStream is = null;
         private JSONObject jObj = null;
         private String json = "";
         private String url = "";
+        private LoaderJSonRunnable runnable = null;
 
         @Override
         protected Object doInBackground(Object... obj) {
             url = (String) obj[0];
+            runnable = (LoaderJSonRunnable) obj[1];
 
             ArrayList<Station> stations = null;
 
@@ -141,7 +144,7 @@ public class ViewStations extends ActionBarActivity {
                 Log.e("Buffer Error", "Error converting result " + e.toString());
             }
 
-            stations = new JSonParser().CreateStations(json);
+            stations = new StationParser().CreateStations(json);
 
             Log.d("Velorn", ""+stations);
 
@@ -152,6 +155,7 @@ public class ViewStations extends ActionBarActivity {
         protected void onPostExecute(Object a_obj) {
             super.onPostExecute(a_obj);
 
+            runnable.run();
             stations = (ArrayList<Station>) a_obj;
             displayStations(stations);
         }
@@ -162,69 +166,7 @@ public class ViewStations extends ActionBarActivity {
         }
     }
 
-    private class JSonParser{
 
-        // JSON Node names
-        private final String TAG_NUMBER = "number";
-        private final String TAG_CONTRACT_NAME = "contract_name";
-        private final String TAG_NAME = "name";
-        private final String TAG_ADDRESS = "address";
-        private final String TAG_POS = "position";
-        private final String TAG_POS_LAT = "lat";
-        private final String TAG_POS_LONG = "lng";
-        private final String TAG_BANKING = "banking";
-        private final String TAG_BONUS = "bonus";
-        private final String TAG_STATUS = "status";
-        private final String TAG_BIKE_STANDS = "bike_stands";
-        private final String TAG_AVAILABLE_BIKE_STANDS = "available_bike_stands";
-        private final String TAG_AVAILABLE_BIKE = "available_bikes";
-        private final String TAG_LAST_UPDATE = "last_update";
-
-        // contacts JSONArray
-        private JSONArray contacts = null;
-
-        public ArrayList<Station> CreateStations(String json){
-            ArrayList<Station> stations = new ArrayList<Station>();
-
-            try {
-                // Getting Array of Contacts
-                contacts = new JSONArray(json);
-
-                // looping through All Contacts
-                for(int i = 0; i < contacts.length(); i++){
-                    JSONObject c = contacts.getJSONObject(i);
-
-                    Station station = new Station();
-
-                    // Storing each json item in variable
-                    station.number = c.getInt(TAG_NUMBER);
-                    station.contractName = c.getString(TAG_CONTRACT_NAME);
-                    station.name = c.getString(TAG_NAME);
-                    station.address = c.getString(TAG_ADDRESS);
-                    JSONObject position =  c.getJSONObject(TAG_POS);
-                    station.pos.lat = position.getDouble(TAG_POS_LAT);
-                    station.pos.lng = position.getDouble(TAG_POS_LONG);
-                    station.banking = c.getBoolean(TAG_BANKING);
-                    station.bonus = c.getBoolean(TAG_BONUS);
-                    if(c.getString(TAG_STATUS).equalsIgnoreCase("OPEN")){
-                        station.status = Station.EStatus.OPEN;
-                    } else if(c.getString(TAG_STATUS).equalsIgnoreCase("CLOSE")){
-                        station.status = Station.EStatus.CLOSE;
-                    }
-                    station.bikeStands = c.getInt(TAG_BIKE_STANDS);
-                    station.availableBike = c.getInt(TAG_AVAILABLE_BIKE);
-                    station.availableBikeStands = c.getInt(TAG_AVAILABLE_BIKE_STANDS);
-                    //station.lastUpdate = c.getLong(TAG_LAST_UPDATE);
-
-                    stations.add(station);
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            return stations;
-        }
-    }
 
     /**
      * Sets up the map if it is possible to do so (i.e., the Google Play services APK is correctly

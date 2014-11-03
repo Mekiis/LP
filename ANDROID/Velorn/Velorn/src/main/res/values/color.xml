@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="view_stations_txt">#ffffffff</color>
+    <color name="view_stations_ville_bg">#ffffa400</color>
+</resources>
