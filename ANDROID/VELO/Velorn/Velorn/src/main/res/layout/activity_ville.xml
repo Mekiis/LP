@@ -1,34 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color">
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/ville_txt_entrer_ville"
-            android:text="@string/ville_txt_entrer_ville" />
-
-        <EditText
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/ville_etxt_ville"
-            android:hint="@string/ville_etxt_ville_hint" />
-    </LinearLayout>
-
-    <Button
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/ville_btn_validate"
-        android:id="@+id/ville_btn_validate"
-        android:singleLine="true"
-        android:onClick="onClick"/>
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true">
 
-</LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ville_txt_entrer_ville"
+                android:text="@string/ville_txt_entrer_ville"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_size_normal"/>
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ville_etxt_ville"
+                android:hint="@string/ville_etxt_ville_hint"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_size_normal"/>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ville_btn_validate"
+            android:id="@+id/ville_btn_validate"
+            android:singleLine="true"
+            android:onClick="onClick"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_normal"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

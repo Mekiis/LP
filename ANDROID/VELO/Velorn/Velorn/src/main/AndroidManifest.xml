@@ -23,23 +23,27 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name="com.velorn.Accueil"
             android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".ChooseCity"
+            android:label="@string/title_activity_ville">
+        </activity>
+        <activity
+            android:name="com.velorn.ViewStations"
+            android:label="@string/title_activity_stations">
+        </activity>
+        <activity
+            android:name="com.velorn.SplashScreen"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name="com.velorn.Ville"
-            android:label="@string/title_activity_ville" >
-        </activity>
-        <activity
-            android:name="com.velorn.ViewStations"
-            android:label="@string/title_activity_stations" >
         </activity>
 
         <meta-data

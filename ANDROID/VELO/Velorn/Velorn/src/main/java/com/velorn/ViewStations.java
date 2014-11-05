@@ -1,35 +1,31 @@
 package com.velorn;
 
+import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.maps.android.clustering.ClusterItem;
 import com.google.maps.android.clustering.ClusterManager;
+import com.google.maps.android.clustering.view.DefaultClusterRenderer;
 import com.velorn.container.Station;
+import com.velorn.loaderJSon.LoaderJSonRunnable;
+import com.velorn.loaderJSon.LoaderJson;
+import com.velorn.loaderJSon.LoaderJsonParams;
 import com.velorn.parser.StationParser;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ViewStations extends ActionBarActivity {
     // UI elements
@@ -46,7 +42,6 @@ public class ViewStations extends ActionBarActivity {
     private String city = "";
 
     private ClusterManager cluster;
-    private ArrayList<Station> stations = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,26 +49,67 @@ public class ViewStations extends ActionBarActivity {
         // Layout Management
         setContentView(R.layout.activity_view_stations_map);
 
+        initViewsStation();
+        initMap();
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        displayMarker(SplashScreen.stations);
+
+        // Get the list of the stations
+        new LoaderJson().execute(new LoaderJsonParams(
+        "https://api.jcdecaux.com/vls/v1/stations?apiKey=416ddf2bf645df9eea6d7c874904e5626ae62ffd",
+        new LoaderJSonRunnable() {
+            @Override
+            public void run() {
+                SplashScreen.stations = new StationParser().CreateStations(s);
+                displayStations(SplashScreen.stations);
+            }
+
+            @Override
+            public void errorNetwork() {
+                Toast.makeText(getApplicationContext(), R.string.load_no_network, Toast.LENGTH_SHORT);
+            }
+        }, getApplicationContext()));
+    }
+
+    private void initViewsStation(){
         // UI Management
         loaderBar = (ProgressBar) findViewById(R.id.view_stations_loadBar);
         msgError = (TextView) findViewById(R.id.view_stations_txt_error);
-        loaderBar.setVisibility(View.VISIBLE);
+        loaderBar.setVisibility(View.GONE);
         msgError.setVisibility(View.GONE);
 
-        city = getPref(Ville.CITIES, Ville.CITY_PREF, "");
+        city = getPref(ChooseCity.CITIES, ChooseCity.CITY_PREF, "");
         if(!city.equalsIgnoreCase(""))
             ((TextView) findViewById(R.id.view_stations_tv_name_city)).setText(city);
         else
             ((TextView) findViewById(R.id.view_stations_tv_name_city)).setText(getResources().getString(R.string.view_stations_tv_city_name_none));
 
-        setUpMapIfNeeded();
+        ((EditText)findViewById(R.id.view_stations_tv_name_city)).setOnFocusChangeListener(new View.OnFocusChangeListener() {
 
-        new LoaderJson().execute("https://api.jcdecaux.com/vls/v1/stations?apiKey=416ddf2bf645df9eea6d7c874904e5626ae62ffd", new LoaderJSonRunnable() {
             @Override
-            public void run() {
-
+            public void onFocusChange(View v, boolean hasFocus) {
+            /* When focus is lost check that the text field
+            * has valid values.
+            */
+                if (!hasFocus) {
+                    city = ((EditText) v).getText().toString();
+                    displayCity(city);
+                    displayMarker(SplashScreen.stations);
+                }
             }
         });
+    }
+
+    private void displayCity(String city){
+        if(!city.equalsIgnoreCase("")){
+            ((EditText)findViewById(R.id.view_stations_tv_name_city)).setText(city.substring(0, 1).toUpperCase() + city.substring(1).toLowerCase());
+        }
     }
 
     String getPref(String file, String key, String defaulValue) {
@@ -97,100 +133,12 @@ public class ViewStations extends ActionBarActivity {
         msgError.setVisibility(View.VISIBLE);
     }
 
-    class LoaderJson extends AsyncTask<Object, Void, Object>{
-        private InputStream is = null;
-        private JSONObject jObj = null;
-        private String json = "";
-        private String url = "";
-        private LoaderJSonRunnable runnable = null;
-
-        @Override
-        protected Object doInBackground(Object... obj) {
-            url = (String) obj[0];
-            runnable = (LoaderJSonRunnable) obj[1];
-
-            ArrayList<Station> stations = null;
-
-            // Making HTTP request
-            try {
-                // defaultHttpClient
-                DefaultHttpClient httpClient = new DefaultHttpClient();
-                HttpGet HttpGet = new HttpGet(url);
-
-                HttpResponse httpResponse = httpClient.execute(HttpGet);
-                HttpEntity httpEntity = httpResponse.getEntity();
-                is = httpEntity.getContent();
-
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            } catch (ClientProtocolException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            try {
-                BufferedReader reader = new BufferedReader(new InputStreamReader(
-                        is, "iso-8859-1"), 8);
-                StringBuilder sb = new StringBuilder();
-                String line = null;
-                while ((line = reader.readLine()) != null) {
-                    sb.append(line + "\n");
-                }
-                is.close();
-                json = sb.toString();
-                Log.d("Velorn", ""+json);
-            } catch (Exception e) {
-                Log.e("Buffer Error", "Error converting result " + e.toString());
-            }
-
-            stations = new StationParser().CreateStations(json);
-
-            Log.d("Velorn", ""+stations);
-
-            return stations;
-        }
-
-        @Override
-        protected void onPostExecute(Object a_obj) {
-            super.onPostExecute(a_obj);
-
-            runnable.run();
-            stations = (ArrayList<Station>) a_obj;
-            displayStations(stations);
-        }
-
-        @Override
-        protected void onCancelled() {
-            super.onCancelled();
-        }
-    }
-
-
-
-    /**
-     * Sets up the map if it is possible to do so (i.e., the Google Play services APK is correctly
-     * installed) and the map has not already been instantiated.. This will ensure that we only ever
-     * call {@link #setUpMap(ArrayList<Station>)} once when {@link #mMap} is not null.
-     * <p/>
-     * If it isn't installed {@link com.google.android.gms.maps.SupportMapFragment} (and
-     * {@link com.google.android.gms.maps.MapView MapView}) will show a prompt for the user to
-     * install/update the Google Play services APK on their device.
-     * <p/>
-     * A user can return to this FragmentActivity after following the prompt and correctly
-     * installing/updating/enabling the Google Play services. Since the FragmentActivity may not
-     * have been completely destroyed during this process (it is likely that it would only be
-     * stopped or paused), {@link #onCreate(Bundle)} may not be called again so we should call this
-     * method in {@link #onResume()} to guarantee that it will be called.
-     */
-    private void setUpMapIfNeeded() {
+    private void initMap() {
         // Do a null check to confirm that we have not already instantiated the map.
         if (mMap == null) {
             // Try to obtain the map from the SupportMapFragment.
             mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
                     .getMap();
-
-
         }
 
         if (mMap != null) {
@@ -200,21 +148,13 @@ public class ViewStations extends ActionBarActivity {
         }
     }
 
-    private void displayMarker(ArrayList<Station> stations){
+    private void displayMarker(ArrayList<Station> stations) {
         if (mMap != null && cluster != null) {
             // Add remove Marker
             cluster.clearItems();
-            setUpMap(stations);
-        }
-    }
+        } else
+            return;
 
-    /**
-     * This is where we can add markers or lines, add listeners or move the camera. In this case, we
-     * just add a marker near Africa.
-     * <p/>
-     * This should only be called once and when we are sure that {@link #mMap} is not null.
-     */
-    private void setUpMap(ArrayList<Station> stations) {
         if(stations == null)
             return;
 
@@ -250,18 +190,32 @@ public class ViewStations extends ActionBarActivity {
 
     }
 
+    private class CustomClusterRenderer extends DefaultClusterRenderer<MarkerItem> {
+
+        public CustomClusterRenderer(Context context, GoogleMap map, ClusterManager clusterManager) {
+            super(context, map, clusterManager);
+        }
+
+        @Override
+        protected void onBeforeClusterItemRendered(MarkerItem item, MarkerOptions markerOptions) {
+            super.onBeforeClusterItemRendered(item, markerOptions);
+            //markerOptions.title(item.getTag());
+            //markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_bicycle_green_2_128));
+        }
+    }
+
     public void searchChange(View v){
         switch(v.getId()){
             case R.id.view_stations_rb_take:
                 if(stateSearch != ESearchState.TAKE){
                     stateSearch = ESearchState.TAKE;
-                    displayMarker(stations);
+                    displayMarker(SplashScreen.stations);
                 }
                 break;
             case R.id.view_stations_rb_return:
                 if(stateSearch != ESearchState.RETURN){
                     stateSearch = ESearchState.RETURN;
-                    displayMarker(stations);
+                    displayMarker(SplashScreen.stations);
                 }
                 break;
         }

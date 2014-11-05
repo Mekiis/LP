@@ -15,7 +15,7 @@ import android.os.Build;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Ville extends ActionBarActivity {
+public class ChooseCity extends ActionBarActivity {
 
     public static final String CITY_PREF = "VILLE_PREF";
     public static final String CITIES = "VILLE";
@@ -39,6 +39,10 @@ public class Ville extends ActionBarActivity {
                 String ville = ((EditText) findViewById(R.id.ville_etxt_ville)).getText().toString();
                 setPref(CITIES, CITY_PREF, ville);
                 Toast.makeText(getApplicationContext(), getResources().getString(R.string.ville_validate_msg), Toast.LENGTH_SHORT).show();
+
+                Intent i = new Intent(this, ViewStations.class);
+                startActivity(i);
+                finish();
                 break;
         }
     }

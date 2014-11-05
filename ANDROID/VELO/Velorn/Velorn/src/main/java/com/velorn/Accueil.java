@@ -1,19 +1,11 @@
 package com.velorn;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
-import android.widget.Toast;
 
-public class Accueil extends ActionBarActivity {
+public class Accueil extends Activity {
     Intent intent;
 
     @Override
@@ -29,7 +21,7 @@ public class Accueil extends ActionBarActivity {
                 startActivity(intent);
                 break;
             case R.id.accueil_menu_ville:
-                intent = new Intent(this, Ville.class);
+                intent = new Intent(this, ChooseCity.class);
                 startActivity(intent);
                 break;
         }
