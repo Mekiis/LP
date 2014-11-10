@@ -87,6 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/view_stations_tv_name_city"
+            android:singleLine="true"
             android:hint="@string/view_stations_tv_city_name_hint"
             android:text="@string/view_stations_tv_city_name_none"
             android:textColor="@color/text_color"

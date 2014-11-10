@@ -54,7 +54,8 @@
             android:hint="@string/view_stations_tv_city_name_hint"
             android:text="@string/view_stations_tv_city_name_none"
             android:textColor="@color/text_color"
-            android:textSize="@dimen/text_size_normal" />
+            android:singleLine="true"
+            android:textSize="@dimen/text_size_normal"/>
     </LinearLayout>
 
     <LinearLayout

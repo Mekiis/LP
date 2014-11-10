@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.velorn.container.Contract;
 import com.velorn.container.Station;
+import com.velorn.container.Stations;
 import com.velorn.loaderJSon.LoaderJSonRunnable;
 import com.velorn.loaderJSon.LoaderJson;
 import com.velorn.loaderJSon.LoaderJsonParams;
@@ -16,15 +17,16 @@ import com.velorn.parser.ContractParser;
 import com.velorn.parser.StationParser;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Handler;
 
 /**
  * Created by IEM on 05/11/2014.
  */
 public class SplashScreen extends Activity {
-    public static ArrayList<Station> stations = new ArrayList<Station>();
-    public static ArrayList<String> cities = new ArrayList<String>();
-    public static ArrayList<Contract> contracts = new ArrayList<Contract>();
+    public static Stations stations = new Stations();
+    public static List<String> cities = new ArrayList<String>();
+    public static List<Contract> contracts = new ArrayList<Contract>();
 
     public Activity activity = this;
 
@@ -39,7 +41,7 @@ public class SplashScreen extends Activity {
         new LoaderJSonRunnable() {
             @Override
             public void run() {
-                stations = new StationParser().CreateStations(s);
+                stations.forceUpdate(new StationParser().CreateStations(s));
             }
 
             @Override
