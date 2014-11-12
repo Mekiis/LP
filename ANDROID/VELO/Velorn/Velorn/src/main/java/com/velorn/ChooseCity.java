@@ -3,16 +3,10 @@ package com.velorn;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
-import android.widget.EditText;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
 public class ChooseCity extends ActionBarActivity {
@@ -20,23 +14,31 @@ public class ChooseCity extends ActionBarActivity {
     public static final String CITY_PREF = "VILLE_PREF";
     public static final String CITIES = "VILLE";
 
+    private static AutoCompleteTextView UIcityName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ville);
 
+        UIcityName = ((AutoCompleteTextView) findViewById(R.id.ville_etxt_ville));
+
         String ville = getPref(CITIES, CITY_PREF, "");
         if(!ville.equalsIgnoreCase("")){
             ville = ville.substring(0, 1).toUpperCase() + ville.substring(1).toLowerCase();
         }
-        ((EditText) findViewById(R.id.ville_etxt_ville)).setText(ville);
+        UIcityName.setText(ville);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, SplashScreen.cities);
+        UIcityName.setAdapter(adapter);
 
     }
 
     public void onClick(View v){
         switch(v.getId()){
             case R.id.ville_btn_validate:
-                String ville = ((EditText) findViewById(R.id.ville_etxt_ville)).getText().toString();
+                String ville = UIcityName.getText().toString();
                 setPref(CITIES, CITY_PREF, ville);
                 Toast.makeText(getApplicationContext(), getResources().getString(R.string.ville_validate_msg), Toast.LENGTH_SHORT).show();
 

@@ -11,7 +11,8 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.EditText;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,19 +40,20 @@ public class ViewStations extends ActionBarActivity {
     // TODO : UI::Put colors on the selection option items (Purple /Light blue)
 
     // UI elements
-    private ProgressBar loaderBar = null;
-    private TextView msgError = null;
-    private GoogleMap mMap; // Might be null if Google Play services APK is not available.
+    private static ProgressBar UIloaderBar = null;
+    private static TextView UImsgError = null;
+    private static GoogleMap UImap; // Might be null if Google Play services APK is not available.
+    private static AutoCompleteTextView UIcityName;
 
     // Research options
     private enum ESearchState{
         TAKE,
         RETURN;
     }
-    private ESearchState stateSearch = ESearchState.TAKE;
-    private String city = "";
+    private static ESearchState stateSearch = ESearchState.TAKE;
+    private static String cityName = "";
 
-    private ClusterManager cluster;
+    private static ClusterManager cluster;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,13 +65,17 @@ public class ViewStations extends ActionBarActivity {
         initViewsStation();
     }
 
-
     @Override
     protected void onStart() {
         super.onStart();
 
-        city = ((EditText)findViewById(R.id.view_stations_tv_name_city)).getText().toString();
+        cityName = UIcityName.getText().toString();
 
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, SplashScreen.cities);
+        UIcityName.setAdapter(adapter);
+
+        displayCity(cityName);
         displayMarker(SplashScreen.stations);
         Log.d(this.getClass().getName(), "Nb stations : " + SplashScreen.stations.getListStations().size());
 
@@ -101,23 +107,19 @@ public class ViewStations extends ActionBarActivity {
 
     private void initViewsStation(){
         // UI Management
-        loaderBar = (ProgressBar) findViewById(R.id.view_stations_loadBar);
-        msgError = (TextView) findViewById(R.id.view_stations_txt_error);
-        loaderBar.setVisibility(View.GONE);
-        msgError.setVisibility(View.GONE);
+        UIcityName = ((AutoCompleteTextView)findViewById(R.id.view_stations_tv_name_city));
+        UIloaderBar = (ProgressBar) findViewById(R.id.view_stations_loadBar);
+        UImsgError = (TextView) findViewById(R.id.view_stations_txt_error);
+        UIloaderBar.setVisibility(View.GONE);
+        UImsgError.setVisibility(View.GONE);
 
-        city = getPref(ChooseCity.CITIES, ChooseCity.CITY_PREF, "");
-        if(!city.equalsIgnoreCase(""))
-            displayCity(city);
-        else
-            displayCity(getResources().getString(R.string.view_stations_tv_city_name_none));
+        cityName = getPref(ChooseCity.CITIES, ChooseCity.CITY_PREF, "");
 
-        ((EditText)findViewById(R.id.view_stations_tv_name_city)).setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        UIcityName.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    Log.d(this.getClass().getName(), "Display the new name of city and display all the stations");
-                    city = ((EditText) v).getText().toString();
-                    displayCity(city);
+                    cityName = UIcityName.getText().toString();
+                    displayCity(cityName);
                     displayMarker(SplashScreen.stations);
                     return true;
                 }
@@ -129,9 +131,11 @@ public class ViewStations extends ActionBarActivity {
 
     private void displayCity(String city){
         if(!city.equalsIgnoreCase("")){
-            ((EditText)findViewById(R.id.view_stations_tv_name_city)).setText(city.substring(0, 1).toUpperCase() + city.substring(1).toLowerCase());
             Log.d(this.getClass().getName(), "City : "+city);
+            UIcityName.setText(city.substring(0, 1).toUpperCase() + city.substring(1).toLowerCase());
             focusOnLocation(city.toLowerCase());
+        } else {
+            UIcityName.setText(getResources().getString(R.string.view_stations_tv_city_name_none));
         }
     }
 
@@ -147,7 +151,7 @@ public class ViewStations extends ActionBarActivity {
         Log.d(this.getClass().getName(), "Position : "+camPos);
         Log.d(this.getClass().getName(), "Cam position : "+camUpd3);
 
-        mMap.animateCamera(camUpd3);
+        UImap.animateCamera(camUpd3);
     }
 
     public LatLng getLocationFromAddress(String strAddress) {
@@ -188,33 +192,33 @@ public class ViewStations extends ActionBarActivity {
 
         displayMarker(stations);
 
-        loaderBar.setVisibility(View.GONE);
-        msgError.setVisibility(View.GONE);
+        UIloaderBar.setVisibility(View.GONE);
+        UImsgError.setVisibility(View.GONE);
     }
 
     void displayErrorMsg(){
-        loaderBar.setVisibility(View.GONE);
-        msgError.setVisibility(View.VISIBLE);
+        UIloaderBar.setVisibility(View.GONE);
+        UImsgError.setVisibility(View.VISIBLE);
     }
 
     private void initMap() {
         // Do a null check to confirm that we have not already instantiated the map.
-        if (mMap == null) {
+        if (UImap == null) {
             // Try to obtain the map from the SupportMapFragment.
-            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
+            UImap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
                     .getMap();
         }
 
-        if (mMap != null) {
-            cluster = new ClusterManager<MarkerItem>(getApplicationContext(), mMap);
-            cluster.setRenderer(new CustomClusterRenderer(getApplicationContext(), mMap, cluster));
-            mMap.setOnCameraChangeListener(cluster);
-            mMap.setOnMarkerClickListener(cluster);
+        if (UImap != null) {
+            cluster = new ClusterManager<MarkerItem>(getApplicationContext(), UImap);
+            cluster.setRenderer(new CustomClusterRenderer(getApplicationContext(), UImap, cluster));
+            UImap.setOnCameraChangeListener(cluster);
+            UImap.setOnMarkerClickListener(cluster);
         }
     }
 
     private void displayMarker(Stations stations) {
-        if (mMap != null && cluster != null) {
+        if (UImap != null && cluster != null) {
             // Add remove Marker
             cluster.clearItems();
         } else
@@ -224,7 +228,7 @@ public class ViewStations extends ActionBarActivity {
             return;
 
         for(int i = 0; i < stations.getListStations().size(); i++){
-            if(stations.getListStations().get(i).contractName.equalsIgnoreCase(city) || city.equalsIgnoreCase("")){
+            if(stations.getListStations().get(i).contractName.equalsIgnoreCase(cityName) || cityName.equalsIgnoreCase("")){
                 if(stateSearch == ESearchState.TAKE && stations.getListStations().get(i).availableBike > 0){
                         cluster.addItem(new MarkerItem( stations.getListStations().get(i).pos.lat, stations.getListStations().get(i).pos.lng,
                                                         stations.getListStations().get(i).availableBike,

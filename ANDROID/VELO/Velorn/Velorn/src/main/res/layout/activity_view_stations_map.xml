@@ -47,7 +47,7 @@
             android:textSize="@dimen/text_size_normal"
             android:layout_marginLeft="10dp"/>
 
-        <EditText
+        <AutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/view_stations_tv_name_city"

@@ -28,13 +28,14 @@
                 android:textColor="@color/text_color"
                 android:textSize="@dimen/text_size_normal"/>
 
-            <EditText
+            <AutoCompleteTextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/ville_etxt_ville"
                 android:hint="@string/ville_etxt_ville_hint"
                 android:textColor="@color/text_color"
-                android:textSize="@dimen/text_size_normal"/>
+                android:textSize="@dimen/text_size_normal" />
+
         </LinearLayout>
 
         <Button
