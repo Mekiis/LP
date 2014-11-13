@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Customer {
 	private String _name;
-	private List<Rental> _rentals = new ArrayList<Rental>();
+	List<Rental> _rentals = new ArrayList<Rental>();
 
 	public Customer(String name) {
 		_name = name;
@@ -18,21 +18,14 @@ public class Customer {
 	}
 
 	public String statement() {
-		String result = "Rental Record for " + getName() + "\n";
-		for (Rental each : _rentals) {
-			// show figures for this rental
-			result += "\t" + each.getMovie().getTitle() + "\t"
-					+ String.valueOf(each.getCharge()) + "\n";
-		}
-		// add footer lines
-		result += "Amount owed is " + String.valueOf(getTotalCharge()) + "\n";
-		result += "You earned " + String.valueOf(getTotalFrequentRenterPoints())
-				+ " frequent renter points";
-		return result;
-
+		return new TextStatement().getStatement(this);
 	}
 
-	private int getTotalFrequentRenterPoints() {
+	public String htmlStatement() {
+		return new HtmlStatement().getStatement(this);
+	}
+
+	int getTotalFrequentRenterPoints() {
 		int frequentRenterPoints = 0;
 		
 		for (Rental rental : _rentals) {
@@ -42,7 +35,7 @@ public class Customer {
 		return frequentRenterPoints;
 	}
 
-	private double getTotalCharge() {
+	double getTotalCharge() {
 		double totalAmount = 0f;
 		
 		for (Rental rental : _rentals) {
@@ -50,21 +43,5 @@ public class Customer {
 
 		}
 		return totalAmount;
-	}
-	
-	public String htmlStatement() {
-        String result = "<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=UTF-8\">";
-        result+= "<H1>Rentals for <EM>" + getName() + "</EM></ H1><P>\n";
-        for(Rental rental : _rentals) {
-            //show figures for each rental
-            result += rental.getMovie().getTitle()+ ": " +
-                          String.valueOf(rental.getCharge()) + "<BR>\n";
-		}
-        //add footer lines
-        result +=  "<P>You owe <EM>" + String.valueOf(getTotalCharge()) + "</EM><P>\n";
-        result += "On this rental you earned <EM>" +
-            String.valueOf(getTotalFrequentRenterPoints()) +
-            "</EM> frequent renter points<P>";
-        return result;
 	}
 }
