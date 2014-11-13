@@ -13,6 +13,7 @@ public class Palindrome {
 		while(i < lastCharIndex - i){
 			if(str.charAt(i) != str.charAt(lastCharIndex - i))
 				return false;
+			i++;
 		}
 		
 		return true;
