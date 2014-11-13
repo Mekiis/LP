@@ -19,6 +19,24 @@ public class PalindromeTest {
 	public void aSingleCharacterStringShouldBeAPalindrome(){
 		shouldBeAPalindrome("a");
 	}
+	
+	@Test
+	public void twoCharacterStringsTests(){
+		shouldBeAPalindrome("aa");
+		shouldNotBeAPalindrome("ab");
+	}
+	
+	@Test
+	public void threeCharacterStringsTests(){
+		shouldBeAPalindrome("aba");
+		shouldNotBeAPalindrome("abc");
+	}
+	
+	@Test
+	public void fourCharacterStringsTests(){
+		shouldBeAPalindrome("abba");
+		shouldNotBeAPalindrome("abca");
+	}
 
 	public void shouldBeAPalindrome(String str) {
 		assertTrue(Palindrome.isPalindrome(str));

@@ -7,6 +7,14 @@ public class Palindrome {
 		if(str == "")
 			return false;
 		
+		int i = 0;
+		int lastCharIndex = str.length() - 1;
+		
+		while(i < lastCharIndex - i){
+			if(str.charAt(i) != str.charAt(lastCharIndex - i))
+				return false;
+		}
+		
 		return true;
 	}
 
