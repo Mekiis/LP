@@ -21,21 +21,46 @@ public class PalindromeTest {
 	}
 	
 	@Test
-	public void twoCharacterStringsTests(){
+	public void twoCharactersStringsTests(){
 		shouldBeAPalindrome("aa");
 		shouldNotBeAPalindrome("ab");
 	}
 	
 	@Test
-	public void threeCharacterStringsTests(){
+	public void threeCharactersStringsTests(){
 		shouldBeAPalindrome("aba");
 		shouldNotBeAPalindrome("abc");
 	}
 	
 	@Test
-	public void fourCharacterStringsTests(){
+	public void fourCharactersStringsTests(){
 		shouldBeAPalindrome("abba");
 		shouldNotBeAPalindrome("abca");
+	}
+	
+	@Test
+	public void accentsShouldBeIgnored(){
+		shouldBeAPalindrome("étè");
+	}
+	
+	@Test
+	public void spacesShouldBeIgnored(){
+		shouldBeAPalindrome("le sel");
+	}
+	
+	@Test
+	public void majusculesShouldBeIgnored(){
+		shouldBeAPalindrome("Le sel");
+	}
+	
+	@Test
+	public void apostrophesShouldBeIgnored(){
+		shouldBeAPalindrome("Tu l'as trop écrasé César ce port salut");
+	}
+	
+	@Test
+	public void ponctuationShouldBeIgnored(){
+		shouldBeAPalindrome("Tu l'as trop écrasé César, ce port salut !");
 	}
 
 	public void shouldBeAPalindrome(String str) {
