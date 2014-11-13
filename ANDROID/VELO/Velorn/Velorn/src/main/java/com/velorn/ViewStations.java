@@ -1,15 +1,24 @@
 package com.velorn;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -34,26 +43,38 @@ import com.velorn.loaderJSon.LoaderJson;
 import com.velorn.loaderJSon.LoaderJsonParams;
 import com.velorn.parser.StationParser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ViewStations extends ActionBarActivity {
     // TODO : UI::Put colors on the selection option items (Purple /Light blue)
 
+    // TODO : Do a button on marker to do the selection path
+    // http://stackoverflow.com/questions/14123243/google-maps-android-api-v2-interactive-infowindow-like-in-original-android-go/15040761#15040761
+
     // UI elements
     private static ProgressBar UIloaderBar = null;
     private static TextView UImsgError = null;
-    private static GoogleMap UImap; // Might be null if Google Play services APK is not available.
     private static AutoCompleteTextView UIcityName;
+    // Gmap
+    private static GoogleMap UImap; // Might be null if Google Play services APK is not available.
+    private static ClusterManager cluster;
+
+    // GPS
+    private static LocationManager locationManager;
+    private static LocationListener locationListener;
+
+    public Context context = this;
 
     // Research options
     private enum ESearchState{
         TAKE,
         RETURN;
     }
+
+    // Logics elements
     private static ESearchState stateSearch = ESearchState.TAKE;
     private static String cityName = "";
-
-    private static ClusterManager cluster;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,27 +82,19 @@ public class ViewStations extends ActionBarActivity {
         // Layout Management
         setContentView(R.layout.activity_view_stations_map);
 
-        initMap();
-        initViewsStation();
+        //locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0,locationListener);
+
+        init();
+
+        displayStations(SplashScreen.stations);
+        Log.d(this.getClass().getName(), "Nb stations : " + SplashScreen.stations.getListStations().size());
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
+    protected void onResume() {
+        super.onResume();
 
-        cityName = UIcityName.getText().toString();
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_dropdown_item_1line, SplashScreen.cities);
-        UIcityName.setAdapter(adapter);
-
-        displayCity(cityName);
-        displayMarker(SplashScreen.stations);
-        Log.d(this.getClass().getName(), "Nb stations : " + SplashScreen.stations.getListStations().size());
-
-        // TODO : Verify that the update delay is correct (5 minutes)
         if(SplashScreen.stations.startUpdate()){
-
             Log.d(this.getClass().getName(), "Updating list of stations");
             // Get the list of the stations
             new LoaderJson().execute(new LoaderJsonParams(
@@ -101,11 +114,27 @@ public class ViewStations extends ActionBarActivity {
                             Toast.makeText(getApplicationContext(), R.string.load_no_network, Toast.LENGTH_SHORT);
                         }
                     }, getApplicationContext()));
+        } else {
+            Log.d(this.getClass().getName(), "Don't update list of stations");
         }
+
 
     }
 
-    private void initViewsStation(){
+    private void init(){
+        // Do a null check to confirm that we have not already instantiated the map.
+
+        UImap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+
+        if (UImap != null) {
+            cluster = new ClusterManager<MarkerItem>(getApplicationContext(), UImap);
+            cluster.setRenderer(new CustomClusterRenderer(getApplicationContext(), UImap, cluster));
+            UImap.setOnCameraChangeListener(cluster);
+            UImap.setOnMarkerClickListener(cluster);
+        } else {
+            Log.e(this.getClass().getName(), "Error - No map detected");
+        }
+
         // UI Management
         UIcityName = ((AutoCompleteTextView)findViewById(R.id.view_stations_tv_name_city));
         UIloaderBar = (ProgressBar) findViewById(R.id.view_stations_loadBar);
@@ -127,16 +156,25 @@ public class ViewStations extends ActionBarActivity {
             }
         });
         // TODO : Find how to get the down clavier event on the edit text
+
+        displayCity(cityName);
+        UIcityName.setAdapter(new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, SplashScreen.cities));
+
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        locationListener = new MyLocationListener();
     }
 
     private void displayCity(String city){
-        if(!city.equalsIgnoreCase("")){
+        if(!city.equalsIgnoreCase("") && !city.equalsIgnoreCase(getResources().getString(R.string.view_stations_tv_city_name_none))){
             Log.d(this.getClass().getName(), "City : "+city);
             UIcityName.setText(city.substring(0, 1).toUpperCase() + city.substring(1).toLowerCase());
             focusOnLocation(city.toLowerCase());
         } else {
             UIcityName.setText(getResources().getString(R.string.view_stations_tv_city_name_none));
         }
+
+        UIcityName.setSelection(UIcityName.getText().length());
     }
 
     private void focusOnLocation(String city){
@@ -201,22 +239,6 @@ public class ViewStations extends ActionBarActivity {
         UImsgError.setVisibility(View.VISIBLE);
     }
 
-    private void initMap() {
-        // Do a null check to confirm that we have not already instantiated the map.
-        if (UImap == null) {
-            // Try to obtain the map from the SupportMapFragment.
-            UImap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
-                    .getMap();
-        }
-
-        if (UImap != null) {
-            cluster = new ClusterManager<MarkerItem>(getApplicationContext(), UImap);
-            cluster.setRenderer(new CustomClusterRenderer(getApplicationContext(), UImap, cluster));
-            UImap.setOnCameraChangeListener(cluster);
-            UImap.setOnMarkerClickListener(cluster);
-        }
-    }
-
     private void displayMarker(Stations stations) {
         if (UImap != null && cluster != null) {
             // Add remove Marker
@@ -230,15 +252,15 @@ public class ViewStations extends ActionBarActivity {
         for(int i = 0; i < stations.getListStations().size(); i++){
             if(stations.getListStations().get(i).contractName.equalsIgnoreCase(cityName) || cityName.equalsIgnoreCase("")){
                 if(stateSearch == ESearchState.TAKE && stations.getListStations().get(i).availableBike > 0){
-                        cluster.addItem(new MarkerItem( stations.getListStations().get(i).pos.lat, stations.getListStations().get(i).pos.lng,
-                                                        stations.getListStations().get(i).availableBike,
-                                                        stations.getListStations().get(i).availableBikeStands,
-                                                        stateSearch));
+                    cluster.addItem(new MarkerItem( stations.getListStations().get(i).pos.lat, stations.getListStations().get(i).pos.lng,
+                            stations.getListStations().get(i).availableBike,
+                            stations.getListStations().get(i).availableBikeStands,
+                            stateSearch));
                 } else if(stateSearch == ESearchState.RETURN && stations.getListStations().get(i).availableBikeStands > 0){
-                        cluster.addItem(new MarkerItem( stations.getListStations().get(i).pos.lat, stations.getListStations().get(i).pos.lng,
-                                                        stations.getListStations().get(i).availableBike,
-                                                        stations.getListStations().get(i).availableBikeStands,
-                                                        stateSearch));
+                    cluster.addItem(new MarkerItem( stations.getListStations().get(i).pos.lat, stations.getListStations().get(i).pos.lng,
+                            stations.getListStations().get(i).availableBike,
+                            stations.getListStations().get(i).availableBikeStands,
+                            stateSearch));
                 }
             }
         }
@@ -272,6 +294,10 @@ public class ViewStations extends ActionBarActivity {
             }
         }
 
+        public String getTitle(){
+            return "XXX Rue ... CODE Ville";
+        }
+
         public float getColor(){
             float[] HSV = new float[3];
             if(state == ESearchState.TAKE){
@@ -282,6 +308,32 @@ public class ViewStations extends ActionBarActivity {
             return HSV[0];
         }
 
+        public Bitmap getIcon(Context context){
+            View marker = null;
+            if(state == ESearchState.TAKE){
+                marker = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_marker_take, null);
+            } else {
+                marker = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_marker_return, null);
+            }
+            ((TextView) marker.findViewById(R.id.custom_marker_txt)).setText(getTag());
+            return createDrawableFromView(context, marker);
+        }
+
+        // Convert a view to bitmap
+        private Bitmap createDrawableFromView(Context context, View view) {
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+            view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+            view.measure(displayMetrics.widthPixels, displayMetrics.heightPixels);
+            view.layout(0, 0, displayMetrics.widthPixels, displayMetrics.heightPixels);
+            view.buildDrawingCache();
+            Bitmap bitmap = Bitmap.createBitmap(view.getMeasuredWidth(), view.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
+
+            Canvas canvas = new Canvas(bitmap);
+            view.draw(canvas);
+
+            return bitmap;
+        }
 
     }
 
@@ -294,11 +346,16 @@ public class ViewStations extends ActionBarActivity {
         @Override
         protected void onBeforeClusterItemRendered(MarkerItem item, MarkerOptions markerOptions) {
             super.onBeforeClusterItemRendered(item, markerOptions);
-            markerOptions.title(item.getTag());
-            markerOptions.icon(BitmapDescriptorFactory.defaultMarker(item.getColor()));
+            markerOptions.title(item.getTitle());
+            //markerOptions.icon(BitmapDescriptorFactory.defaultMarker(item.getColor()));
+            markerOptions.icon(BitmapDescriptorFactory.fromBitmap(item.getIcon(context)));
         }
     }
 
+    /***
+     * On click function to change the filter of display of the boundary marker on the view
+     * @param v The view clicked
+     */
     public void searchChange(View v){
         switch(v.getId()){
             case R.id.view_stations_rb_take:
@@ -313,6 +370,31 @@ public class ViewStations extends ActionBarActivity {
                     displayMarker(SplashScreen.stations);
                 }
                 break;
+        }
+    }
+
+    private class MyLocationListener implements LocationListener{
+        @Override
+        public void onLocationChanged(Location loc) {
+            if (loc != null) {
+                Toast.makeText(getBaseContext(),"Localisation actuelle :n Lat: " + loc.getLatitude() +"  Lng: " + loc.getLongitude(),Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        @Override
+        public void onProviderDisabled(String provider) {
+
+        }
+
+        @Override
+
+        public void onProviderEnabled(String provider) {
+
+        }
+
+        @Override
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+
         }
     }
 }

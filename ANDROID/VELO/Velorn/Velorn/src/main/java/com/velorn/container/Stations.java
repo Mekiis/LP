@@ -27,7 +27,7 @@ public class Stations {
     public boolean startUpdate(){
         boolean canUpdate = false;
 
-        if(!this.isUpdating){
+        if(!this.isUpdating && needUpdate()){
             this.isUpdating = true;
             canUpdate = true;
         }
