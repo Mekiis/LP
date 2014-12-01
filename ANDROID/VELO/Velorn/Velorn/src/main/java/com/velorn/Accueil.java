@@ -14,8 +14,8 @@ public class Accueil extends Activity {
         setContentView(R.layout.activity_accueil);
     }
 
-    public void onClick(View v){
-        switch(v.getId()){
+    public void onClick(View v) {
+        switch (v.getId()) {
             case R.id.accueil_menu_list:
                 intent = new Intent(this, ViewStations.class);
                 startActivity(intent);

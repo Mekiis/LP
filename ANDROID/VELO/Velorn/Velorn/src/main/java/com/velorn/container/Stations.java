@@ -1,6 +1,5 @@
 package com.velorn.container;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,20 +13,20 @@ public class Stations {
 
     private static final int DELAY_UPDATE = 5 * 1000 * 60; // 5 minutes
 
-    public Stations(ArrayList<Station> stations){
+    public Stations(ArrayList<Station> stations) {
         this.stations = stations;
         this.lastUpdate = System.currentTimeMillis();
     }
 
-    public Stations(){
+    public Stations() {
         this.stations = new ArrayList<Station>();
         this.lastUpdate = -1;
     }
 
-    public boolean startUpdate(){
+    public boolean startUpdate() {
         boolean canUpdate = false;
 
-        if(!this.isUpdating && needUpdate()){
+        if (!this.isUpdating && needUpdate()) {
             this.isUpdating = true;
             canUpdate = true;
         }
@@ -35,38 +34,44 @@ public class Stations {
         return canUpdate;
     }
 
-    public boolean update(ArrayList<Station> stations){
+    public boolean update(ArrayList<Station> stations) {
         boolean isUpdate = false;
 
-        if(isUpdating){
-            if(needUpdate()){
+        if (this.isUpdating) {
+            if (needUpdate()) {
                 this.stations = stations;
                 this.lastUpdate = System.currentTimeMillis();
                 isUpdate = true;
             }
-            isUpdating = false;
+            this.isUpdating = false;
         }
 
 
         return isUpdate;
     }
 
-    public void forceUpdate(ArrayList<Station> stations){
-        this.stations = stations;
-        this.lastUpdate = System.currentTimeMillis();
+    public void forceUpdate(ArrayList<Station> stations) {
+        if (this.isUpdating) {
+            this.isUpdating = true;
+
+            this.stations = stations;
+            this.lastUpdate = System.currentTimeMillis();
+
+            this.isUpdating = false;
+        }
     }
 
-    public boolean needUpdate(){
+    public boolean needUpdate() {
         boolean needUpdate = false;
 
-        if(System.currentTimeMillis() - lastUpdate > DELAY_UPDATE){
+        if (System.currentTimeMillis() - this.lastUpdate > DELAY_UPDATE) {
             needUpdate = true;
         }
 
         return needUpdate;
     }
 
-    public List<Station> getListStations(){
-        return stations;
+    public List<Station> getListStations() {
+        return this.stations;
     }
 }

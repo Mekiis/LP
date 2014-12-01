@@ -8,17 +8,21 @@ public class Station {
     public String contractName = "";
     public String name = "";
     public String address = "";
-    public class Position{
+
+    public class Position {
         public double lat = -1.0;
         public double lng = -1;
     }
+
     public Position pos = new Position();
     public boolean banking = false;
     public boolean bonus = false;
-    public enum EStatus{
+
+    public enum EStatus {
         OPEN,
         CLOSE;
     }
+
     public EStatus status = EStatus.OPEN;
     public int bikeStands = 0;
     public int availableBikeStands = 0;

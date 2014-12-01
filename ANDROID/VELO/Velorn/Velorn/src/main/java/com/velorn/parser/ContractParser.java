@@ -1,7 +1,6 @@
 package com.velorn.parser;
 
 import com.velorn.container.Contract;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,7 +18,7 @@ public class ContractParser {
     // contacts JSONArray
     private JSONArray contacts = null;
 
-    public ArrayList<Contract> CreateContract(String json){
+    public ArrayList<Contract> CreateContract(String json) {
         ArrayList<Contract> contracts = new ArrayList<Contract>();
 
         try {
@@ -27,7 +26,7 @@ public class ContractParser {
             contacts = new JSONArray(json);
 
             // looping through All Contacts
-            for(int i = 0; i < contacts.length(); i++){
+            for (int i = 0; i < contacts.length(); i++) {
                 JSONObject c = contacts.getJSONObject(i);
 
                 Contract contract = new Contract();
@@ -36,8 +35,8 @@ public class ContractParser {
                 contract.name = c.getString(TAG_NAME);
                 contract.commercial_name = c.getString(TAG_COMMERCIAL_NAME);
                 contract.country_code = c.getString(TAG_COUNTRY_CODE);
-                JSONArray cities =  c.getJSONArray(TAG_CITIES);
-                for(int j = 0; j < cities.length(); j++){
+                JSONArray cities = c.getJSONArray(TAG_CITIES);
+                for (int j = 0; j < cities.length(); j++) {
                     contract.cities.add(cities.getString(j));
                 }
 

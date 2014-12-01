@@ -2,8 +2,8 @@ package com.velorn;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -24,7 +24,7 @@ public class ChooseCity extends ActionBarActivity {
         UIcityName = ((AutoCompleteTextView) findViewById(R.id.ville_etxt_ville));
 
         String ville = getPref(CITIES, CITY_PREF, "");
-        if(!ville.equalsIgnoreCase("")){
+        if (!ville.equalsIgnoreCase("")) {
             ville = ville.substring(0, 1).toUpperCase() + ville.substring(1).toLowerCase();
         }
         UIcityName.setText(ville);
@@ -35,8 +35,8 @@ public class ChooseCity extends ActionBarActivity {
 
     }
 
-    public void onClick(View v){
-        switch(v.getId()){
+    public void onClick(View v) {
+        switch (v.getId()) {
             case R.id.ville_btn_validate:
                 String ville = UIcityName.getText().toString();
                 setPref(CITIES, CITY_PREF, ville);

@@ -2,17 +2,14 @@ package com.velorn;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.location.Address;
-import android.location.Geocoder;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.support.v7.app.ActionBarActivity;
+import android.location.*;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -20,12 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
-
+import android.widget.*;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -43,7 +35,6 @@ import com.velorn.loaderJSon.LoaderJson;
 import com.velorn.loaderJSon.LoaderJsonParams;
 import com.velorn.parser.StationParser;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ViewStations extends ActionBarActivity {
@@ -55,7 +46,6 @@ public class ViewStations extends ActionBarActivity {
     // UI elements
     private static ProgressBar UIloaderBar = null;
     private static TextView UImsgError = null;
-    private static AutoCompleteTextView UIcityName;
     // Gmap
     private static GoogleMap UImap; // Might be null if Google Play services APK is not available.
     private static ClusterManager cluster;
@@ -65,9 +55,10 @@ public class ViewStations extends ActionBarActivity {
     private static LocationListener locationListener;
 
     public Context context = this;
+    private Object thisO = ((Object) this);
 
     // Research options
-    private enum ESearchState{
+    private enum ESearchState {
         TAKE,
         RETURN;
     }
@@ -87,15 +78,15 @@ public class ViewStations extends ActionBarActivity {
         init();
 
         displayStations(SplashScreen.stations);
-        Log.d(this.getClass().getName(), "Nb stations : " + SplashScreen.stations.getListStations().size());
+        Log.d(thisO.getClass().getName(), "Nb stations : " + SplashScreen.stations.getListStations().size());
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        if(SplashScreen.stations.startUpdate()){
-            Log.d(this.getClass().getName(), "Updating list of stations");
+        if (SplashScreen.stations.startUpdate()) {
+            Log.d(thisO.getClass().getName(), "Updating list of stations");
             // Get the list of the stations
             new LoaderJson().execute(new LoaderJsonParams(
                     "https://api.jcdecaux.com/vls/v1/stations?apiKey=416ddf2bf645df9eea6d7c874904e5626ae62ffd",
@@ -104,9 +95,9 @@ public class ViewStations extends ActionBarActivity {
                         public void run() {
                             SplashScreen.stations.update(new StationParser().CreateStations(s));
                             displayStations(SplashScreen.stations);
-                            Log.d(this.getClass().getName(), "Refresh of the display of the stations =====");
-                            Log.d(this.getClass().getName(), "Nb stations : " + SplashScreen.stations.getListStations().size());
-                            Log.d(this.getClass().getName(), "=================");
+                            Log.d(thisO.getClass().getName(), "Refresh of the display of the stations =====");
+                            Log.d(thisO.getClass().getName(), "Nb stations : " + SplashScreen.stations.getListStations().size());
+                            Log.d(thisO.getClass().getName(), "=================");
                         }
 
                         @Override
@@ -115,13 +106,13 @@ public class ViewStations extends ActionBarActivity {
                         }
                     }, getApplicationContext()));
         } else {
-            Log.d(this.getClass().getName(), "Don't update list of stations");
+            Log.d(thisO.getClass().getName(), "Don't update list of stations");
         }
 
 
     }
 
-    private void init(){
+    private void init() {
         // Do a null check to confirm that we have not already instantiated the map.
 
         UImap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
@@ -132,11 +123,10 @@ public class ViewStations extends ActionBarActivity {
             UImap.setOnCameraChangeListener(cluster);
             UImap.setOnMarkerClickListener(cluster);
         } else {
-            Log.e(this.getClass().getName(), "Error - No map detected");
+            Log.e(thisO.getClass().getName(), "Error - No map detected");
         }
 
         // UI Management
-        UIcityName = ((AutoCompleteTextView)findViewById(R.id.view_stations_tv_name_city));
         UIloaderBar = (ProgressBar) findViewById(R.id.view_stations_loadBar);
         UImsgError = (TextView) findViewById(R.id.view_stations_txt_error);
         UIloaderBar.setVisibility(View.GONE);
@@ -144,40 +134,11 @@ public class ViewStations extends ActionBarActivity {
 
         cityName = getPref(ChooseCity.CITIES, ChooseCity.CITY_PREF, "");
 
-        UIcityName.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    cityName = UIcityName.getText().toString();
-                    displayCity(cityName);
-                    displayMarker(SplashScreen.stations);
-                    return true;
-                }
-                return false;
-            }
-        });
-        // TODO : Find how to get the down clavier event on the edit text
-
-        displayCity(cityName);
-        UIcityName.setAdapter(new ArrayAdapter<String>(this,
-                android.R.layout.simple_dropdown_item_1line, SplashScreen.cities));
-
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         locationListener = new MyLocationListener();
     }
 
-    private void displayCity(String city){
-        if(!city.equalsIgnoreCase("") && !city.equalsIgnoreCase(getResources().getString(R.string.view_stations_tv_city_name_none))){
-            Log.d(this.getClass().getName(), "City : "+city);
-            UIcityName.setText(city.substring(0, 1).toUpperCase() + city.substring(1).toLowerCase());
-            focusOnLocation(city.toLowerCase());
-        } else {
-            UIcityName.setText(getResources().getString(R.string.view_stations_tv_city_name_none));
-        }
-
-        UIcityName.setSelection(UIcityName.getText().length());
-    }
-
-    private void focusOnLocation(String city){
+    private void focusOnLocation(String city) {
 
         CameraPosition camPos = new CameraPosition.Builder()
                 .target(getLocationFromAddress(city))
@@ -186,8 +147,8 @@ public class ViewStations extends ActionBarActivity {
 
         CameraUpdate camUpd3 = CameraUpdateFactory.newCameraPosition(camPos);
 
-        Log.d(this.getClass().getName(), "Position : "+camPos);
-        Log.d(this.getClass().getName(), "Cam position : "+camUpd3);
+        Log.d(thisO.getClass().getName(), "Position : " + camPos);
+        Log.d(thisO.getClass().getName(), "Cam position : " + camUpd3);
 
         UImap.animateCamera(camUpd3);
     }
@@ -207,13 +168,13 @@ public class ViewStations extends ActionBarActivity {
             location.getLatitude();
             location.getLongitude();
 
-            p1 = new LatLng(location.getLatitude(),location.getLongitude());
+            p1 = new LatLng(location.getLatitude(), location.getLongitude());
 
-        } catch (Exception e){
-            Log.e(this.getClass().getName(), "Error - While convert");
+        } catch (Exception e) {
+            Log.e(thisO.getClass().getName(), "Error - While convert");
         }
 
-        Log.d(this.getClass().getName(), "Lat : "+p1.latitude+" / Lng : "+p1.longitude);
+        Log.d(thisO.getClass().getName(), "Lat : " + p1.latitude + " / Lng : " + p1.longitude);
 
         return p1;
     }
@@ -224,8 +185,8 @@ public class ViewStations extends ActionBarActivity {
         return preferences.getString(s, defaulValue);
     }
 
-    void displayStations(Stations stations){
-        if(stations == null || stations.getListStations().size() == 0)
+    void displayStations(Stations stations) {
+        if (stations == null || stations.getListStations().size() == 0)
             return;
 
         displayMarker(stations);
@@ -234,7 +195,7 @@ public class ViewStations extends ActionBarActivity {
         UImsgError.setVisibility(View.GONE);
     }
 
-    void displayErrorMsg(){
+    void displayErrorMsg() {
         UIloaderBar.setVisibility(View.GONE);
         UImsgError.setVisibility(View.VISIBLE);
     }
@@ -246,18 +207,18 @@ public class ViewStations extends ActionBarActivity {
         } else
             return;
 
-        if(stations == null)
+        if (stations == null)
             return;
 
-        for(int i = 0; i < stations.getListStations().size(); i++){
-            if(stations.getListStations().get(i).contractName.equalsIgnoreCase(cityName) || cityName.equalsIgnoreCase("")){
-                if(stateSearch == ESearchState.TAKE && stations.getListStations().get(i).availableBike > 0){
-                    cluster.addItem(new MarkerItem( stations.getListStations().get(i).pos.lat, stations.getListStations().get(i).pos.lng,
+        for (int i = 0; i < stations.getListStations().size(); i++) {
+            if (stations.getListStations().get(i).contractName.equalsIgnoreCase(cityName) || cityName.equalsIgnoreCase("")) {
+                if (stateSearch == ESearchState.TAKE && stations.getListStations().get(i).availableBike > 0) {
+                    cluster.addItem(new MarkerItem(stations.getListStations().get(i).pos.lat, stations.getListStations().get(i).pos.lng,
                             stations.getListStations().get(i).availableBike,
                             stations.getListStations().get(i).availableBikeStands,
                             stateSearch));
-                } else if(stateSearch == ESearchState.RETURN && stations.getListStations().get(i).availableBikeStands > 0){
-                    cluster.addItem(new MarkerItem( stations.getListStations().get(i).pos.lat, stations.getListStations().get(i).pos.lng,
+                } else if (stateSearch == ESearchState.RETURN && stations.getListStations().get(i).availableBikeStands > 0) {
+                    cluster.addItem(new MarkerItem(stations.getListStations().get(i).pos.lat, stations.getListStations().get(i).pos.lng,
                             stations.getListStations().get(i).availableBike,
                             stations.getListStations().get(i).availableBikeStands,
                             stateSearch));
@@ -274,7 +235,7 @@ public class ViewStations extends ActionBarActivity {
         private int nbPlaceFree = 0;
         private ESearchState state = ESearchState.TAKE;
 
-        public MarkerItem(double lat, double lng, int nbBikeFree, int nbPlaceFree, ESearchState state){
+        public MarkerItem(double lat, double lng, int nbBikeFree, int nbPlaceFree, ESearchState state) {
             this.position = new LatLng(lat, lng);
             this.nbBikeFree = nbBikeFree;
             this.nbPlaceFree = nbPlaceFree;
@@ -286,21 +247,21 @@ public class ViewStations extends ActionBarActivity {
             return position;
         }
 
-        public String getTag(){
-            if(state == ESearchState.TAKE){
-                return ""+nbBikeFree;
+        public String getTag() {
+            if (state == ESearchState.TAKE) {
+                return "" + nbBikeFree;
             } else {
-                return ""+nbPlaceFree;
+                return "" + nbPlaceFree;
             }
         }
 
-        public String getTitle(){
+        public String getTitle() {
             return "XXX Rue ... CODE Ville";
         }
 
-        public float getColor(){
+        public float getColor() {
             float[] HSV = new float[3];
-            if(state == ESearchState.TAKE){
+            if (state == ESearchState.TAKE) {
                 new Color().colorToHSV(getResources().getColor(R.color.views_stations_bike_avaible), HSV);
             } else {
                 new Color().colorToHSV(getResources().getColor(R.color.views_stations_place_avaible), HSV);
@@ -308,9 +269,9 @@ public class ViewStations extends ActionBarActivity {
             return HSV[0];
         }
 
-        public Bitmap getIcon(Context context){
+        public Bitmap getIcon(Context context) {
             View marker = null;
-            if(state == ESearchState.TAKE){
+            if (state == ESearchState.TAKE) {
                 marker = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_marker_take, null);
             } else {
                 marker = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_marker_return, null);
@@ -352,20 +313,21 @@ public class ViewStations extends ActionBarActivity {
         }
     }
 
-    /***
+    /**
      * On click function to change the filter of display of the boundary marker on the view
+     *
      * @param v The view clicked
      */
-    public void searchChange(View v){
-        switch(v.getId()){
+    public void searchChange(View v) {
+        switch (v.getId()) {
             case R.id.view_stations_rb_take:
-                if(stateSearch != ESearchState.TAKE){
+                if (stateSearch != ESearchState.TAKE) {
                     stateSearch = ESearchState.TAKE;
                     displayMarker(SplashScreen.stations);
                 }
                 break;
             case R.id.view_stations_rb_return:
-                if(stateSearch != ESearchState.RETURN){
+                if (stateSearch != ESearchState.RETURN) {
                     stateSearch = ESearchState.RETURN;
                     displayMarker(SplashScreen.stations);
                 }
@@ -373,11 +335,41 @@ public class ViewStations extends ActionBarActivity {
         }
     }
 
-    private class MyLocationListener implements LocationListener{
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.view_stations_ib_city:
+                Intent intent = new Intent(this, ChooseCity.class);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.view_stations_ib_refresh:
+                new LoaderJson().execute(new LoaderJsonParams(
+                        "https://api.jcdecaux.com/vls/v1/stations?apiKey=416ddf2bf645df9eea6d7c874904e5626ae62ffd",
+                        new LoaderJSonRunnable() {
+                            @Override
+                            public void run() {
+                                SplashScreen.stations.update(new StationParser().CreateStations(s));
+                                displayStations(SplashScreen.stations);
+                                Log.d(thisO.getClass().getName(), "Refresh of the display of the stations =====");
+                                Log.d(thisO.getClass().getName(), "Nb stations : " + SplashScreen.stations.getListStations().size());
+                                Log.d(thisO.getClass().getName(), "=================");
+                            }
+
+                            @Override
+                            public void errorNetwork() {
+                                Toast.makeText(getApplicationContext(), R.string.load_no_network, Toast.LENGTH_SHORT);
+                            }
+                        }, getApplicationContext()));
+            case R.id.view_stations_ib_localisation:
+                break;
+        }
+    }
+
+    private class MyLocationListener implements LocationListener {
         @Override
         public void onLocationChanged(Location loc) {
             if (loc != null) {
-                Toast.makeText(getBaseContext(),"Localisation actuelle :n Lat: " + loc.getLatitude() +"  Lng: " + loc.getLongitude(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(), "Localisation actuelle :n Lat: " + loc.getLatitude() + "  Lng: " + loc.getLongitude(), Toast.LENGTH_SHORT).show();
             }
         }
 

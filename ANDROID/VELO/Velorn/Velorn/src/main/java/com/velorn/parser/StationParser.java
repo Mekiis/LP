@@ -1,14 +1,13 @@
 package com.velorn.parser;
 
 import com.velorn.container.Station;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class StationParser{
+public class StationParser {
 
     // JSON Node names
     private final String TAG_NUMBER = "number";
@@ -29,7 +28,7 @@ public class StationParser{
     // contacts JSONArray
     private JSONArray contacts = null;
 
-    public ArrayList<Station> CreateStations(String json){
+    public ArrayList<Station> CreateStations(String json) {
         ArrayList<Station> stations = new ArrayList<Station>();
 
         try {
@@ -37,7 +36,7 @@ public class StationParser{
             contacts = new JSONArray(json);
 
             // looping through All Contacts
-            for(int i = 0; i < contacts.length(); i++){
+            for (int i = 0; i < contacts.length(); i++) {
                 JSONObject c = contacts.getJSONObject(i);
 
                 Station station = new Station();
@@ -47,14 +46,14 @@ public class StationParser{
                 station.contractName = c.getString(TAG_CONTRACT_NAME);
                 station.name = c.getString(TAG_NAME);
                 station.address = c.getString(TAG_ADDRESS);
-                JSONObject position =  c.getJSONObject(TAG_POS);
+                JSONObject position = c.getJSONObject(TAG_POS);
                 station.pos.lat = position.getDouble(TAG_POS_LAT);
                 station.pos.lng = position.getDouble(TAG_POS_LONG);
                 station.banking = c.getBoolean(TAG_BANKING);
                 station.bonus = c.getBoolean(TAG_BONUS);
-                if(c.getString(TAG_STATUS).equalsIgnoreCase("OPEN")){
+                if (c.getString(TAG_STATUS).equalsIgnoreCase("OPEN")) {
                     station.status = Station.EStatus.OPEN;
-                } else if(c.getString(TAG_STATUS).equalsIgnoreCase("CLOSE")){
+                } else if (c.getString(TAG_STATUS).equalsIgnoreCase("CLOSE")) {
                     station.status = Station.EStatus.CLOSE;
                 }
                 station.bikeStands = c.getInt(TAG_BIKE_STANDS);

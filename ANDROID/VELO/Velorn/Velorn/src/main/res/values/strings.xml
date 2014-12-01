@@ -7,7 +7,7 @@
     <string name="accueil_btn_menu_list">See born of bikes</string>
     <string name="accueil_btn_menu_ville">Choose a city</string>
     <string name="ville_btn_validate">Validate</string>
-    <string name="ville_txt_entrer_ville">City : </string>
+    <string name="ville_txt_entrer_ville">City :</string>
     <string name="ville_etxt_ville_hint">City</string>
     <string name="title_activity_ville">Ville</string>
     <string name="title_activity_stations">Stations</string>
@@ -18,10 +18,19 @@
     <string name="view_stations_rb_take">Take a bike</string>
     <string name="view_stations_rb_return">Return a bike</string>
     <string name="view_stations_tv_city_name_none">All cities</string>
-    <string name="view_stations_tv_city">City : </string>
+    <string name="view_stations_tv_city">City :</string>
     <string name="view_stations_tv_city_name_hint">City</string>
     <string name="load_no_network">No network detected</string>
     <string name="splash_screen_title_txt">Velorn</string>
     <string name="splash_screen_subtitle_txt">Ride with your bike</string>
+    <string name="chose_path_way_to_travel_bike">Bike</string>
+    <string name="chose_path_way_to_travel_car">Car</string>
+    <string name="chose_path_way_to_travel_foot">Foot</string>
+    <string name="chose_path_validate">Search</string>
+    <string name="chose_path_position_destination">Destination</string>
+    <string name="chose_path_position_start">Start</string>
+    <string name="chose_path_user_position">Your position</string>
+    <string name="chose_path_start">Start point :</string>
+    <string name="chose_path_destination">Destination point :</string>
 
 </resources>
