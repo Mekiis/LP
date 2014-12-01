@@ -1,9 +1,0 @@
-c:\users\lp\documents\visual studio 2012\Projects\GENIE_LOGICIEL\TP01\TP01\bin\Debug\TP01.exe.config
-c:\users\lp\documents\visual studio 2012\Projects\GENIE_LOGICIEL\TP01\TP01\bin\Debug\TP01.exe
-c:\users\lp\documents\visual studio 2012\Projects\GENIE_LOGICIEL\TP01\TP01\bin\Debug\TP01.pdb
-c:\users\lp\documents\visual studio 2012\Projects\GENIE_LOGICIEL\TP01\TP01\obj\Debug\TP01.csprojResolveAssemblyReference.cache
-c:\users\lp\documents\visual studio 2012\Projects\GENIE_LOGICIEL\TP01\TP01\obj\Debug\TP01.Form1.resources
-c:\users\lp\documents\visual studio 2012\Projects\GENIE_LOGICIEL\TP01\TP01\obj\Debug\TP01.Properties.Resources.resources
-c:\users\lp\documents\visual studio 2012\Projects\GENIE_LOGICIEL\TP01\TP01\obj\Debug\TP01.csproj.GenerateResource.Cache
-c:\users\lp\documents\visual studio 2012\Projects\GENIE_LOGICIEL\TP01\TP01\obj\Debug\TP01.exe
-c:\users\lp\documents\visual studio 2012\Projects\GENIE_LOGICIEL\TP01\TP01\obj\Debug\TP01.pdb

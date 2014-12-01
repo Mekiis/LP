@@ -1,5 +1,0 @@
-c:\Users\lp\documents\visual studio 2012\Projects\GENIE_LOGICIEL\TP04\TP04_Library\bin\Debug\TP04_Library.dll
-c:\Users\lp\documents\visual studio 2012\Projects\GENIE_LOGICIEL\TP04\TP04_Library\bin\Debug\TP04_Library.pdb
-c:\Users\lp\documents\visual studio 2012\Projects\GENIE_LOGICIEL\TP04\TP04_Library\obj\Debug\TP04_Library.csprojResolveAssemblyReference.cache
-c:\Users\lp\documents\visual studio 2012\Projects\GENIE_LOGICIEL\TP04\TP04_Library\obj\Debug\TP04_Library.dll
-c:\Users\lp\documents\visual studio 2012\Projects\GENIE_LOGICIEL\TP04\TP04_Library\obj\Debug\TP04_Library.pdb
