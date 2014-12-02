@@ -1,0 +1,110 @@
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\bin\AgenceWebService.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\bin\AgenceWebService.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\bin\AgenceDTO.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\bin\AgenceService.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\bin\AgenceMetier.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\bin\AgenceUniteMetier.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\bin\AgenceDAO.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\bin\AgenceUtils.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\bin\System.Data.SQLite.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\bin\NLog.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\bin\AgenceDTO.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\bin\AgenceService.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\bin\AgenceMetier.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\bin\AgenceUniteMetier.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\bin\AgenceDAO.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\bin\AgenceUtils.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\bin\System.Data.SQLite.xml
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\bin\NLog.xml
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\obj\Debug\AgenceWebServices.csprojResolveAssemblyReference.cache
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\obj\Debug\AgenceWebService.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\obj\Debug\AgenceWebService.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\bin\NLog.config
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\bin\NLog.config
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\bin\AgenceWebService.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\bin\AgenceWebService.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\bin\AgenceDTO.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\bin\AgenceService.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\bin\AgenceUtils.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\bin\AgenceMetier.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\bin\AgenceUniteMetier.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\bin\NLog.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\bin\AgenceDAO.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\bin\System.Data.SQLite.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\bin\AgenceDTO.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\bin\AgenceService.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\bin\AgenceUtils.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\bin\AgenceMetier.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\bin\AgenceUniteMetier.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\bin\NLog.xml
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\bin\AgenceDAO.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\bin\System.Data.SQLite.xml
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\obj\Debug\AgenceWebServices.csprojResolveAssemblyReference.cache
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\obj\Debug\AgenceWebService.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\13 - Linq et mode déconnecté\Agence\AgenceWebService\obj\Debug\AgenceWebService.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\NLog.config
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceWebService.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceWebService.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceDTO.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceService.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceUtils.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceMetier.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceUniteMetier.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\NLog.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceDAO.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\System.Data.SQLite.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceDTO.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceService.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceUtils.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceMetier.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceUniteMetier.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\NLog.xml
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceDAO.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\System.Data.SQLite.xml
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\obj\Debug\AgenceWebServices.csprojResolveAssemblyReference.cache
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\obj\Debug\AgenceWebService.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\obj\Debug\AgenceWebService.pdb
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\NLog.config
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceWebService.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceWebService.pdb
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceDTO.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceService.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceUtils.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceMetier.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceUniteMetier.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\NLog.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceDAO.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\System.Data.SQLite.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceDTO.pdb
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceService.pdb
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceUtils.pdb
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceMetier.pdb
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceUniteMetier.pdb
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\NLog.xml
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\AgenceDAO.pdb
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\bin\System.Data.SQLite.xml
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\obj\Debug\AgenceWebServices.csprojResolveAssemblyReference.cache
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\obj\Debug\AgenceWebService.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\obj\Debug\AgenceWebService.pdb
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\bin\NLog.config
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\bin\AgenceWebService.dll
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\bin\AgenceWebService.pdb
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\bin\AgenceDTO.dll
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\bin\AgenceService.dll
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\bin\AgenceUtils.dll
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\bin\AgenceMetier.dll
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\bin\AgenceUniteMetier.dll
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\bin\NLog.dll
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\bin\AgenceDAO.dll
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\bin\System.Data.SQLite.dll
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\bin\AgenceDTO.pdb
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\bin\AgenceService.pdb
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\bin\AgenceUtils.pdb
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\bin\AgenceMetier.pdb
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\bin\AgenceUniteMetier.pdb
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\bin\NLog.xml
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\bin\AgenceDAO.pdb
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\bin\System.Data.SQLite.xml
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\obj\Debug\AgenceWebServices.csprojResolveAssemblyReference.cache
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\obj\Debug\AgenceWebService.dll
+C:\Users\bfo.CMRE\Documents\IUT\2014\Projet\Agence\AgenceWebService\obj\Debug\AgenceWebService.pdb

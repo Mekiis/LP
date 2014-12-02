@@ -1,0 +1,152 @@
+2013-02-11 18:47:09.2319 AgenceUtils.Utils.LogException Fatal 
+ Exception systeme 
+ Le bien n'existe pas dans la base de données.    a AgenceMetier.BienMetier.Charger(Int32 idBien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 40
+   a AgenceService.BienService.Charger(Int32 idBien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 18
+   a AgenceWebServices.AgenceWebServices.ChargerBien(String id) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 21
+2013-02-11 18:49:02.3052 AgenceUtils.Utils.LogException Fatal 
+ Exception systeme 
+ Le bien n'existe pas dans la base de données.    a AgenceMetier.BienMetier.Charger(Int32 idBien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 40
+   a AgenceService.BienService.Charger(Int32 idBien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 18
+   a AgenceWebServices.AgenceWebServices.ChargerBien(String id) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 21
+2013-02-11 18:50:38.9449 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Le bien n'existe pas dans la base de données.    a AgenceMetier.BienMetier.Charger(Int32 idBien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 40
+   a AgenceService.BienService.Charger(Int32 idBien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 18
+   a AgenceWebServices.AgenceWebServices.ChargerBien(String id) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 21
+2013-02-11 18:54:53.8823 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Le bien n'existe pas dans la base de données.    a AgenceMetier.BienMetier.Charger(Int32 idBien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 40
+   a AgenceService.BienService.Charger(Int32 idBien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 18
+   a AgenceWebServices.AgenceWebServices.ChargerBien(String id) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 21
+2013-02-11 20:10:49.5196 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le type de bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 19
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 53
+2013-02-11 20:11:57.3015 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le type de bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 19
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 53
+2013-02-11 20:12:56.4548 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le type de bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 19
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 53
+2013-02-11 20:16:10.5224 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le type de bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 19
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 53
+2013-02-11 20:16:32.5165 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le type de bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 19
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 53
+2013-02-11 20:17:25.8047 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le type de bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 19
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 53
+2013-02-11 20:19:07.5166 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le type de bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 19
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 53
+2013-02-11 20:19:29.2638 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le type de bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 19
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 53
+2013-02-11 20:23:38.2556 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le type de bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 19
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 53
+2013-02-11 20:28:46.7392 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le type de bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 19
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 53
+2013-02-11 20:31:48.7704 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le type de bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 19
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 53
+2013-02-11 20:31:48.7904 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le type de bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 19
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 53
+2013-02-11 20:32:02.2985 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le type de bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 19
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 53
+2013-02-11 20:33:29.9867 AgenceUtils.Utils.LogException Fatal 
+ Exception systeme 
+ coincoin    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 14
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 53
+2013-02-11 20:34:15.2640 AgenceUtils.Utils.LogException Fatal 
+ Exception systeme 
+ coincoin    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 14
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 53
+2013-02-11 20:36:47.1613 AgenceUtils.Utils.LogException Fatal 
+ Exception systeme 
+ coincoin    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 14
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 53
+2013-02-11 20:38:49.1017 AgenceUtils.Utils.LogException Fatal 
+ Exception systeme 
+ coincoin    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 14
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 53
+2013-02-11 20:42:47.9905 AgenceUtils.Utils.LogException Fatal 
+ Exception systeme 
+ coincoin    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 14
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 53
+2013-02-11 20:48:22.6279 AgenceUtils.Utils.LogException Fatal 
+ Exception systeme 
+ coincoin    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 14
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 48
+2013-02-11 20:58:11.2101 AgenceUtils.Utils.LogException Fatal 
+ Exception systeme 
+ coincoin    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 14
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 54
+2013-02-11 20:58:56.4548 AgenceUtils.Utils.LogException Fatal 
+ Exception systeme 
+ coincoin    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 14
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 24
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 54
+2013-02-11 21:00:23.6290 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le type de bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 18
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 23
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 54

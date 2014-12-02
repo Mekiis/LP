@@ -1,0 +1,85 @@
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceMetier\obj\Debug\AgenceMetier.csprojResolveAssemblyReference.cache
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceMetier\bin\Debug\AgenceMetier.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceMetier\bin\Debug\AgenceMetier.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceMetier\bin\Debug\AgenceDAO.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceMetier\bin\Debug\AgenceDTO.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceMetier\bin\Debug\DBWrapper.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceMetier\bin\Debug\System.Data.SQLite.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceMetier\bin\Debug\AgenceDAO.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceMetier\bin\Debug\AgenceDTO.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceMetier\bin\Debug\DBWrapper.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceMetier\bin\Debug\System.Data.SQLite.xml
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceMetier\obj\Debug\AgenceMetier.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceMetier\obj\Debug\AgenceMetier.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceMetier\bin\Debug\AgenceUniteMetier.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceMetier\bin\Debug\AgenceUtils.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceMetier\bin\Debug\AgenceUniteMetier.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceMetier\bin\Debug\AgenceUtils.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceMetier\bin\Debug\AgenceMetier.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceMetier\bin\Debug\AgenceMetier.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceMetier\bin\Debug\AgenceDAO.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceMetier\bin\Debug\AgenceDTO.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceMetier\bin\Debug\AgenceUniteMetier.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceMetier\bin\Debug\AgenceUtils.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceMetier\bin\Debug\System.Data.SQLite.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceMetier\bin\Debug\AgenceDAO.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceMetier\bin\Debug\AgenceDTO.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceMetier\bin\Debug\AgenceUniteMetier.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceMetier\bin\Debug\AgenceUtils.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceMetier\bin\Debug\System.Data.SQLite.xml
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceMetier\obj\Debug\AgenceMetier.csprojResolveAssemblyReference.cache
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceMetier\obj\Debug\AgenceMetier.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceMetier\obj\Debug\AgenceMetier.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceMetier\bin\Debug\NLog.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceMetier\bin\Debug\NLog.xml
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\bin\Debug\AgenceMetier.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\bin\Debug\AgenceMetier.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\bin\Debug\AgenceDAO.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\bin\Debug\AgenceDTO.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\bin\Debug\AgenceUniteMetier.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\bin\Debug\AgenceUtils.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\bin\Debug\System.Data.SQLite.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\bin\Debug\NLog.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\bin\Debug\AgenceDAO.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\bin\Debug\AgenceDTO.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\bin\Debug\AgenceUniteMetier.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\bin\Debug\AgenceUtils.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\bin\Debug\System.Data.SQLite.xml
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\bin\Debug\NLog.xml
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\obj\Debug\AgenceMetier.csprojResolveAssemblyReference.cache
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\obj\Debug\AgenceMetier.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\obj\Debug\AgenceMetier.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\AgenceMetier.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\AgenceMetier.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\AgenceDAO.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\AgenceDTO.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\AgenceUniteMetier.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\AgenceUtils.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\System.Data.SQLite.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\NLog.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\AgenceDAO.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\AgenceDTO.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\AgenceUniteMetier.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\AgenceUtils.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\System.Data.SQLite.xml
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\NLog.xml
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\obj\Debug\AgenceMetier.csprojResolveAssemblyReference.cache
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\obj\Debug\AgenceMetier.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\obj\Debug\AgenceMetier.pdb
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\AgenceMetier.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\AgenceMetier.pdb
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\AgenceDAO.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\AgenceDTO.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\AgenceUniteMetier.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\AgenceUtils.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\System.Data.SQLite.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\NLog.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\AgenceDAO.pdb
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\AgenceDTO.pdb
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\AgenceUniteMetier.pdb
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\AgenceUtils.pdb
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\System.Data.SQLite.xml
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\bin\Debug\NLog.xml
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\obj\Debug\AgenceMetier.csprojResolveAssemblyReference.cache
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\obj\Debug\AgenceMetier.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\obj\Debug\AgenceMetier.pdb

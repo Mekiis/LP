@@ -1,0 +1,14 @@
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceDTO\bin\Debug\AgenceDTO.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceDTO\bin\Debug\AgenceDTO.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceDTO\obj\Debug\AgenceDTO.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceDTO\obj\Debug\AgenceDTO.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceDTO\bin\Debug\AgenceDTO.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceDTO\bin\Debug\AgenceDTO.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceDTO\obj\Debug\AgenceDTO.csprojResolveAssemblyReference.cache
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceDTO\obj\Debug\AgenceDTO.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceDTO\obj\Debug\AgenceDTO.pdb
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceDTO\bin\Debug\AgenceDTO.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceDTO\bin\Debug\AgenceDTO.pdb
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceDTO\obj\Debug\AgenceDTO.csprojResolveAssemblyReference.cache
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceDTO\obj\Debug\AgenceDTO.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceDTO\obj\Debug\AgenceDTO.pdb

@@ -1,0 +1,37 @@
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceUtils\bin\Debug\AgenceUtils.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceUtils\bin\Debug\AgenceUtils.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceUtils\obj\Debug\AgenceUtils.csprojResolveAssemblyReference.cache
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceUtils\obj\Debug\AgenceUtils.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\AgenceUtils\obj\Debug\AgenceUtils.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceUtils\bin\Debug\AgenceUtils.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceUtils\bin\Debug\AgenceUtils.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceUtils\bin\Debug\NLog.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceUtils\bin\Debug\NLog.xml
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceUtils\obj\Debug\AgenceUtils.csprojResolveAssemblyReference.cache
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceUtils\obj\Debug\AgenceUtils.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceUtils\obj\Debug\AgenceUtils.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceUtils\bin\Debug\System.Data.SQLite.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceUtils\bin\Debug\System.Data.SQLite.xml
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceUtils\bin\Debug\AgenceUtils.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceUtils\bin\Debug\AgenceUtils.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceUtils\bin\Debug\NLog.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceUtils\bin\Debug\System.Data.SQLite.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceUtils\bin\Debug\NLog.xml
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceUtils\bin\Debug\System.Data.SQLite.xml
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceUtils\obj\Debug\AgenceUtils.csprojResolveAssemblyReference.cache
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceUtils\obj\Debug\AgenceUtils.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceUtils\obj\Debug\AgenceUtils.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceUtils\bin\Debug\AgenceUtils.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceUtils\bin\Debug\AgenceUtils.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceUtils\bin\Debug\NLog.xml
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceUtils\bin\Debug\System.Data.SQLite.xml
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceUtils\obj\Debug\AgenceUtils.csprojResolveAssemblyReference.cache
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceUtils\obj\Debug\AgenceUtils.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceUtils\obj\Debug\AgenceUtils.pdb
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceUtils\bin\Debug\AgenceUtils.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceUtils\bin\Debug\AgenceUtils.pdb
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceUtils\bin\Debug\NLog.xml
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceUtils\bin\Debug\System.Data.SQLite.xml
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceUtils\obj\Debug\AgenceUtils.csprojResolveAssemblyReference.cache
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceUtils\obj\Debug\AgenceUtils.dll
+C:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceUtils\obj\Debug\AgenceUtils.pdb

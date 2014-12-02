@@ -1,0 +1,39 @@
+2013-12-09 23:40:05.0369 AgenceUtils.Utils.LogException Fatal 
+ Exception systeme 
+ SQLite error
+no such column: BIENID
+SQL : SELECT ID FROM AGENDA WHERE BIENID=@idBien    a AgenceDAO.SQLiteWrapper.ExecuteReader() dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceDAO\DBWrapper.cs:ligne 86
+   a AgenceDAO.AgendaDAO.VerifierSiBienDansAgenda(Int32 idBien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceDAO\AgendaDAO.cs:ligne 97
+   a AgenceMetier.BienMetier.Supprimer(Int32 idBien, UniteMetier um) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 46
+   a AgenceService.BienService.Supprimer(Int32 idBien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceService\BienService.cs:ligne 32
+   a AgenceWebServices.AgenceWebServices.SupprimerBien(String id) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 73
+2013-12-09 23:41:40.1267 AgenceUtils.Utils.LogException Fatal 
+ Exception systeme 
+ SQLite error
+no such column: BIENID
+SQL : SELECT ID FROM AGENDA WHERE BIENID=@idBien    a AgenceDAO.SQLiteWrapper.ExecuteReader() dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceDAO\DBWrapper.cs:ligne 86
+   a AgenceDAO.AgendaDAO.VerifierSiBienDansAgenda(Int32 idBien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceDAO\AgendaDAO.cs:ligne 97
+   a AgenceMetier.BienMetier.Supprimer(Int32 idBien, UniteMetier um) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 46
+   a AgenceService.BienService.Supprimer(Int32 idBien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceService\BienService.cs:ligne 32
+   a AgenceWebServices.AgenceWebServices.SupprimerBien(String id) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 73
+2013-12-09 23:47:31.2067 AgenceUtils.Utils.LogException Fatal 
+ Exception systeme 
+ SQLite error
+ambiguous column name: ID
+SQL : SELECT ID FROM AGENDA AG INNER JOIN ANNONCE AN ON AN.ID=AG.ANNONCEID WHERE BIENID=@idBien    a AgenceDAO.SQLiteWrapper.ExecuteReader() dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceDAO\DBWrapper.cs:ligne 86
+   a AgenceDAO.AgendaDAO.VerifierSiBienDansAgenda(Int32 idBien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceDAO\AgendaDAO.cs:ligne 99
+   a AgenceMetier.BienMetier.Supprimer(Int32 idBien, UniteMetier um) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 46
+   a AgenceService.BienService.Supprimer(Int32 idBien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceService\BienService.cs:ligne 32
+   a AgenceWebServices.AgenceWebServices.SupprimerBien(String id) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 73
+2013-12-09 23:55:11.1974 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le titre du Bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 15
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 23
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 59
+2013-12-09 23:57:13.8867 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le titre du Bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 15
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 23
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 59

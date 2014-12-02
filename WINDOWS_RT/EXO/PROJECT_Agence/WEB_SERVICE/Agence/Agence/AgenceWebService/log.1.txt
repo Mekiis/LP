@@ -1,0 +1,72 @@
+2013-12-10 00:08:27.2241 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le titre du Bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 15
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 23
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 59
+2013-12-10 00:08:40.9628 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le titre du Bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 15
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 23
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 59
+2013-12-10 00:14:18.6661 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le titre du Bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 15
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 23
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 59
+2013-12-10 00:18:10.6712 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le titre du Bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 15
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 23
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 59
+2013-12-10 00:18:27.9794 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le titre du Bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 15
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 23
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 59
+2013-12-10 00:18:37.2335 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le titre du Bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 15
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 23
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 59
+2013-12-10 00:23:04.0080 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le titre du Bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 15
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 23
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 59
+2013-12-10 00:23:10.8978 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le titre du Bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 15
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 23
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 59
+2013-12-10 00:23:13.9372 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le titre du Bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 15
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 23
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 59
+2013-12-10 00:23:14.6253 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le titre du Bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 15
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 23
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 59
+2013-12-10 00:23:15.1924 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le titre du Bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 15
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 23
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 59
+2013-12-10 00:23:30.4433 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le titre du Bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 15
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 23
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 59

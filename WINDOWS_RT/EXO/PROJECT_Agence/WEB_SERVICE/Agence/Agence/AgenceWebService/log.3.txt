@@ -1,0 +1,18 @@
+2013-11-28 20:28:46.4669 AgenceUtils.Utils.LogException Fatal 
+ Exception systeme 
+ SQLite error
+no such column: BIENID
+SQL : SELECT ID FROM AGENDA WHERE BIENID=@idBien    a AgenceDAO.SQLiteWrapper.ExecuteReader() dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceDAO\DBWrapper.cs:ligne 86
+   a AgenceDAO.AgendaDAO.VerifierSiBienDansAgenda(Int32 idBien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceDAO\AgendaDAO.cs:ligne 97
+   a AgenceMetier.BienMetier.Supprimer(Int32 idBien, UniteMetier um) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 46
+   a AgenceService.BienService.Supprimer(Int32 idBien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceService\BienService.cs:ligne 32
+   a AgenceWebServices.AgenceWebServices.SupprimerBien(String id) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 73
+2013-11-28 21:03:13.9344 AgenceUtils.Utils.LogException Fatal 
+ Exception systeme 
+ SQLite error
+no such column: BIENID
+SQL : SELECT ID FROM AGENDA WHERE BIENID=@idBien    a AgenceDAO.SQLiteWrapper.ExecuteReader() dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceDAO\DBWrapper.cs:ligne 86
+   a AgenceDAO.AgendaDAO.VerifierSiBienDansAgenda(Int32 idBien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceDAO\AgendaDAO.cs:ligne 97
+   a AgenceMetier.BienMetier.Supprimer(Int32 idBien, UniteMetier um) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\BienMetier.cs:ligne 46
+   a AgenceService.BienService.Supprimer(Int32 idBien) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceService\BienService.cs:ligne 32
+   a AgenceWebServices.AgenceWebServices.SupprimerBien(String id) dans c:\Users\Moi\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 73
