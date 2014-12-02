@@ -20,17 +20,23 @@
             android:layout_height="wrap_content"
             android:paddingRight="10dp"
             android:paddingLeft="10dp"
+            android:gravity="center"
             android:id="@+id/chose_path_ll_way_to_travel_foot"
             android:onClick="onChangeWayToTravel">
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/chose_path_way_to_travel_foot" />
+                android:src="@drawable/icone_walk"
+                android:id="@+id/chose_path_way_to_travel_foot"
+                android:background="@android:color/transparent"
+                android:layout_margin="5dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/text_color"
                 android:text="@string/chose_path_way_to_travel_foot"
                 android:id="@+id/chose_path_tv_way_to_travel_foot" />
         </LinearLayout>
@@ -41,17 +47,23 @@
             android:layout_height="wrap_content"
             android:paddingRight="10dp"
             android:paddingLeft="10dp"
+            android:gravity="center"
             android:id="@+id/chose_path_ll_way_to_travel_bike"
             android:onClick="onChangeWayToTravel">
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/chose_path_way_to_travel_bike" />
+                android:src="@drawable/icone_bike"
+                android:id="@+id/chose_path_way_to_travel_bike"
+                android:background="@android:color/transparent"
+                android:layout_margin="5dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/text_color"
                 android:text="@string/chose_path_way_to_travel_bike"
                 android:id="@+id/chose_path_tv_way_to_travel_bike" />
         </LinearLayout>
@@ -62,17 +74,23 @@
             android:layout_height="wrap_content"
             android:paddingRight="10dp"
             android:paddingLeft="10dp"
+            android:gravity="center"
             android:id="@+id/chose_path_ll_way_to_travel_car"
             android:onClick="onChangeWayToTravel">
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/chose_path_way_to_travel_car" />
+                android:src="@drawable/icone_drive"
+                android:id="@+id/chose_path_way_to_travel_car"
+                android:background="@android:color/transparent"
+                android:layout_margin="5dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/text_color"
                 android:text="@string/chose_path_way_to_travel_car"
                 android:id="@+id/chose_path_tv_way_to_travel_car" />
         </LinearLayout>
@@ -97,6 +115,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/text_color_hover"
                 android:text="@string/chose_path_start" />
 
             <RelativeLayout
@@ -107,19 +127,23 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toStartOf="@+id/chose_path_ib_localise"
+                    android:id="@+id/chose_path_et_origin"
+                    android:layout_toLeftOf="@+id/chose_path_ib_localise"
                     android:layout_centerVertical="true"
-                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="@dimen/text_size_normal"
                     android:text="@string/chose_path_user_position"
+                    android:textColor="@color/text_color_hover"
                     android:hint="@string/chose_path_position_start"/>
 
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
                     android:id="@+id/chose_path_ib_localise"
                     android:src="@drawable/icone_localisation"
-                    android:onClick="onLocalise"/>
+                    android:onClick="onLocalise"
+                    android:background="@android:color/transparent" />
 
             </RelativeLayout>
         </LinearLayout>
@@ -134,36 +158,47 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/text_color_hover"
                 android:text="@string/chose_path_destination" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/chose_path_et_destination"
+                android:textSize="@dimen/text_size_normal"
+                android:textColor="@color/text_color_hover"
                 android:hint="@string/chose_path_position_destination"/>
         </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:id="@+id/chose_path_ll_validate"
         android:background="@color/bg_color"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:onClick="onValidate">
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:src="@drawable/icone_validate"
+            android:background="@android:color/transparent"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_small"
+            android:textColor="@color/text_color"
             android:text="@string/chose_path_validate"
-            android:id="@+id/chose_path_tv_validate" />
+            android:id="@+id/chose_path_tv_validate"
+            />
 
     </LinearLayout>
 

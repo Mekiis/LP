@@ -5,4 +5,5 @@
     <dimen name="text_size_title">50dp</dimen>
     <dimen name="text_size_subtitle">20dp</dimen>
     <dimen name="text_size_normal">30dp</dimen>
+    <dimen name="text_size_small">20sp</dimen>
 </resources>

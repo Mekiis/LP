@@ -57,7 +57,7 @@
                     android:text="@string/view_stations_rb_take"
                     android:textColor="@color/text_color"
                     android:id="@+id/view_stations_rb_take"
-                    android:onClick="searchChange"
+                    android:onClick="onSearchChange"
                     android:checked="true"/>
 
             <RadioButton
@@ -66,7 +66,7 @@
                     android:text="@string/view_stations_rb_return"
                     android:textColor="@color/text_color"
                     android:id="@+id/view_stations_rb_return"
-                    android:onClick="searchChange"/>
+                    android:onClick="onSearchChange"/>
 
         </RadioGroup>
 
@@ -86,6 +86,6 @@
         android:src="@drawable/icone_localisation"
         android:onClick="onClick"
         android:layout_above="@+id/view_stations_ll_options"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentRight="true" />
 </RelativeLayout>
 

@@ -19,7 +19,7 @@ public class ChooseCity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ville);
+        setContentView(R.layout.activity_chose_city);
 
         UIcityName = ((AutoCompleteTextView) findViewById(R.id.ville_etxt_ville));
 
@@ -35,18 +35,14 @@ public class ChooseCity extends ActionBarActivity {
 
     }
 
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ville_btn_validate:
-                String ville = UIcityName.getText().toString();
-                setPref(CITIES, CITY_PREF, ville);
-                Toast.makeText(getApplicationContext(), getResources().getString(R.string.ville_validate_msg), Toast.LENGTH_SHORT).show();
+    public void onValidate(View v) {
+        String ville = UIcityName.getText().toString();
+        setPref(CITIES, CITY_PREF, ville);
+        Toast.makeText(getApplicationContext(), getResources().getString(R.string.ville_validate_msg), Toast.LENGTH_SHORT).show();
 
-                Intent i = new Intent(this, ViewStations.class);
-                startActivity(i);
-                finish();
-                break;
-        }
+        Intent i = new Intent(this, ViewStations.class);
+        startActivity(i);
+        finish();
     }
 
     private String getPref(String file, String key, String defaulValue) {

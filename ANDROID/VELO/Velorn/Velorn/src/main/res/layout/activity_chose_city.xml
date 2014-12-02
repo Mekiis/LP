@@ -9,14 +9,13 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignParentStart="true">
+            android:layout_centerVertical="true">
 
         <LinearLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp">
+                android:layout_margin="10dp">
 
             <TextView
 
@@ -25,7 +24,7 @@
                     android:id="@+id/ville_txt_entrer_ville"
                     android:text="@string/ville_txt_entrer_ville"
                     android:textColor="@color/text_color"
-                    android:textSize="@dimen/text_size_normal"/>
+                    android:textSize="@dimen/text_size_small"/>
 
             <AutoCompleteTextView
                     android:layout_width="fill_parent"
@@ -37,15 +36,28 @@
 
         </LinearLayout>
 
-        <Button
-                android:layout_width="match_parent"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:onClick="onValidate">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icone_validate"/>
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/ville_btn_validate"
                 android:id="@+id/ville_btn_validate"
                 android:singleLine="true"
-                android:onClick="onClick"
                 android:textColor="@color/text_color"
-                android:textSize="@dimen/text_size_normal"/>
+                android:textSize="@dimen/text_size_normal"
+                android:layout_margin="10dp"/>
+        </LinearLayout>
 
     </LinearLayout>
 

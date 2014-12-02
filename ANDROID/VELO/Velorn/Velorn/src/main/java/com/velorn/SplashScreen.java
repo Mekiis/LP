@@ -61,7 +61,7 @@ public class SplashScreen extends Activity {
                             }
                         }
 
-                        Intent i = new Intent(activity, Accueil.class);
+                        Intent i = new Intent(activity, Home.class);
                         startActivity(i);
                         finish();
                     }

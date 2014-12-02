@@ -44,7 +44,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/view_stations_ib_city"
             android:src="@drawable/icone_city"
-            android:onClick="onClick"/>
+            android:onClick="onChoseCity"
+            android:background="@android:color/transparent"/>
 
         <RadioGroup
                 android:layout_width="wrap_content"
@@ -57,7 +58,7 @@
                     android:text="@string/view_stations_rb_take"
                     android:textColor="@color/text_color"
                     android:id="@+id/view_stations_rb_take"
-                    android:onClick="searchChange"
+                    android:onClick="onSearchChange"
                     android:checked="true"/>
 
             <RadioButton
@@ -66,7 +67,7 @@
                     android:text="@string/view_stations_rb_return"
                     android:textColor="@color/text_color"
                     android:id="@+id/view_stations_rb_return"
-                    android:onClick="searchChange"/>
+                    android:onClick="onSearchChange"/>
 
         </RadioGroup>
 
@@ -75,7 +76,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/view_stations_ib_refresh"
             android:src="@drawable/icone_refresh"
-            android:onClick="onClick"/>
+            android:onClick="onRefresh"
+            android:background="@android:color/transparent"/>
 
     </LinearLayout>
 
@@ -85,7 +87,8 @@
         android:id="@+id/view_stations_ib_localisation"
         android:src="@drawable/icone_localisation"
         android:layout_above="@+id/view_stations_ll_options"
-        android:layout_alignParentEnd="true"
-        android:onClick="onClick"/>
+        android:layout_alignParentRight="true"
+        android:onClick="onLocalisation"
+        android:background="@android:color/transparent"/>
 </RelativeLayout>
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="text_color">#ffffffff</color>
+    <color name="text_color_hover">#000000</color>
     <color name="bg_color">#F86F05</color>
     <color name="views_stations_bike_avaible">#61E5FF</color>
     <color name="views_stations_place_avaible">#8844FF</color>
