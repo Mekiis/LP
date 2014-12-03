@@ -34,7 +34,10 @@ public class LoaderJson extends AsyncTask<LoaderJsonParams, Void, Void> {
         ArrayList<Station> stations = null;
 
         if (!checkInternetConnection())
+        {
             runnable.errorNetwork();
+            return null;
+        }
 
         // Making HTTP request
         try {
@@ -56,7 +59,7 @@ public class LoaderJson extends AsyncTask<LoaderJsonParams, Void, Void> {
 
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(
-                    is, "iso-8859-1"), 8);
+                    is, "UTF-8"), 8);
             StringBuilder sb = new StringBuilder();
             String line = null;
             while ((line = reader.readLine()) != null) {

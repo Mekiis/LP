@@ -50,8 +50,8 @@ public class PathParser {
                             path.add(hm);
                         }
                     }
-                    routes.add(path);
                 }
+                routes.add(path);
             }
 
         } catch (JSONException e) {

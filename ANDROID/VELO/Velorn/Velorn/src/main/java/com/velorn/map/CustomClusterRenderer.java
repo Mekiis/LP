@@ -22,6 +22,6 @@ public class CustomClusterRenderer extends DefaultClusterRenderer<CustomMarkerIt
         super.onBeforeClusterItemRendered(item, markerOptions);
         markerOptions.title(item.getTitle());
         //markerOptions.icon(BitmapDescriptorFactory.defaultMarker(item.getColor()));
-        markerOptions.icon(BitmapDescriptorFactory.fromBitmap(item.getIcon(ctx)));
+        markerOptions.icon(BitmapDescriptorFactory.fromBitmap(item.getIcon()));
     }
 }

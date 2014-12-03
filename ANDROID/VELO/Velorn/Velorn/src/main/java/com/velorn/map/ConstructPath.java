@@ -37,13 +37,17 @@ public class ConstructPath{
     }
 
     public void loadPath(String p1, String p2, EWayToTravel wayToTravel, GoogleMap gMap, Context ctx){
-        String url = "url.com/googleDirection.php?";
-        url += "origin="+p1+"&";
-        url += "destination="+p1+"&";
-        url += "mode="+wayToTravel.name();
+        String url = "https://maps.googleapis.com/maps/api/directions/json?";
+        url += "origin="+p1;
+        url += "&destination="+p2;
+        url += "&mode="+wayToTravel.name();
         url += "key="+ctx.getResources().getString(R.string.google_maps_key);
 
+        // TODO : Take the mode in itineraire
+
         googleMap = gMap;
+
+        Log.d("Velorn", url);
 
         new LoaderJson().execute(new LoaderJsonParams(
                 url,
@@ -54,6 +58,7 @@ public class ConstructPath{
                         constructPath(parser.parse(s));
                         if(listener != null){
                             listener.loadFinish();
+                            Log.d("Velorn", "Finish !");
                         }
                     }
                 },
@@ -99,13 +104,15 @@ public class ConstructPath{
             }
 
             polyLineOptions.addAll(points);
-            polyLineOptions.width(2);
+            polyLineOptions.width(5);
             polyLineOptions.color(Color.BLUE);
+
+            if(googleMap != null)
+                googleMap.addPolyline(polyLineOptions);
+            else
+                Log.e("ConstructPath", "No map find to draw path");
         }
 
-        if(googleMap != null)
-            googleMap.addPolyline(polyLineOptions);
-        else
-            Log.e("ConstructPath", "No map find to draw path");
+
     }
 }

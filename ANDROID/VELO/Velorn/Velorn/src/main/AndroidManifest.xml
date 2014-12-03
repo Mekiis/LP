@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <!--
  The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but are recommended.
@@ -26,18 +27,27 @@
             android:theme="@style/AppTheme">
         <activity
                 android:name=".Home"
+                android:screenOrientation="portrait"
                 android:label="@string/app_name">
         </activity>
         <activity
                 android:name=".ChooseCity"
+            android:screenOrientation="portrait"
                 android:label="@string/title_activity_ville">
         </activity>
         <activity
                 android:name="com.velorn.ViewStations"
+            android:screenOrientation="portrait"
                 android:label="@string/title_activity_stations">
         </activity>
         <activity
+            android:name="com.velorn.ChosePath"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_chose_path">
+        </activity>
+        <activity
                 android:name="com.velorn.SplashScreen"
+            android:screenOrientation="portrait"
                 android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

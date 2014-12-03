@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.maps.android.clustering.ClusterItem;
 import com.velorn.R;
+import com.velorn.SplashScreen;
 import com.velorn.ViewStations;
 import com.velorn.container.Station;
 
@@ -35,16 +36,12 @@ public class CustomMarkerItem implements ClusterItem {
         return position;
     }
 
-    public String getTag() {
-        if (state == ViewStations.ESearchState.TAKE) {
-            return "" + this.station.availableBike;
-        } else {
-            return "" + this.station.availableBikeStands;
-        }
+    public String getTitle() {
+        return station.name;
     }
 
-    public String getTitle() {
-        return station.name+"\n"+station.address;
+    public String getSnippet(){
+       return station.address;
     }
 
     public float getColor() {
@@ -57,31 +54,13 @@ public class CustomMarkerItem implements ClusterItem {
         return HSV[0];
     }
 
-    public Bitmap getIcon(Context context) {
-        View marker = null;
+    public Bitmap getIcon() {
         if (state == ViewStations.ESearchState.TAKE) {
-            marker = ((LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_marker_take, null);
+            return SplashScreen.markerImage.get(this.station.availableBike-1);
         } else {
-            marker = ((LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_marker_return, null);
+            return SplashScreen.markerImage.get(SplashScreen.NB_MARKER + this.station.availableBikeStands-2);
         }
-        ((TextView) marker.findViewById(R.id.custom_marker_txt)).setText(getTag());
-        return createDrawableFromView(context, marker);
-    }
 
-    // Convert a view to bitmap
-    private Bitmap createDrawableFromView(Context context, View view) {
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        view.measure(displayMetrics.widthPixels, displayMetrics.heightPixels);
-        view.layout(0, 0, displayMetrics.widthPixels, displayMetrics.heightPixels);
-        view.buildDrawingCache();
-        Bitmap bitmap = Bitmap.createBitmap(view.getMeasuredWidth(), view.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
-
-        Canvas canvas = new Canvas(bitmap);
-        view.draw(canvas);
-
-        return bitmap;
     }
 
 }

@@ -124,7 +124,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content">
 
-                <EditText
+                <AutoCompleteTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/chose_path_et_origin"
@@ -162,7 +162,7 @@
                 android:textColor="@color/text_color_hover"
                 android:text="@string/chose_path_destination" />
 
-            <EditText
+            <AutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/chose_path_et_destination"

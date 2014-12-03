@@ -41,18 +41,20 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:gravity="center"
+            android:id="@+id/chose_city_ll_validate"
             android:onClick="onValidate">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/icone_validate"/>
+                android:src="@drawable/icone_validate"
+                android:id="@+id/chose_city_iv_validate"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/ville_btn_validate"
-                android:id="@+id/ville_btn_validate"
+                android:id="@+id/chose_city_tv_validate"
                 android:singleLine="true"
                 android:textColor="@color/text_color"
                 android:textSize="@dimen/text_size_normal"

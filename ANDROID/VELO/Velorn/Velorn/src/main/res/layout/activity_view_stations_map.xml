@@ -45,7 +45,8 @@
             android:id="@+id/view_stations_ib_city"
             android:src="@drawable/icone_city"
             android:onClick="onChoseCity"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent"
+            android:padding="10dp"/>
 
         <RadioGroup
                 android:layout_width="wrap_content"
@@ -56,18 +57,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/view_stations_rb_take"
-                    android:textColor="@color/text_color"
                     android:id="@+id/view_stations_rb_take"
                     android:onClick="onSearchChange"
-                    android:checked="true"/>
+                    android:checked="true"
+                android:textColor="@color/views_stations_bike_avaible"/>
 
             <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/view_stations_rb_return"
-                    android:textColor="@color/text_color"
                     android:id="@+id/view_stations_rb_return"
-                    android:onClick="onSearchChange"/>
+                    android:onClick="onSearchChange"
+                android:textColor="@color/views_stations_place_avaible"/>
 
         </RadioGroup>
 
@@ -77,18 +78,9 @@
             android:id="@+id/view_stations_ib_refresh"
             android:src="@drawable/icone_refresh"
             android:onClick="onRefresh"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent"
+            android:padding="10dp"/>
 
     </LinearLayout>
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/view_stations_ib_localisation"
-        android:src="@drawable/icone_localisation"
-        android:layout_above="@+id/view_stations_ll_options"
-        android:layout_alignParentRight="true"
-        android:onClick="onLocalisation"
-        android:background="@android:color/transparent"/>
 </RelativeLayout>
 

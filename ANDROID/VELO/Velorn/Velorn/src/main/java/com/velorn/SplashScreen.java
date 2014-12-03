@@ -1,8 +1,16 @@
 package com.velorn;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.velorn.container.Contract;
 import com.velorn.container.Stations;
@@ -22,6 +30,8 @@ public class SplashScreen extends Activity {
     public static Stations stations = new Stations();
     public static List<String> cities = new ArrayList<String>();
     public static List<Contract> contracts = new ArrayList<Contract>();
+    public static List<Bitmap> markerImage = new ArrayList<Bitmap>();
+    public static final int NB_MARKER = 70;
 
     public Activity activity = this;
 
@@ -41,7 +51,12 @@ public class SplashScreen extends Activity {
 
                     @Override
                     public void errorNetwork() {
-                        Toast.makeText(getApplicationContext(), R.string.load_no_network, Toast.LENGTH_SHORT);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(getApplicationContext(), R.string.load_no_network, Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
                 }, getApplicationContext()));
 
@@ -61,15 +76,53 @@ public class SplashScreen extends Activity {
                             }
                         }
 
-                        Intent i = new Intent(activity, Home.class);
-                        startActivity(i);
-                        finish();
+                        generateMarker();
                     }
 
                     @Override
                     public void errorNetwork() {
-                        Toast.makeText(getApplicationContext(), R.string.load_no_network, Toast.LENGTH_SHORT);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(getApplicationContext(), R.string.load_no_network, Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
                 }, getApplicationContext()));
+    }
+
+    public void generateMarker(){
+        View marker = null;
+        for(int i = 1; i < NB_MARKER; i++){
+            marker = ((LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_marker_take, null);
+            ((TextView) marker.findViewById(R.id.custom_marker_txt)).setText(Integer.toString(i));
+            markerImage.add(createDrawableFromView(this, marker));
+        }
+
+        for(int i = 1; i < NB_MARKER; i++){
+            marker = ((LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.custom_marker_return, null);
+            ((TextView) marker.findViewById(R.id.custom_marker_txt)).setText(Integer.toString(i));
+            markerImage.add(createDrawableFromView(this, marker));
+        }
+
+        Intent i = new Intent(activity, Home.class);
+        startActivity(i);
+        finish();
+    }
+
+    // Convert a view to bitmap
+    private Bitmap createDrawableFromView(Context context, View view) {
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        view.measure(displayMetrics.widthPixels, displayMetrics.heightPixels);
+        view.layout(0, 0, displayMetrics.widthPixels, displayMetrics.heightPixels);
+        view.buildDrawingCache();
+        Bitmap bitmap = Bitmap.createBitmap(view.getMeasuredWidth(), view.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
+
+        Canvas canvas = new Canvas(bitmap);
+        view.draw(canvas);
+
+        return bitmap;
     }
 }

@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.velorn.container.Station;
 import com.velorn.loaderJSon.LoaderJSonRunnable;
 import com.velorn.loaderJSon.LoaderJson;
 import com.velorn.loaderJSon.LoaderJsonParams;
@@ -42,10 +45,11 @@ public class ChosePath extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_chose_path);
 
         String destination = getIntent().getStringExtra(ViewStations.CHOSE_PATH_DESTINATION);
-        ((EditText) findViewById(R.id.chose_path_et_origin)).setText(R.string.chose_path_user_position);
-        ((EditText) findViewById(R.id.chose_path_et_destination)).setText(destination);
+        ((AutoCompleteTextView) findViewById(R.id.chose_path_et_origin)).setText(getResources().getString(R.string.chose_path_user_position));
+        ((AutoCompleteTextView) findViewById(R.id.chose_path_et_destination)).setText(destination);
 
         wayToTravel = ConstructPath.EWayToTravel.walking;
 
@@ -57,6 +61,18 @@ public class ChosePath extends Activity {
         UIImageFoot = (ImageButton) findViewById(R.id.chose_path_way_to_travel_foot);
 
         displayWayToTravel();
+
+        List<String> station = new ArrayList<String>();
+        for(Station s : SplashScreen.stations.getListStations()){
+            if(s.contractName.equalsIgnoreCase("lyon")){
+                station.add(s.name);
+            }
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, station);
+        ((AutoCompleteTextView) findViewById(R.id.chose_path_et_origin)).setAdapter(adapter);
+        ((AutoCompleteTextView) findViewById(R.id.chose_path_et_destination)).setAdapter(adapter);
     }
 
     public void onChangeWayToTravel(View v){
@@ -97,10 +113,10 @@ public class ChosePath extends Activity {
 
     public void onValidate(View v){
         Intent returnIntent = new Intent();
-        returnIntent.putExtra(ViewStations.CHOSE_PATH_ORIGIN, ((EditText) findViewById(R.id.chose_path_et_origin)).getText());
-        returnIntent.putExtra(ViewStations.CHOSE_PATH_DESTINATION, ((EditText) findViewById(R.id.chose_path_et_destination)).getText());
+        returnIntent.putExtra(ViewStations.CHOSE_PATH_ORIGIN, ((EditText) findViewById(R.id.chose_path_et_origin)).getText().toString());
+        returnIntent.putExtra(ViewStations.CHOSE_PATH_DESTINATION, ((EditText) findViewById(R.id.chose_path_et_destination)).getText().toString());
         returnIntent.putExtra(ViewStations.CHOSE_PATH_WAY_TO_TRAVEL, wayToTravel.name());
-        setResult(ViewStations.CHOSE_PATH_OK, returnIntent);
+        setResult(RESULT_OK, returnIntent);
         finish();
     }
 }

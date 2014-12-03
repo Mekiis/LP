@@ -5,4 +5,5 @@
     <color name="bg_color">#F86F05</color>
     <color name="views_stations_bike_avaible">#61E5FF</color>
     <color name="views_stations_place_avaible">#8844FF</color>
+    <color name="gray">#30000000</color>
 </resources>

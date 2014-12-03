@@ -8,17 +8,17 @@
         revision="19.1.0"
         sha1="0840d832d8a8c4fde01e623f2817332801e6bb49"/>
     <item
-        dex="D:\Documents\COURS\LP\ANDROID\VELO\Velorn\Velorn\build\intermediates\pre-dexed\defaultFlavor\debug\support-v4-19.0.1-671970120488e515fbc865b2adb943d92e178d7b.jar"
-        jar="C:\Program Files (x86)\ANDROID\sdk\extras\android\m2repository\com\android\support\support-v4\19.0.1\support-v4-19.0.1.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="587da9a481ffd341d2fa091704489b89845ddacd"/>
-    <item
         dex="D:\Documents\COURS\LP\ANDROID\VELO\Velorn\Velorn\build\intermediates\pre-dexed\defaultFlavor\debug\classes-f05dad63a5235e6a77a2a253cd8fcbe4db0b91f2.jar"
         jar="D:\Documents\COURS\LP\ANDROID\VELO\Velorn\Velorn\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.0.0\classes.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="eb69b5c2e53e59d82f7439f3217f46f9d98f0c89"/>
+    <item
+        dex="D:\Documents\COURS\LP\ANDROID\VELO\Velorn\Velorn\build\intermediates\pre-dexed\defaultFlavor\debug\support-v4-19.0.1-671970120488e515fbc865b2adb943d92e178d7b.jar"
+        jar="C:\Program Files (x86)\ANDROID\sdk\extras\android\m2repository\com\android\support\support-v4\19.0.1\support-v4-19.0.1.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="587da9a481ffd341d2fa091704489b89845ddacd"/>
     <item
         dex="D:\Documents\COURS\LP\ANDROID\VELO\Velorn\Velorn\build\intermediates\pre-dexed\defaultFlavor\debug\classes-7231c52b84989492f689c8b1f8d3637073f766e4.jar"
         jar="D:\Documents\COURS\LP\ANDROID\VELO\Velorn\Velorn\build\intermediates\exploded-aar\com.google.android.gms\play-services\4.3.23\classes.jar"
