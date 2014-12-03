@@ -80,6 +80,22 @@ public class MainActivity extends Activity implements MediaFragment.OnElementSel
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
+        
+        /*
+         
+         DBManager db = new DBManager(this);
+         Manager.get().setDbManager(db);
+         TextView test = (TextView) findViewById(R.id.test);
+         new DataInitializationTask();
+         
+         String text = "";
+         List<Media> medias = Manager.get().getDbManager().getAllMedia();
+         for(Media media : medias){
+         text+=media.toString() + "\n";
+         }
+         test.setText(text);
+         
+         */
 
     }
 
