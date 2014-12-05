@@ -1,8 +1,6 @@
 package Tennis;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 public class TennisMatch{
@@ -34,7 +32,7 @@ public class TennisMatch{
 		
 		resetGame();
 		
-		this.sets = new ArrayList<>();
+		this.sets = new ArrayList<Set>();
 		this.isFinished = nextSet();
 	}
 

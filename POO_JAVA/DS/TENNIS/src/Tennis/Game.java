@@ -31,25 +31,16 @@ public class Game {
 		String previousScore = this.getScoreForPlayer(player);
 		Player otherPlayer = (player.equals(player1) ? player2 : player1);
 				
-		switch (previousScore) {
-		case "0":
+		if(previousScore.equals("0"))
 			game.put(player, "15");
-			break;
-		case "15":
+		else if(previousScore.equals("15"))
 			game.put(player, "30");
-			break;
-		case "30":
-			switch (this.getScoreForPlayer(otherPlayer)) {
-			case "30":
+		else if(previousScore.equals("30")){
+			if(this.getScoreForPlayer(otherPlayer).equals("30")){
 				game.put(player, "A");
-				break;
-			case "A":
+			} else if(this.getScoreForPlayer(otherPlayer).equals("A")){
 				game.put(otherPlayer, "30");
-				break;
-			default:
-				return true;
 			}
-			break;
 		}
 				
 		return false;
