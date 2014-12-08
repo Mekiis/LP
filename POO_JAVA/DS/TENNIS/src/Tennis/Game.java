@@ -35,13 +35,18 @@ public class Game {
 			game.put(player, "15");
 		else if(previousScore.equals("15"))
 			game.put(player, "30");
-		else if(previousScore.equals("30")){
-			if(this.getScoreForPlayer(otherPlayer).equals("30")){
+		else if(previousScore.equals("30"))
+			game.put(player, "40");
+		else if(previousScore.equals("40")){
+			if(this.getScoreForPlayer(otherPlayer).equals("40")){
 				game.put(player, "A");
 			} else if(this.getScoreForPlayer(otherPlayer).equals("A")){
 				game.put(otherPlayer, "30");
+			} else {
+				return true;
 			}
 		}
+		
 				
 		return false;
 	}
