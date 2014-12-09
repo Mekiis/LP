@@ -1,41 +1,31 @@
 package Tennis;
 
-import java.util.HashMap;
-import java.util.Map;
 
-public class TieBreak implements AGame {
-	private Map<Player, String> game;
+public class TieBreak extends AGame {
 	
-	private Player player1;
-	private Player player2;
-
 	public TieBreak(Player player1, Player player2) {
-		this.game = new HashMap<Player, String>();
-		
-		this.player1 = player1;
-		this.player2 = player2;
-		
-		resetGame();
+		super(player1, player2);
 	}
 
-	@Override
-	public void resetGame() {
-		this.game.put(player1, "0");
-		this.game.put(player2, "0");
-	}
-	
 	
 	@Override
 	public boolean addScoreForPlayer(Player player){
+		boolean isGameFinished = false;
 		String previousScore = this.getPointsForPlayer(player);
 		Player otherPlayer = (player.equals(player1) ? player2 : player1);
 		
-				
-		return false;
-	}
-	
-	@Override
-	public String getPointsForPlayer(Player player){
-		return game.get(player);
+		String actualScore = Integer.toString(Integer.parseInt(previousScore)+1);
+		game.put(player, actualScore);
+		
+		// Verification of the end of the game
+		int actualScoreInt = Integer.parseInt(actualScore);
+		int otherPlayerScoreInt = Integer.parseInt(game.get(otherPlayer));
+		// Score >= 7
+		// 2 points difference
+		if(actualScoreInt >= 7 && actualScoreInt - otherPlayerScoreInt >= 2){
+			isGameFinished = true;
+		}
+		
+		return isGameFinished;
 	}
 }
