@@ -15,7 +15,7 @@ public class TennisMatch{
 	private List<Set> sets;
 	
 	private int setsCounter = -1;
-	private Game game;
+	private AGame game;
 	private MatchType matchType;
 	private boolean tieBreakInLastSet;
 	
@@ -46,7 +46,6 @@ public class TennisMatch{
 		}
 		boolean isGameWin = game.addScoreForPlayer(winner);
 		if(isGameWin){
-			System.out.println("Game win !");
 			gameWinForPlayer(winner);
 		}
 	}
@@ -66,7 +65,7 @@ public class TennisMatch{
 			if(gamesInCurrentSetForPlayer(winner) >= 3){
 				isFinished = nextSet();
 			}
-		}
+		}		
 	}
 
 
@@ -107,14 +106,14 @@ public class TennisMatch{
 	}
 	
 	public int gamesInCurrentSetForPlayer(Player player){
-		return gamesInCurrentSetForPlayer(currentSetNumber(), player);
-	}
-	
-	public int gamesInCurrentSetForPlayer(int setId, Player player){
 		if(player != player1 && player != player2){
 			return -1;
 		}
 		
+		return gamesInCurrentSetForPlayer(currentSetNumber(), player);
+	}
+	
+	public int gamesInCurrentSetForPlayer(int setId, Player player){
 		setId -= 1;
 		if(setId > setsCounter){
 			return -1;

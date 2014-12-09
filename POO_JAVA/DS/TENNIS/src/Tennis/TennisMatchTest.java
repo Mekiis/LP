@@ -81,12 +81,14 @@ public class TennisMatchTest {
 		match.updateWithPointWonBy(player1);
 		match.updateWithPointWonBy(player1);
 		match.updateWithPointWonBy(player1);
+		assertEquals("40", match.pointsForPlayer(player1));
 		match.updateWithPointWonBy(player2);
 		match.updateWithPointWonBy(player2);
 		match.updateWithPointWonBy(player2);
+		assertEquals("40", match.pointsForPlayer(player2));
 		match.updateWithPointWonBy(player1);
 		match.updateWithPointWonBy(player1);
-		assertEquals(1, match.gamesInCurrentSetForPlayer(player1));
+		assertEquals(1, match.gamesInCurrentSetForPlayer(1, player1));
 	}
 
 	public void playerWinTheGame(Player p){
