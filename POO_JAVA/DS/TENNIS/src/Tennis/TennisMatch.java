@@ -80,7 +80,6 @@ public class TennisMatch{
 
 	public String pointsForPlayer(Player player){
 		return sets.get(setsCounter).getGamePointsForPlayer(player);
-		
 	}
 	
 	public int currentSetNumber(){
