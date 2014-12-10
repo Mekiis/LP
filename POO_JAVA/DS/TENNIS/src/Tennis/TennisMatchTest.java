@@ -44,10 +44,7 @@ public class TennisMatchTest {
 	
 	@Test
 	public void player1WinTheFirstSet(){
-		match.updateWithPointWonBy(player1);
-		match.updateWithPointWonBy(player1);
-		match.updateWithPointWonBy(player1);
-		match.updateWithPointWonBy(player1);
+		playerWinTheGame(player1);
 		assertEquals(1, match.gamesInCurrentSetForPlayer(player1));
 	}
 	
