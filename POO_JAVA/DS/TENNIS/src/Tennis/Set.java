@@ -1,16 +1,22 @@
 package Tennis;
 
+import java.sql.Time;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.rmi.CORBA.Tie;
 
 public class Set {
 
 	private Map<Player, Integer> set;
 	
-	protected Player player1;
-	protected Player player2;
+	private Player player1;
+	private Player player2;
 	
 	private AGame game;
+	
+	private boolean isWin = false;
+	private Player winner = null;
 	
 	//R Constructor
 	public Set(Player player1, Player player2, boolean isTimeBreak) {
@@ -21,7 +27,10 @@ public class Set {
 		set.put(player1, 0);
 		set.put(player2, 0);
 		
-		resetGame(isTimeBreak);
+		if(isTimeBreak)
+			resetGame(TieBreak.class);
+		else
+			resetGame(Game.class);
 	}
 	//ER
 
@@ -38,8 +47,8 @@ public class Set {
 	//ER
 	
 	//R Game Management
-	private void resetGame(boolean isTimeBreak) {
-		if(isTimeBreak)
+	private void resetGame(Class<?> typeOfGame) {
+		if(typeOfGame == TieBreak.class)
 			this.game = new TieBreak(player1, player2);
 		else
 			this.game = new Game(player1, player2);
@@ -48,30 +57,38 @@ public class Set {
 	}
 	
 	public boolean addGamePointForPlayer(Player winner){
-		boolean isGameFinished = false;
+		boolean isSetFinished = false;
 		
-		isGameFinished = game.addScoreForPlayer(winner);
+		boolean isGameFinished = game.addScoreForPlayer(winner);
 		if(isGameFinished){
 			addSetPointForPlayer(winner);
 			Player otherPlayer = (winner.equals(player1) ? player2 : player1);
 			int scorePlayerWinner = getGamesInSetForPlayer(winner);
 			int scoreOtherPlayer = getGamesInSetForPlayer(otherPlayer);
 			if(scorePlayerWinner == 6 && scoreOtherPlayer == 6){
-				resetGame(true);
-			} else if(scorePlayerWinner >= 6 && scorePlayerWinner - scorePlayerWinner >= 2){
-				isGameFinished = true;
+				resetGame(TieBreak.class);
+			} else if(scorePlayerWinner >= 6 && scorePlayerWinner - scoreOtherPlayer >= 2){
+				this.isWin = true;
+				this.winner = winner;
+				isSetFinished = true;
 			} else {
-				resetGame(false);
+				resetGame(Game.class);
 			}
 		}
 		
-		return isGameFinished;
+		return isSetFinished;
 	}
 	
 	public String getGamePointsForPlayer(Player player){
 		return game.getPointsForPlayer(player);
 	}
 	//ER
-	
-	
+
+	public boolean isWin() {
+		return isWin;
+	}
+
+	public Player getWinner() {
+		return winner;
+	}
 }

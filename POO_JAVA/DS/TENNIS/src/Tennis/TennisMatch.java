@@ -1,6 +1,8 @@
 package Tennis;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class TennisMatch{
@@ -40,6 +42,10 @@ public class TennisMatch{
 			return;
 		}
 		
+		if(winner != player1 && winner != player2){
+			return;
+		}
+		
 		boolean isSetWin = actualSet.addGamePointForPlayer(winner);
 		if(isSetWin){
 			isFinished = nextSet();
@@ -62,20 +68,38 @@ public class TennisMatch{
 		}
 	}
 	
+	/**
+	 * Return a boolean to know if players need to play an other set or if one player have win the match (Can vary with MatchType (BO3/BO5) value)
+	 * @return <i>boolean</i> if one player has the minimum of set to win, it return false. Else, they need to play, it return true. If no type of match is specified, the match is automatically finished (0 set to win)
+	 */
 	private boolean isNeededOneMoreSet() {
-		int nbSetMax;
+		boolean isNeededOneMoreSet = true;
+		
+		Map<Player, Integer> setsWin = new HashMap<>();
+		for(Set s : sets){
+			if(s.isWin()){
+				if(setsWin.containsKey(s.getWinner())){
+					setsWin.put(s.getWinner(), setsWin.get(s.getWinner())+1);
+				} else {
+					setsWin.put(s.getWinner(), 1);
+				}
+			}
+		}
+		
+		int NB_SET_TO_WIN = 0;
 		switch (matchType) {
 		case BEST_OF_FIVE:
-			nbSetMax = 5;
+			NB_SET_TO_WIN = 3;
 			break;
 		case BEST_OF_THREE:
-			nbSetMax = 3;
-			break;
-		default:
-			nbSetMax = 0;
+			NB_SET_TO_WIN = 2;
 			break;
 		}
-		return (currentSetNumber() < nbSetMax);
+		
+		if(		(setsWin.containsKey(player1) && setsWin.get(player1) >= NB_SET_TO_WIN) 
+			|| 	(setsWin.containsKey(player2) && setsWin.get(player2) >= NB_SET_TO_WIN))
+			isNeededOneMoreSet = false;
+		return isNeededOneMoreSet;
 	}
 
 	public String pointsForPlayer(Player player){
@@ -91,10 +115,10 @@ public class TennisMatch{
 			return -1;
 		}
 		
-		return gamesInCurrentSetForPlayer(currentSetNumber(), player);
+		return gamesInSetForPlayer(currentSetNumber(), player);
 	}
 	
-	public int gamesInCurrentSetForPlayer(int setId, Player player){
+	public int gamesInSetForPlayer(int setId, Player player){
 		setId -= 1;
 		if(setId > setsCounter){
 			return -1;
