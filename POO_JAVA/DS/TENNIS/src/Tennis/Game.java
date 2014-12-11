@@ -1,8 +1,5 @@
 package Tennis;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Game extends AGame {
 
 	public Game(Player player1, Player player2) {
