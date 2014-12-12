@@ -1,10 +1,7 @@
 package Tennis;
 
-import java.sql.Time;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.rmi.CORBA.Tie;
 
 public class Set {
 
@@ -18,8 +15,10 @@ public class Set {
 	private boolean isWin = false;
 	private Player winner = null;
 	
+	private boolean isTieBreak = true;
+	
 	//R Constructor
-	public Set(Player player1, Player player2, boolean isTimeBreak) {
+	public Set(Player player1, Player player2, boolean isTieBreak) {
 		this.player1 = player1;
 		this.player2 = player2;
 		
@@ -27,10 +26,8 @@ public class Set {
 		set.put(player1, 0);
 		set.put(player2, 0);
 		
-		if(isTimeBreak)
-			resetGame(TieBreak.class);
-		else
-			resetGame(Game.class);
+		this.isTieBreak = isTieBreak;
+		resetGame(Game.class);
 	}
 	//ER
 
@@ -65,9 +62,9 @@ public class Set {
 			Player otherPlayer = (winner.equals(player1) ? player2 : player1);
 			int scorePlayerWinner = getGamesInSetForPlayer(winner);
 			int scoreOtherPlayer = getGamesInSetForPlayer(otherPlayer);
-			if(scorePlayerWinner == 6 && scoreOtherPlayer == 6){
+			if((scorePlayerWinner == 6 && scoreOtherPlayer == 6) && isTieBreak){
 				resetGame(TieBreak.class);
-			} else if(scorePlayerWinner >= 6 && scorePlayerWinner - scoreOtherPlayer >= 2){
+			} else if((scorePlayerWinner >= 6 && scorePlayerWinner - scoreOtherPlayer >= 2) || (isTieBreak && scorePlayerWinner == 7)){
 				this.isWin = true;
 				this.winner = winner;
 				isSetFinished = true;

@@ -37,6 +37,10 @@ public class TennisMatch{
 	}
 	//ER
 
+	/***
+	 * Add a point for the player in the current game of the current set. It manage the victory of the current game, set and launch next set if needed
+	 * @param winner <i>Player</i> The player to add a point in the current game of the current set. If not a player of the game, nothing is going on
+	 */
 	public void updateWithPointWonBy(Player winner){
 		if(isFinished){
 			return;
@@ -58,9 +62,15 @@ public class TennisMatch{
 	 */
 	private boolean nextSet() {
 		if(!isFinished && isNeededOneMoreSet()){
-			Set set = new Set(player1, player2, false);
-			sets.add(set);
 			setsCounter++;
+			Set set;
+			if(isLastSet() && !tieBreakInLastSet){
+				set = new Set(player1, player2, false);
+			} else {
+				set = new Set(player1, player2, true);
+			}
+			
+			sets.add(set);
 			actualSet = sets.get(setsCounter);
 			return false;
 		} else {
@@ -68,6 +78,17 @@ public class TennisMatch{
 		}
 	}
 	
+	private boolean isLastSet() {
+		boolean isLastSet = false;
+		
+		if(matchType == MatchType.BEST_OF_THREE && currentSetNumber() == 3)
+			isLastSet = true;
+		else if(matchType == MatchType.BEST_OF_FIVE && currentSetNumber() == 5)
+			isLastSet = true;
+			
+		return isLastSet;
+	}
+
 	/**
 	 * Return a boolean to know if players need to play an other set or if one player have win the match (Can vary with MatchType (BO3/BO5) value)
 	 * @return <i>boolean</i> if one player has the minimum of set to win, it return false. Else, they need to play, it return true. If no type of match is specified, the match is automatically finished (0 set to win)
@@ -102,14 +123,28 @@ public class TennisMatch{
 		return isNeededOneMoreSet;
 	}
 
+	/***
+	 * Get the score in the current game of the current set
+	 * @param player <i>Player</i> The player of the match to check the score
+	 * @return <i>Integer</i> The score in the current game of the current set for the player
+	 */
 	public String pointsForPlayer(Player player){
 		return sets.get(setsCounter).getGamePointsForPlayer(player);
 	}
 	
+	/***
+	 * Return the current set number. First set is 1
+	 * @return <i>Integer</i> The current set number
+	 */
 	public int currentSetNumber(){
 		return setsCounter+1;
 	}
 	
+	/***
+	 * 
+	 * @param player <i>Player</i> The player of the match to check the score
+	 * @return <i>Integer</i> The number in game for the player. -1 if encounter an error (Set not played yet, Invalid player)
+	 */
 	public int gamesInCurrentSetForPlayer(Player player){
 		if(player != player1 && player != player2){
 			return -1;
@@ -118,6 +153,12 @@ public class TennisMatch{
 		return gamesInSetForPlayer(currentSetNumber(), player);
 	}
 	
+	/***
+	 * 
+	 * @param setId <i>Integer</i> The number of the set to check. First set is 1.
+	 * @param player <i>Player</i> The player of the match to check the score
+	 * @return <i>Integer</i> The number in game for the player. -1 if encounter an error (Set not played yet, Invalid player)
+	 */
 	public int gamesInSetForPlayer(int setId, Player player){
 		setId -= 1;
 		if(setId > setsCounter){
