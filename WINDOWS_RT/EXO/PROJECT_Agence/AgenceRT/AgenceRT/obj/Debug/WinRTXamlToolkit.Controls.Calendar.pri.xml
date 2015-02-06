@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PriInfo>
+	<ResourceMap name="WinRTXamlToolkit.Controls.Calendar" version="1.0" primary="true">
+		<Qualifiers/>
+		<ResourceMapSubtree name="Files">
+			<ResourceMapSubtree name="WinRTXamlToolkit.Controls.Calendar">
+				<ResourceMapSubtree name="Controls">
+					<ResourceMapSubtree name="Calendar">
+						<NamedResource name="Calendar.xaml" uri="ms-resource://WinRTXamlToolkit.Controls.Calendar/Files/WinRTXamlToolkit.Controls.Calendar/Controls/Calendar/Calendar.xaml">
+							<Candidate type="Path">
+								<Value>WinRTXamlToolkit.Controls.Calendar\Controls\Calendar\Calendar.xaml</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="CalendarButton.xaml" uri="ms-resource://WinRTXamlToolkit.Controls.Calendar/Files/WinRTXamlToolkit.Controls.Calendar/Controls/Calendar/CalendarButton.xaml">
+							<Candidate type="Path">
+								<Value>WinRTXamlToolkit.Controls.Calendar\Controls\Calendar\CalendarButton.xaml</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="CalendarDayButton.xaml" uri="ms-resource://WinRTXamlToolkit.Controls.Calendar/Files/WinRTXamlToolkit.Controls.Calendar/Controls/Calendar/CalendarDayButton.xaml">
+							<Candidate type="Path">
+								<Value>WinRTXamlToolkit.Controls.Calendar\Controls\Calendar\CalendarDayButton.xaml</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="CalendarItem.xaml" uri="ms-resource://WinRTXamlToolkit.Controls.Calendar/Files/WinRTXamlToolkit.Controls.Calendar/Controls/Calendar/CalendarItem.xaml">
+							<Candidate type="Path">
+								<Value>WinRTXamlToolkit.Controls.Calendar\Controls\Calendar\CalendarItem.xaml</Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="Themes">
+					<NamedResource name="Generic.xaml" uri="ms-resource://WinRTXamlToolkit.Controls.Calendar/Files/WinRTXamlToolkit.Controls.Calendar/Themes/Generic.xaml">
+						<Candidate type="Path">
+							<Value>WinRTXamlToolkit.Controls.Calendar\Themes\Generic.xaml</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+	</ResourceMap>
+</PriInfo>

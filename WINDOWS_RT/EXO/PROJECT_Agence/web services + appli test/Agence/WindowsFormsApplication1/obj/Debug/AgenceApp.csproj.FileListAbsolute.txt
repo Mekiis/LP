@@ -1,0 +1,116 @@
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\AgenceDAO.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\AgenceDTO.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\DBWrapper.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\System.Data.SQLite.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\AgenceDAO.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\AgenceDTO.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\DBWrapper.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\System.Data.SQLite.xml
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\obj\Debug\AgenceApp.csprojResolveAssemblyReference.cache
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmListeBiens.resources
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmMain.resources
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmNouveauBien.resources
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\obj\Debug\AgenceApp.csproj.GenerateResource.Cache
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\AgenceService.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\AgenceMetier.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\AgenceService.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\AgenceMetier.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\AgenceUniteMetier.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\AgenceUtils.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\AgenceUniteMetier.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\AgenceUtils.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.CodeAnalysisLog.xml
+C:\Users\Bastien\Documents\IUT\2013\Cours\8 - Architecture 3 tiers\Agence\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.lastcodeanalysissucceeded
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\AgenceDTO.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\AgenceService.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\AgenceUtils.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\AgenceMetier.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\AgenceUniteMetier.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\NLog.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\AgenceDAO.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\System.Data.SQLite.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\AgenceDTO.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\AgenceService.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\AgenceUtils.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\AgenceMetier.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\AgenceUniteMetier.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\NLog.xml
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\AgenceDAO.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\System.Data.SQLite.xml
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\obj\Debug\AgenceApp.csprojResolveAssemblyReference.cache
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmListeBiens.resources
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmMain.resources
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmNouveauBien.resources
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\obj\Debug\AgenceApp.csproj.GenerateResource.Cache
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\Program.cs
+C:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\bin\Debug\NLog.config
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\Program.cs
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\NLog.config
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\AgenceDTO.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\AgenceService.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\AgenceUtils.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\AgenceMetier.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\AgenceUniteMetier.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\NLog.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\AgenceDAO.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\System.Data.SQLite.dll
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\AgenceDTO.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\AgenceService.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\AgenceUtils.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\AgenceMetier.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\AgenceUniteMetier.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\NLog.xml
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\AgenceDAO.pdb
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\bin\Debug\System.Data.SQLite.xml
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\obj\Debug\AgenceApp.csprojResolveAssemblyReference.cache
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmListeBiens.resources
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmMain.resources
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmNouveauBien.resources
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\WindowsFormsApplication1\obj\Debug\AgenceApp.csproj.GenerateResource.Cache
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\Program.cs
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\NLog.config
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\AgenceDTO.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\AgenceService.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\AgenceUtils.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\AgenceMetier.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\AgenceUniteMetier.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\NLog.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\AgenceDAO.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\System.Data.SQLite.dll
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\AgenceDTO.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\AgenceService.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\AgenceUtils.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\AgenceMetier.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\AgenceUniteMetier.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\NLog.xml
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\AgenceDAO.pdb
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\bin\Debug\System.Data.SQLite.xml
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\obj\Debug\AgenceApp.csprojResolveAssemblyReference.cache
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmListeBiens.resources
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmMain.resources
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmNouveauBien.resources
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\obj\Debug\AgenceApp.csproj.GenerateResource.Cache
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb

@@ -1,0 +1,5 @@
+2013-07-28 17:18:50.8488 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ L'annonce n'existe pas dans la base de données.    a AgenceMetier.AnnonceMetier.Charger(Int32 idAnnonce) dans c:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceMetier\AnnonceMetier.cs:ligne 39
+   a AgenceService.AnnonceService.Charger(Int32 idAnnonce) dans c:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceService\AnnonceService.cs:ligne 16
+   a AgenceWebServices.AgenceWebServices.ChargerAnnonce(String id) dans c:\Users\Bastien\Documents\Visual Studio 2012\Projects\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 254

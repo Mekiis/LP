@@ -1,0 +1,2 @@
+D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\AgenceEntites\AgenceEntites.csproj;neutral
+D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\AgenceRT\AgenceRT.csproj;neutral
