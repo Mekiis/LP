@@ -1,0 +1,86 @@
+﻿<Page
+    x:Class="APIs_spéciale.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:APIs_spéciale"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Border BorderBrush="White" Margin="20, 20, 5, 5" BorderThickness="0,0,1,0" Grid.Column="0">
+            <StackPanel Margin="30" >
+                <TextBlock Text="Géolocalisation" Style="{StaticResource HeaderTextBlockStyle}" />
+                <ProgressRing Margin="50" Width="70" Height="70" IsActive="True"  Visibility="{Binding LocationLoaded, Converter={StaticResource boolconverter}, ConverterParameter=1}" />
+                <StackPanel  Orientation="Horizontal" Visibility="{Binding LocationLoaded, Converter={StaticResource boolconverter}, ConverterParameter=0}" Margin="0,50,0,0">
+                    <TextBlock Text="Latitude :" Style="{StaticResource SubheaderTextBlockStyle}" />
+                    <TextBlock Text="{Binding Latitude}" Style="{StaticResource SubheaderTextBlockStyle}" Margin="15,0,0,0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Visibility="{Binding LocationLoaded, Converter={StaticResource boolconverter}, ConverterParameter=0}">
+                    <TextBlock Text="Longitude :" Style="{StaticResource SubheaderTextBlockStyle}" />
+                    <TextBlock Text="{Binding Longitude}" Style="{StaticResource SubheaderTextBlockStyle}" Margin="15,0,0,0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Visibility="{Binding LocationLoaded, Converter={StaticResource boolconverter}, ConverterParameter=0}">
+                    <TextBlock Text="Adresse :" Style="{StaticResource SubheaderTextBlockStyle}" />
+                    <TextBlock Text="{Binding Adresse}" Style="{StaticResource SubheaderTextBlockStyle}" Margin="15,0,0,0" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+
+        <StackPanel Margin="50" Grid.Column="1">
+            <TextBlock Text="Photographie" Style="{StaticResource HeaderTextBlockStyle}" />
+            <ProgressRing Margin="50" Width="70" Height="70" IsActive="True"  Visibility="{Binding WebcamListLoaded, Converter={StaticResource boolconverter}, ConverterParameter=1}" />
+            <StackPanel  Orientation="Horizontal" Visibility="{Binding WebcamListLoaded, Converter={StaticResource boolconverter}, ConverterParameter=0}" Margin="0,50,0,0">
+                <TextBlock Text="Sélectionnez la webcam à utiliser :" Style="{StaticResource SubheaderTextBlockStyle}" />
+                <ComboBox ItemsSource="{Binding WebcamList}" SelectedItem="{Binding SelectedWebcam, Mode=TwoWay}" Margin="15,0,0,0" MinWidth="300">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"></TextBlock>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Visibility="{Binding WebcamListLoaded, Converter={StaticResource boolconverter}, ConverterParameter=0}">
+                <ProgressRing Margin="50" Width="70" Height="70" IsActive="True" Visibility="{Binding SelectedWebcamInitialized, Converter={StaticResource boolconverter}, ConverterParameter=1}" />
+
+                <Grid Visibility="{Binding SelectedWebcamInitialized, Converter={StaticResource boolconverter}, ConverterParameter=0}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Column="0" BorderBrush="White" Margin="0,50,0,0" BorderThickness="0,0,1,0">
+                        <CaptureElement x:Name="captureElement" />
+                    </Border>
+
+                    <Border Grid.Column="1" BorderBrush="White" Margin="0,50,0,0" BorderThickness="0,0,1,0">
+                        <Button Margin="20,0" Click="Button_Click">Prendre la photo =></Button>
+                    </Border>
+
+                    <Image  Grid.Column="2" Margin="0,50,0,0" x:Name="imageElement" />
+
+                    <Button Grid.Row="1" Grid.ColumnSpan="3" Click="Button_Click_1" Margin="0,50,0,0">Convertir la photo =></Button>
+                    <TextBlock Grid.Row="2" Grid.ColumnSpan="3"  Text="{Binding PhotoString}"></TextBlock>
+                </Grid>
+
+            </StackPanel>
+
+
+            
+            
+        </StackPanel>
+
+    </Grid>
+</Page>

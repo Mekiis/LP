@@ -1,0 +1,41 @@
+Public Class WPFBitmapConverter
+	Implements IValueConverter
+
+	#Region "IValueConverter Members"
+
+	Public Function Convert(value As Object, targetType As Type, parameter As Object, culture As System.Globalization.CultureInfo) As Object
+		Dim ms As New MemoryStream()
+		DirectCast(value, System.Drawing.Bitmap).Save(ms, System.Drawing.Imaging.ImageFormat.Bmp)
+		Dim image As New System.Windows.Media.Imaging.BitmapImage()
+		image.BeginInit()
+		ms.Seek(0, SeekOrigin.Begin)
+		image.StreamSource = ms
+		image.EndInit()
+		Return image
+	End Function
+
+	Public Function ConvertBack(value As Object, targetType As Type, parameter As Object, culture As System.Globalization.CultureInfo) As Object
+		Throw New NotImplementedException()
+	End Function
+
+	#End Region
+End Class
+
+<Window x:Class="WPFComboBoxEditable.WindowImageProjectResource"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ProjectProperties="clr-namespace:WPFComboBoxEditable.Properties"
+    xmlns:local="clr-namespace:WPFComboBoxEditable"
+    Title="WindowImageProjectResource" Height="368" Width="616">
+	<Window.Resources>
+	<local:WPFBitmapConverter x:Key="ImageConverter" />
+    </Window.Resources>
+    <Grid> 
+	<Image Margin="2,3,4,4" Name="image1" Stretch="Fill" >
+	<Image.Source>
+	<Binding Source="{x:Static ProjectProperties:Resources.Minar}"
+	Converter="{StaticResource ImageConverter}" /> 
+	</Image.Source>
+	</Image>
+    </Grid>
+</Window>

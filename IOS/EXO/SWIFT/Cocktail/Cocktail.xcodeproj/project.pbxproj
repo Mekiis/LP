@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B8571A091A8D021D00A25575 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8571A081A8D021D00A25575 /* AppDelegate.swift */; };
+		B8571A0B1A8D021D00A25575 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8571A0A1A8D021D00A25575 /* MasterViewController.swift */; };
+		B8571A0E1A8D021D00A25575 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8571A0C1A8D021D00A25575 /* Main.storyboard */; };
+		B8571A101A8D021D00A25575 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8571A0F1A8D021D00A25575 /* Images.xcassets */; };
+		B8571A131A8D021D00A25575 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8571A111A8D021D00A25575 /* LaunchScreen.xib */; };
+		B8571A1F1A8D021D00A25575 /* CocktailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8571A1E1A8D021D00A25575 /* CocktailTests.swift */; };
+		B8571A2A1A8D025D00A25575 /* DrinkDirections.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8571A291A8D025D00A25575 /* DrinkDirections.plist */; };
+		B8A186BC1A8D0ABA00449932 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A186BB1A8D0ABA00449932 /* Cocktail.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B8571A191A8D021D00A25575 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B85719FB1A8D021D00A25575 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B8571A021A8D021D00A25575;
+			remoteInfo = Cocktail;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B8571A031A8D021D00A25575 /* Cocktail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocktail.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8571A071A8D021D00A25575 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8571A081A8D021D00A25575 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B8571A0A1A8D021D00A25575 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		B8571A0D1A8D021D00A25575 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B8571A0F1A8D021D00A25575 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B8571A121A8D021D00A25575 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B8571A181A8D021D00A25575 /* CocktailTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocktailTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8571A1D1A8D021D00A25575 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8571A1E1A8D021D00A25575 /* CocktailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailTests.swift; sourceTree = "<group>"; };
+		B8571A291A8D025D00A25575 /* DrinkDirections.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DrinkDirections.plist; sourceTree = "<group>"; };
+		B8A186BB1A8D0ABA00449932 /* Cocktail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B8571A001A8D021D00A25575 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8571A151A8D021D00A25575 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B85719FA1A8D021D00A25575 = {
+			isa = PBXGroup;
+			children = (
+				B8571A051A8D021D00A25575 /* Cocktail */,
+				B8571A1B1A8D021D00A25575 /* CocktailTests */,
+				B8571A041A8D021D00A25575 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B8571A041A8D021D00A25575 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B8571A031A8D021D00A25575 /* Cocktail.app */,
+				B8571A181A8D021D00A25575 /* CocktailTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B8571A051A8D021D00A25575 /* Cocktail */ = {
+			isa = PBXGroup;
+			children = (
+				B8571A281A8D024500A25575 /* Ressources */,
+				B8571A081A8D021D00A25575 /* AppDelegate.swift */,
+				B8571A0A1A8D021D00A25575 /* MasterViewController.swift */,
+				B8A186BB1A8D0ABA00449932 /* Cocktail.swift */,
+				B8571A0C1A8D021D00A25575 /* Main.storyboard */,
+				B8571A0F1A8D021D00A25575 /* Images.xcassets */,
+				B8571A111A8D021D00A25575 /* LaunchScreen.xib */,
+				B8571A061A8D021D00A25575 /* Supporting Files */,
+			);
+			path = Cocktail;
+			sourceTree = "<group>";
+		};
+		B8571A061A8D021D00A25575 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B8571A071A8D021D00A25575 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B8571A1B1A8D021D00A25575 /* CocktailTests */ = {
+			isa = PBXGroup;
+			children = (
+				B8571A1E1A8D021D00A25575 /* CocktailTests.swift */,
+				B8571A1C1A8D021D00A25575 /* Supporting Files */,
+			);
+			path = CocktailTests;
+			sourceTree = "<group>";
+		};
+		B8571A1C1A8D021D00A25575 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B8571A1D1A8D021D00A25575 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B8571A281A8D024500A25575 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				B8571A291A8D025D00A25575 /* DrinkDirections.plist */,
+			);
+			name = Ressources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B8571A021A8D021D00A25575 /* Cocktail */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B8571A221A8D021D00A25575 /* Build configuration list for PBXNativeTarget "Cocktail" */;
+			buildPhases = (
+				B85719FF1A8D021D00A25575 /* Sources */,
+				B8571A001A8D021D00A25575 /* Frameworks */,
+				B8571A011A8D021D00A25575 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cocktail;
+			productName = Cocktail;
+			productReference = B8571A031A8D021D00A25575 /* Cocktail.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B8571A171A8D021D00A25575 /* CocktailTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B8571A251A8D021D00A25575 /* Build configuration list for PBXNativeTarget "CocktailTests" */;
+			buildPhases = (
+				B8571A141A8D021D00A25575 /* Sources */,
+				B8571A151A8D021D00A25575 /* Frameworks */,
+				B8571A161A8D021D00A25575 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B8571A1A1A8D021D00A25575 /* PBXTargetDependency */,
+			);
+			name = CocktailTests;
+			productName = CocktailTests;
+			productReference = B8571A181A8D021D00A25575 /* CocktailTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B85719FB1A8D021D00A25575 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = iem;
+				TargetAttributes = {
+					B8571A021A8D021D00A25575 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					B8571A171A8D021D00A25575 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = B8571A021A8D021D00A25575;
+					};
+				};
+			};
+			buildConfigurationList = B85719FE1A8D021D00A25575 /* Build configuration list for PBXProject "Cocktail" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B85719FA1A8D021D00A25575;
+			productRefGroup = B8571A041A8D021D00A25575 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B8571A021A8D021D00A25575 /* Cocktail */,
+				B8571A171A8D021D00A25575 /* CocktailTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B8571A011A8D021D00A25575 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8571A0E1A8D021D00A25575 /* Main.storyboard in Resources */,
+				B8571A131A8D021D00A25575 /* LaunchScreen.xib in Resources */,
+				B8571A101A8D021D00A25575 /* Images.xcassets in Resources */,
+				B8571A2A1A8D025D00A25575 /* DrinkDirections.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8571A161A8D021D00A25575 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B85719FF1A8D021D00A25575 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8571A0B1A8D021D00A25575 /* MasterViewController.swift in Sources */,
+				B8571A091A8D021D00A25575 /* AppDelegate.swift in Sources */,
+				B8A186BC1A8D0ABA00449932 /* Cocktail.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8571A141A8D021D00A25575 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8571A1F1A8D021D00A25575 /* CocktailTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B8571A1A1A8D021D00A25575 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B8571A021A8D021D00A25575 /* Cocktail */;
+			targetProxy = B8571A191A8D021D00A25575 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B8571A0C1A8D021D00A25575 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B8571A0D1A8D021D00A25575 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B8571A111A8D021D00A25575 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B8571A121A8D021D00A25575 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B8571A201A8D021D00A25575 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B8571A211A8D021D00A25575 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B8571A231A8D021D00A25575 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Cocktail/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B8571A241A8D021D00A25575 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Cocktail/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B8571A261A8D021D00A25575 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CocktailTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cocktail.app/Cocktail";
+			};
+			name = Debug;
+		};
+		B8571A271A8D021D00A25575 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CocktailTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cocktail.app/Cocktail";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B85719FE1A8D021D00A25575 /* Build configuration list for PBXProject "Cocktail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8571A201A8D021D00A25575 /* Debug */,
+				B8571A211A8D021D00A25575 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B8571A221A8D021D00A25575 /* Build configuration list for PBXNativeTarget "Cocktail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8571A231A8D021D00A25575 /* Debug */,
+				B8571A241A8D021D00A25575 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B8571A251A8D021D00A25575 /* Build configuration list for PBXNativeTarget "CocktailTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8571A261A8D021D00A25575 /* Debug */,
+				B8571A271A8D021D00A25575 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B85719FB1A8D021D00A25575 /* Project object */;
+}

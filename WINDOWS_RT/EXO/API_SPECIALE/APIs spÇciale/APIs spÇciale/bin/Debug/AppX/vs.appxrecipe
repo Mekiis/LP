@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>IUTABGDIN202</Machine>
+    <WindowsUser>lp</WindowsUser>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>0d1048ec-a7bc-408c-86a4-a8f3322e7aa2</PackageIdentityName>
+    <RegisteredManifestChecksum>A02D927CA4761B0E4197BDA9F3CB903BD1DA5AFC44039A1DE435761D848B63AA</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>0d1048ec-a7bc-408c-86a4-a8f3322e7aa2_1.0.0.0_neutral__24ehhzytcf1wm</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>0d1048ec-a7bc-408c-86a4-a8f3322e7aa2_24ehhzytcf1wm!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>0d1048ec-a7bc-408c-86a4-a8f3322e7aa2</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Loïc</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-02-09T07:36:15.211</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\bin\Debug\APIs spéciale.exe">
+      <PackagePath>APIs spéciale.exe</PackagePath>
+      <Modified>2015-02-09T07:36:13.789</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-02-09T07:34:48.822</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-02-09T07:34:48.838</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-02-09T07:34:48.838</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-02-09T07:34:48.854</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2015-02-09T07:34:49.229</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\bin\Debug\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+      <Modified>2015-02-09T07:34:49.300</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2015-02-09T07:36:14.196</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

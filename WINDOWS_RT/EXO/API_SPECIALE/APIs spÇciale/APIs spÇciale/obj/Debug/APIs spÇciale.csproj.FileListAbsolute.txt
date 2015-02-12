@@ -1,0 +1,63 @@
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\App.g.i.cs
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\App.g.cs
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\MainPage.g.i.cs
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\MainPage.g.cs
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\XamlTypeInfo.g.cs
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\XamlSaveStateFile.xml
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\bin\Debug\App.xbf
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\bin\Debug\MainPage.xbf
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\bin\Debug\APIs spéciale.xr.xml
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\bin\Debug\APIs spéciale.exe
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\bin\Debug\APIs spéciale.pdb
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\bin\Debug\resources.pri
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\bin\Debug\AppxManifest.xml
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\bin\Debug\APIs spéciale.build.appxrecipe
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\App.xaml
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\MainPage.xaml
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\App.xbf
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\MainPage.xbf
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\APIs spéciale.exe
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\APIs spéciale.pdb
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\priconfig.xml
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\priconfig.xml.intermediate
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\layout.resfiles
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\layout.resfiles.intermediate
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\resources.resfiles
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\resources.resfiles.intermediate
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\pri.resfiles
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\pri.resfiles.intermediate
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\qualifiers.txt
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\qualifiers.txt.intermediate
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\MultipleQualifiersPerDimensionFound.txt
+D:\Oyosoft\Enseignement\IUT\Cours\Cours 2 - APIs spéciales et DataBinding\APIs spéciale\APIs spéciale\obj\Debug\ProjectArchitectures.txt
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\bin\Debug\App.xbf
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\bin\Debug\MainPage.xbf
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\bin\Debug\APIs spéciale.exe
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\bin\Debug\APIs spéciale.pdb
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\bin\Debug\resources.pri
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\bin\Debug\AppxManifest.xml
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\bin\Debug\APIs spéciale.build.appxrecipe
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\App.g.i.cs
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\App.g.cs
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\MainPage.g.i.cs
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\MainPage.g.cs
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\XamlTypeInfo.g.cs
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\App.xaml
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\MainPage.xaml
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\App.xbf
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\MainPage.xbf
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\XamlSaveStateFile.xml
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\APIs spéciale.exe
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\APIs spéciale.pdb
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\priconfig.xml
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\priconfig.xml.intermediate
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\layout.resfiles
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\layout.resfiles.intermediate
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\resources.resfiles
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\resources.resfiles.intermediate
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\pri.resfiles
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\pri.resfiles.intermediate
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\qualifiers.txt
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\qualifiers.txt.intermediate
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\lp\Downloads\APIs spéciale\APIs spéciale\APIs spéciale\obj\Debug\ProjectArchitectures.txt
