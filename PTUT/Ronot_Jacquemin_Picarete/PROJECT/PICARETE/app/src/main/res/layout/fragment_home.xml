@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/flat_brown_light"
+    tools:context="io.picarete.picarete.ui.fragments.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="@color/orange">
+
+        <io.picarete.picarete.ui.custom.CustomFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/app_name"
+            style="@style/TitleTheme"
+            android:layout_weight="2"
+            android:gravity="center_horizontal|bottom"/>
+
+        <io.picarete.picarete.ui.custom.CustomFontTextView
+            android:id="@+id/home_welcome"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text=""
+            style="@style/SubTitleTheme"
+            android:layout_weight="2"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:id="@+id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="8"
+            android:gravity="center">
+
+            <io.picarete.picarete.ui.custom.CustomFontButton
+                android:id="@+id/b_solo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/solo"
+                style="@style/home_btn_first"
+                android:layout_gravity="center_horizontal"/>
+
+            <io.picarete.picarete.ui.custom.CustomFontButton
+                android:id="@+id/b_multi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/multi"
+                style="@style/home_btn_middle"
+                android:layout_gravity="center_horizontal"/>
+
+            <io.picarete.picarete.ui.custom.CustomFontButton
+                android:id="@+id/b_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/profile"
+                style="@style/home_btn_middle"
+                android:layout_gravity="center_horizontal"/>
+
+            <io.picarete.picarete.ui.custom.CustomFontTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_version"
+                android:textColor="@color/white"
+                android:gravity="right"
+                android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+</RelativeLayout>

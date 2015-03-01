@@ -1,0 +1,62 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="horizontal_label_pair">
+        <item name="android:padding">@dimen/paddingGameGrid</item>
+        <item name="android:background">@color/orange_light</item>
+    </style>
+
+    <style name="horizontal_label_impair">
+        <item name="android:padding">@dimen/paddingGameGrid</item>
+    </style>
+
+    <style name="top_label">
+        <item name="android:layout_marginRight">@dimen/paddingGameGrid</item>
+        <item name="android:layout_marginLeft">@dimen/paddingGameGrid</item>
+    </style>
+
+    <style name="TitleTheme" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textSize">@dimen/textSizeTitle</item>
+    </style>
+
+    <style name="TitleBanner" parent="TextAppearance.AppCompat.Large">
+        <item name="android:paddingTop">@dimen/paddingGameGrid</item>
+        <item name="android:paddingBottom">@dimen/paddingGameGrid</item>
+        <item name="android:background">@color/orange</item>
+    </style>
+
+    <style name="home_btn">
+        <item name="android:paddingLeft">@dimen/paddingHomeBtnLeft</item>
+        <item name="android:paddingRight">@dimen/paddingHomeBtnRight</item>
+        <item name="android:background">@drawable/btn_bg</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="home_btn_first" parent="home_btn">
+        <item name="android:layout_marginBottom">@dimen/marginHomeBtnBottom</item>
+        <item name="android:textColor">@color/flat_brown_light</item>
+    </style>
+
+    <style name="home_btn_middle" parent="home_btn">
+        <item name="android:layout_marginTop">@dimen/marginHomeBtnTop</item>
+        <item name="android:layout_marginBottom">@dimen/marginHomeBtnBottom</item>
+    </style>
+
+    <style name="home_btn_last" parent="home_btn">
+        <item name="android:layout_marginTop">@dimen/marginHomeBtnTop</item>
+    </style>
+
+    <style name="SubTitleTheme">
+        <item name="android:textSize">@dimen/textSizeSubTitle</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="ClassicText" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textSize">@dimen/classicText</item>
+    </style>
+
+</resources>

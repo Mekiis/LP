@@ -1,0 +1,180 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/flat_brown_light"
+    tools:context="io.picarete.picarete.ui.fragments.SoloChooserFragment">
+
+    <ScrollView
+        android:layout_above="@+id/mode_chooser_validate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fadeScrollbars="false">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TitleBanner">
+
+                <io.picarete.picarete.ui.custom.CustomFontTextView
+                    android:id="@+id/mode_chooser_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/soloModeChooser"
+
+                    style="@style/TitleTheme"
+                    android:background="@color/orange"
+                    android:gravity="center"/>
+                </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/mode_chooser_game_mode"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_below="@+id/mode_chooser_title"
+                style="@style/horizontal_label_pair"
+                android:layout_height="0dp"
+                android:gravity="center_vertical">
+
+                <io.picarete.picarete.ui.custom.CustomFontTextView
+                    android:id="@+id/mode_chooser_label_game_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mode"
+                    android:textAppearance="@android:style/TextAppearance.Medium"
+/>
+                <Spinner
+                    android:id="@+id/mode_chooser_spinner_game_mode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/mode_chooser_label_game_mode"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/game_chosen_tiles"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_below="@+id/mode_chooser_game_mode"
+                android:gravity="center_vertical"
+                style="@style/horizontal_label_impair"
+                android:orientation="vertical">
+
+                <io.picarete.picarete.ui.custom.CustomFontSwitch
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mode_choser_pre_chosen_border_tile"
+                    android:id="@+id/mode_chooser_switch_chosen_border_tile"/>
+
+                <io.picarete.picarete.ui.custom.CustomFontSwitch
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mode_choser_pre_chosen_tile"
+                    android:id="@+id/mode_chooser_switch_chosen_tile"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/mode_chooser_number_pickers"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_below="@+id/game_chosen_tiles"
+                android:gravity="center_vertical"
+                android:layout_weight="1"
+                style="@style/horizontal_label_pair">
+
+                <io.picarete.picarete.ui.custom.CustomFontTextView
+                    android:id="@+id/mode_chooser_label_column"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/column"
+                    android:textAppearance="@android:style/TextAppearance.Medium"
+                    android:layout_toLeftOf="@+id/x"/>
+
+                <io.picarete.picarete.ui.custom.CustomFontTextView
+                    android:id="@+id/x"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="X"
+                    android:textAppearance="@android:style/TextAppearance.Large"
+                    android:layout_centerHorizontal="true"
+                    android:paddingLeft="@dimen/paddingTopLabel"
+                    android:paddingRight="@dimen/paddingTopLabel"/>
+
+                <io.picarete.picarete.ui.custom.CustomFontTextView
+                    android:id="@+id/mode_chooser_label_row"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/row"
+                    android:textAppearance="@android:style/TextAppearance.Medium"
+                    android:layout_toRightOf="@+id/x"/>
+
+                <io.picarete.picarete.ui.custom.CustomFontNumberPicker
+                    android:id="@+id/mode_chooser_picker_column"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/x"
+                    android:layout_toLeftOf="@id/x"/>
+
+                <io.picarete.picarete.ui.custom.CustomFontNumberPicker
+                    android:id="@+id/mode_chooser_picker_row"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/x"
+                    android:layout_toRightOf="@id/x"/>
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_below="@+id/mode_chooser_number_pickers"
+                style="@style/horizontal_label_impair"
+                android:gravity="center_vertical">
+
+                <io.picarete.picarete.ui.custom.CustomFontTextView
+                    android:id="@+id/mode_chooser_label_ia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/toughness"
+                    android:textAppearance="@android:style/TextAppearance.Medium"
+                     />
+
+                <Spinner
+                    android:id="@+id/mode_chooser_spinner_ia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/mode_chooser_label_ia"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <io.picarete.picarete.ui.custom.CustomFontButton
+        android:id="@+id/mode_chooser_validate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/validate"
+        style="@style/home_btn_last"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"/>
+
+</RelativeLayout>

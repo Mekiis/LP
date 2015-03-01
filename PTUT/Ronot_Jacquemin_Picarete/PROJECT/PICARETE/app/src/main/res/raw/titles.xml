@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<titles>
+
+    <title>
+        <value>Demo maker</value>
+        <condition
+            mode="multi"
+            play="1"
+            />
+    </title>
+    <title>
+        <value>AI Fighter</value>
+        <condition
+            game_mode="CLASSIC"
+            mode="solo"
+            win="20"
+            difficulty="EASY"
+            />
+    </title>
+
+    <title>
+        <value>AI Killer</value>
+        <condition
+            mode="solo"
+            win="20"
+            difficulty="EASY_MAX_TILE"
+            />
+    </title>
+
+    <title>
+        <value>AI Ruler</value>
+        <condition
+            mode="solo"
+            win="20"
+            difficulty="AGGRESSIVE"
+            />
+    </title>
+
+    <title>
+        <value>Beginner</value>
+        <condition
+            win="1"
+            />
+    </title>
+
+    <title>
+        <value></value>
+        <condition
+            play="1"
+            />
+    </title>
+
+    <title>
+        <value>Persistent</value>
+        <condition
+            lost="20"
+            />
+    </title>
+
+    <title>
+        <value>Game Master</value>
+        <condition
+            play="500"
+            />
+    </title>
+
+    <title>
+        <value>Explorer</value>
+        <condition
+            game_mode="CLASSIC"
+            play="1"
+            mode="solo"
+            win="66"
+            difficulty="easy"
+        />
+    </title>
+</titles>
