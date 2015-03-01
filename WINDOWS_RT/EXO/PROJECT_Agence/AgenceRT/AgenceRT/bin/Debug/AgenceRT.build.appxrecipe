@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>PCBUREAU</Machine>
+    <WindowsUser>Loïc</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>d5acc1ff-a270-47e3-a901-f98a80160135</PackageIdentityName>
+    <IntermediateOutputPath>D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\AgenceRT\obj\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\AgenceRT\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\AgenceRT\bin\Debug\AgenceRT.exe">
+      <PackagePath>AgenceRT.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\AgenceEntites\bin\Debug\AgenceEntites.dll">
+      <PackagePath>AgenceEntites.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\packages\WinRTXamlToolkit.Controls.Calendar.1.5.4.3\lib\netcore45\WinRTXamlToolkit.Controls.Calendar.dll">
+      <PackagePath>WinRTXamlToolkit.Controls.Calendar.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\AgenceRT\Assets\Logo.png">
+      <PackagePath>Assets\Logo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\AgenceRT\Assets\SmallLogo.png">
+      <PackagePath>Assets\SmallLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\AgenceRT\Assets\SplashScreen.png">
+      <PackagePath>Assets\SplashScreen.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\AgenceRT\Assets\StoreLogo.png">
+      <PackagePath>Assets\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\AgenceRT\Common\ReadMe.txt">
+      <PackagePath>Common\ReadMe.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\AgenceRT\bin\Debug\App.xaml">
+      <PackagePath>App.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\AgenceRT\bin\Debug\Common\StandardStyles.xaml">
+      <PackagePath>Common\StandardStyles.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\AgenceRT\bin\Debug\ListeBiens.xaml">
+      <PackagePath>ListeBiens.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\AgenceRT\bin\Debug\MainPage.xaml">
+      <PackagePath>MainPage.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\AgenceRT\bin\Debug\NouveauBien.xaml">
+      <PackagePath>NouveauBien.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\AgenceRT\bin\Debug\TestPage.xaml">
+      <PackagePath>TestPage.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\packages\WinRTXamlToolkit.Controls.Calendar.1.5.4.3\lib\netcore45\WinRTXamlToolkit.Controls.Calendar\Controls\Calendar\Calendar.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.Calendar\Controls\Calendar\Calendar.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\packages\WinRTXamlToolkit.Controls.Calendar.1.5.4.3\lib\netcore45\WinRTXamlToolkit.Controls.Calendar\Controls\Calendar\CalendarButton.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.Calendar\Controls\Calendar\CalendarButton.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\packages\WinRTXamlToolkit.Controls.Calendar.1.5.4.3\lib\netcore45\WinRTXamlToolkit.Controls.Calendar\Controls\Calendar\CalendarDayButton.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.Calendar\Controls\Calendar\CalendarDayButton.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\packages\WinRTXamlToolkit.Controls.Calendar.1.5.4.3\lib\netcore45\WinRTXamlToolkit.Controls.Calendar\Controls\Calendar\CalendarItem.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.Calendar\Controls\Calendar\CalendarItem.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\packages\WinRTXamlToolkit.Controls.Calendar.1.5.4.3\lib\netcore45\WinRTXamlToolkit.Controls.Calendar\Themes\Generic.xaml">
+      <PackagePath>WinRTXamlToolkit.Controls.Calendar\Themes\Generic.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Oyosoft\Enseignement\IUT\2014\Projet\AgenceRT\AgenceRT\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

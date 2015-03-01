@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AgenceWebServices" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:55775/AgenceWebServices.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:55775/AgenceWebServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:55775/AgenceWebServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AgenceDTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAgenceWebServices_ChargerListeBiens_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerListeBiens" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerListeBiens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerListeBiensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerBien_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerBien" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerBien_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerBienResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerListeBiensParType_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerListeBiensParType" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerListeBiensParType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerListeBiensParTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_AjouterBien_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterBien" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_AjouterBien_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterBienResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerListeTypesBiens_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerListeTypesBiens" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerListeTypesBiens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerListeTypesBiensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_SupprimerBien_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerBien" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_SupprimerBien_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerBienResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerListeProspects_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerListeProspects" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerListeProspects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerListeProspectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerProspect_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerProspect" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerProspect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerProspectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_AjouterProspect_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterProspect" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_AjouterProspect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterProspectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_SupprimerProspect_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerProspect" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_SupprimerProspect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerProspectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerListeAgents_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerListeAgents" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerListeAgents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerListeAgentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerAgent_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerAgent" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerAgent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerAgentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_AjouterAgent_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterAgent" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_AjouterAgent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterAgentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_SupprimerAgent_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerAgent" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_SupprimerAgent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerAgentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerListeProprietaires_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerListeProprietaires" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerListeProprietaires_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerListeProprietairesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerProprietaire_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerProprietaire" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerProprietaire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerProprietaireResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_AjouterProprietaire_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterProprietaire" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_AjouterProprietaire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterProprietaireResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_SupprimerProprietaire_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerProprietaire" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_SupprimerProprietaire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerProprietaireResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerListeRendezVous_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerListeRendezVous" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerListeRendezVous_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerListeRendezVousResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerAgenda_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerAgenda" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerAgenda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerAgendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_AjouterAgenda_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterAgenda" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_AjouterAgenda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterAgendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_SupprimerAgenda_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerAgenda" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_SupprimerAgenda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerAgendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerListeAnnonces_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerListeAnnonces" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerListeAnnonces_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerListeAnnoncesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerAnnonce_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerAnnonce" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_ChargerAnnonce_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChargerAnnonceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_AjouterAnnonce_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterAnnonce" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_AjouterAnnonce_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjouterAnnonceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_SupprimerAnnonce_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerAnnonce" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_SupprimerAnnonce_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerAnnonceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_EnregistrerSaisie_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnregistrerSaisie" />
+  </wsdl:message>
+  <wsdl:message name="IAgenceWebServices_EnregistrerSaisie_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnregistrerSaisieResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAgenceWebServices">
+    <wsdl:operation name="ChargerListeBiens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerListeBiens" message="tns:IAgenceWebServices_ChargerListeBiens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerListeBiensResponse" message="tns:IAgenceWebServices_ChargerListeBiens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChargerBien">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerBien" message="tns:IAgenceWebServices_ChargerBien_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerBienResponse" message="tns:IAgenceWebServices_ChargerBien_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChargerListeBiensParType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerListeBiensParType" message="tns:IAgenceWebServices_ChargerListeBiensParType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerListeBiensParTypeResponse" message="tns:IAgenceWebServices_ChargerListeBiensParType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AjouterBien">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/AjouterBien" message="tns:IAgenceWebServices_AjouterBien_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/AjouterBienResponse" message="tns:IAgenceWebServices_AjouterBien_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChargerListeTypesBiens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerListeTypesBiens" message="tns:IAgenceWebServices_ChargerListeTypesBiens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerListeTypesBiensResponse" message="tns:IAgenceWebServices_ChargerListeTypesBiens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerBien">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/SupprimerBien" message="tns:IAgenceWebServices_SupprimerBien_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/SupprimerBienResponse" message="tns:IAgenceWebServices_SupprimerBien_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChargerListeProspects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerListeProspects" message="tns:IAgenceWebServices_ChargerListeProspects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerListeProspectsResponse" message="tns:IAgenceWebServices_ChargerListeProspects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChargerProspect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerProspect" message="tns:IAgenceWebServices_ChargerProspect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerProspectResponse" message="tns:IAgenceWebServices_ChargerProspect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AjouterProspect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/AjouterProspect" message="tns:IAgenceWebServices_AjouterProspect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/AjouterProspectResponse" message="tns:IAgenceWebServices_AjouterProspect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerProspect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/SupprimerProspect" message="tns:IAgenceWebServices_SupprimerProspect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/SupprimerProspectResponse" message="tns:IAgenceWebServices_SupprimerProspect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChargerListeAgents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerListeAgents" message="tns:IAgenceWebServices_ChargerListeAgents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerListeAgentsResponse" message="tns:IAgenceWebServices_ChargerListeAgents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChargerAgent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerAgent" message="tns:IAgenceWebServices_ChargerAgent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerAgentResponse" message="tns:IAgenceWebServices_ChargerAgent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AjouterAgent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/AjouterAgent" message="tns:IAgenceWebServices_AjouterAgent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/AjouterAgentResponse" message="tns:IAgenceWebServices_AjouterAgent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerAgent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/SupprimerAgent" message="tns:IAgenceWebServices_SupprimerAgent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/SupprimerAgentResponse" message="tns:IAgenceWebServices_SupprimerAgent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChargerListeProprietaires">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerListeProprietaires" message="tns:IAgenceWebServices_ChargerListeProprietaires_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerListeProprietairesResponse" message="tns:IAgenceWebServices_ChargerListeProprietaires_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChargerProprietaire">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerProprietaire" message="tns:IAgenceWebServices_ChargerProprietaire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerProprietaireResponse" message="tns:IAgenceWebServices_ChargerProprietaire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AjouterProprietaire">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/AjouterProprietaire" message="tns:IAgenceWebServices_AjouterProprietaire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/AjouterProprietaireResponse" message="tns:IAgenceWebServices_AjouterProprietaire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerProprietaire">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/SupprimerProprietaire" message="tns:IAgenceWebServices_SupprimerProprietaire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/SupprimerProprietaireResponse" message="tns:IAgenceWebServices_SupprimerProprietaire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChargerListeRendezVous">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerListeRendezVous" message="tns:IAgenceWebServices_ChargerListeRendezVous_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerListeRendezVousResponse" message="tns:IAgenceWebServices_ChargerListeRendezVous_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChargerAgenda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerAgenda" message="tns:IAgenceWebServices_ChargerAgenda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerAgendaResponse" message="tns:IAgenceWebServices_ChargerAgenda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AjouterAgenda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/AjouterAgenda" message="tns:IAgenceWebServices_AjouterAgenda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/AjouterAgendaResponse" message="tns:IAgenceWebServices_AjouterAgenda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerAgenda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/SupprimerAgenda" message="tns:IAgenceWebServices_SupprimerAgenda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/SupprimerAgendaResponse" message="tns:IAgenceWebServices_SupprimerAgenda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChargerListeAnnonces">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerListeAnnonces" message="tns:IAgenceWebServices_ChargerListeAnnonces_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerListeAnnoncesResponse" message="tns:IAgenceWebServices_ChargerListeAnnonces_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChargerAnnonce">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerAnnonce" message="tns:IAgenceWebServices_ChargerAnnonce_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/ChargerAnnonceResponse" message="tns:IAgenceWebServices_ChargerAnnonce_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AjouterAnnonce">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/AjouterAnnonce" message="tns:IAgenceWebServices_AjouterAnnonce_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/AjouterAnnonceResponse" message="tns:IAgenceWebServices_AjouterAnnonce_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerAnnonce">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/SupprimerAnnonce" message="tns:IAgenceWebServices_SupprimerAnnonce_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/SupprimerAnnonceResponse" message="tns:IAgenceWebServices_SupprimerAnnonce_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnregistrerSaisie">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgenceWebServices/EnregistrerSaisie" message="tns:IAgenceWebServices_EnregistrerSaisie_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgenceWebServices/EnregistrerSaisieResponse" message="tns:IAgenceWebServices_EnregistrerSaisie_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAgenceWebServices" type="tns:IAgenceWebServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ChargerListeBiens">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/ChargerListeBiens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChargerBien">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/ChargerBien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChargerListeBiensParType">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/ChargerListeBiensParType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterBien">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/AjouterBien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChargerListeTypesBiens">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/ChargerListeTypesBiens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerBien">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/SupprimerBien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChargerListeProspects">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/ChargerListeProspects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChargerProspect">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/ChargerProspect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterProspect">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/AjouterProspect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerProspect">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/SupprimerProspect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChargerListeAgents">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/ChargerListeAgents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChargerAgent">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/ChargerAgent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterAgent">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/AjouterAgent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerAgent">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/SupprimerAgent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChargerListeProprietaires">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/ChargerListeProprietaires" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChargerProprietaire">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/ChargerProprietaire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterProprietaire">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/AjouterProprietaire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerProprietaire">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/SupprimerProprietaire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChargerListeRendezVous">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/ChargerListeRendezVous" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChargerAgenda">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/ChargerAgenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterAgenda">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/AjouterAgenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerAgenda">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/SupprimerAgenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChargerListeAnnonces">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/ChargerListeAnnonces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChargerAnnonce">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/ChargerAnnonce" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterAnnonce">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/AjouterAnnonce" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerAnnonce">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/SupprimerAnnonce" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnregistrerSaisie">
+      <soap:operation soapAction="http://tempuri.org/IAgenceWebServices/EnregistrerSaisie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AgenceWebServices">
+    <wsdl:port name="BasicHttpBinding_IAgenceWebServices" binding="tns:BasicHttpBinding_IAgenceWebServices">
+      <soap:address location="http://localhost:55775/AgenceWebServices.svc/soap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

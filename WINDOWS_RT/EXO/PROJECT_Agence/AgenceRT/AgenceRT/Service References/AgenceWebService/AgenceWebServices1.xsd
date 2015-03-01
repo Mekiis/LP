@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AgenceDTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AgenceDTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfBienDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BienDTO" nillable="true" type="tns:BienDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBienDTO" nillable="true" type="tns:ArrayOfBienDTO" />
+  <xs:complexType name="BienDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeBienDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Adresse" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdBien" type="xs:int" />
+          <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Proprietaire" nillable="true" type="tns:ProprietaireDTO" />
+          <xs:element minOccurs="0" name="Titre" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BienDTO" nillable="true" type="tns:BienDTO" />
+  <xs:complexType name="TypeBienDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdTypeBien" type="xs:int" />
+      <xs:element minOccurs="0" name="LibelleType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TypeBienDTO" nillable="true" type="tns:TypeBienDTO" />
+  <xs:complexType name="ProprietaireDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PersonneDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Adresse" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProprietaireDTO" nillable="true" type="tns:ProprietaireDTO" />
+  <xs:complexType name="PersonneDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdPersonne" type="xs:int" />
+      <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prenom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonneDTO" nillable="true" type="tns:PersonneDTO" />
+  <xs:complexType name="ArrayOfTypeBienDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TypeBienDTO" nillable="true" type="tns:TypeBienDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTypeBienDTO" nillable="true" type="tns:ArrayOfTypeBienDTO" />
+  <xs:complexType name="ArrayOfProspectDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProspectDTO" nillable="true" type="tns:ProspectDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProspectDTO" nillable="true" type="tns:ArrayOfProspectDTO" />
+  <xs:complexType name="ProspectDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PersonneDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateContact" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProspectDTO" nillable="true" type="tns:ProspectDTO" />
+  <xs:complexType name="ArrayOfAgentDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AgentDTO" nillable="true" type="tns:AgentDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAgentDTO" nillable="true" type="tns:ArrayOfAgentDTO" />
+  <xs:complexType name="AgentDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PersonneDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MotDePasse" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AgentDTO" nillable="true" type="tns:AgentDTO" />
+  <xs:complexType name="ArrayOfProprietaireDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProprietaireDTO" nillable="true" type="tns:ProprietaireDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProprietaireDTO" nillable="true" type="tns:ArrayOfProprietaireDTO" />
+  <xs:complexType name="ArrayOfAgendaDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AgendaDTO" nillable="true" type="tns:AgendaDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAgendaDTO" nillable="true" type="tns:ArrayOfAgendaDTO" />
+  <xs:complexType name="AgendaDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Agent" nillable="true" type="tns:AgentDTO" />
+      <xs:element minOccurs="0" name="Annonce" nillable="true" type="tns:AnnonceDTO" />
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdAgenda" type="xs:int" />
+      <xs:element minOccurs="0" name="Prospect" nillable="true" type="tns:ProspectDTO" />
+      <xs:element minOccurs="0" name="Titre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AgendaDTO" nillable="true" type="tns:AgendaDTO" />
+  <xs:complexType name="AnnonceDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bien" nillable="true" type="tns:BienDTO" />
+      <xs:element minOccurs="0" name="IdAnnonce" type="xs:int" />
+      <xs:element minOccurs="0" name="Prix" type="xs:float" />
+      <xs:element minOccurs="0" name="Texte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Titre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnnonceDTO" nillable="true" type="tns:AnnonceDTO" />
+  <xs:complexType name="ArrayOfAnnonceDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AnnonceDTO" nillable="true" type="tns:AnnonceDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAnnonceDTO" nillable="true" type="tns:ArrayOfAnnonceDTO" />
+</xs:schema>

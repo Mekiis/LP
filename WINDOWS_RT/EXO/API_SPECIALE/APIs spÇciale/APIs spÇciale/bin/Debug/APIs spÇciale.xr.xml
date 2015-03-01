@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Roots >
+  <Roots.Interfaces>
+    <RootInterface FullName="Windows.UI.Xaml.Data.IValueConverter" />
+  </Roots.Interfaces>
+  <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="WebcamListLoaded" />
+    <RootPropertyPathName Name="SelectedWebcamInitialized" />
+    <RootPropertyPathName Name="PhotoString" />
+    <RootPropertyPathName Name="WebcamList" />
+    <RootPropertyPathName Name="SelectedWebcam" />
+    <RootPropertyPathName Name="Name" />
+    <RootPropertyPathName Name="LocationLoaded" />
+    <RootPropertyPathName Name="Adresse" />
+    <RootPropertyPathName Name="Longitude" />
+    <RootPropertyPathName Name="Latitude" />
+  </Roots.PropertyPathNames>
+  <Roots.RootTypes>
+    <RootType FullName="Windows.UI.Xaml.Application">
+      <RootProperty Name="Resources" />
+    </RootType>
+    <RootType FullName="APIs_spéciale.Converters.BoolToVisibilityConverter" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Page">
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Grid">
+      <RootProperty Name="Background" />
+      <RootProperty Name="ColumnDefinitions" />
+      <RootProperty Name="Children" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="RowDefinitions" />
+      <RootMethod Name="GetColumn" />
+      <RootMethod Name="SetColumn" />
+      <RootMethod Name="GetRow" />
+      <RootMethod Name="SetRow" />
+      <RootMethod Name="GetColumnSpan" />
+      <RootMethod Name="SetColumnSpan" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
+      <RootProperty Name="Width" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Border">
+      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="Child" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Children" />
+      <RootProperty Name="Orientation" />
+      <RootProperty Name="Visibility" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
+      <RootProperty Name="Text" />
+      <RootProperty Name="Style" />
+      <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ProgressRing">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="IsActive" />
+      <RootProperty Name="Visibility" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="Converter" />
+      <RootProperty Name="ConverterParameter" />
+      <RootProperty Name="Mode" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
+    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Image">
+      <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Content" />
+      <RootEvent Name="Click" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.CaptureElement" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="SelectedItem" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="MinWidth" />
+      <RootProperty Name="ItemTemplate" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.DataTemplate">
+      <RootProperty Name="Template" />
+    </RootType>
+    <RootType FullName="APIs_spéciale.MainPage" />
+  </Roots.RootTypes>
+</Roots>

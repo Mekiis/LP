@@ -1,0 +1,6 @@
+2013-02-15 17:19:20.1087 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le titre du bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 15
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceMetier\BienMetier.cs:ligne 23
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceService\BienService.cs:ligne 24
+   a AgenceWebServices.AgenceWebServices.AjouterBien(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\12 - WCF Rest\Agence\AgenceWebService\AgenceWebServices.svc.cs:ligne 53

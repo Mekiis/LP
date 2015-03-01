@@ -1,0 +1,6 @@
+2012-12-16 15:51:28.0047 AgenceUtils.Utils.LogException Warn 
+ Exception métier 
+ Vous devez saisir le titre du bien.    a AgenceMetier.BienMetier.VerifierSaisie(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceMetier\BienMetier.cs:ligne 15
+   a AgenceMetier.BienMetier.Ajouter(BienDTO bien, UniteMetier um) dans c:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceMetier\BienMetier.cs:ligne 23
+   a AgenceService.BienService.Ajouter(BienDTO bien) dans c:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\AgenceService\BienService.cs:ligne 24
+   a WindowsFormsApplication1.FrmNouveauBien.btnCreer_Click(Object sender, EventArgs e) dans c:\Users\Bastien\Documents\IUT\2013\Cours\9- Architecture 3 tiers, complétions\Agence\WindowsFormsApplication1\FrmNouveauBien.cs:ligne 42

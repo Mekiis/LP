@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TpAndroid</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="menu_items_array">
+        <item>Images</item>
+        <item>Vidéos</item>
+        <item>Textes</item>
+    </string-array>
+
+    <string name="images">Images</string>
+    <string name="videos">Vidéos</string>
+    <string name="textes">Textes</string>
+    <string name="drawer_open">Select a media</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="download">Download</string>
+    <string name="display">Display</string>
+    <string name="title_activity_display_media">DisplayMediaActivity</string>
+
+</resources>
