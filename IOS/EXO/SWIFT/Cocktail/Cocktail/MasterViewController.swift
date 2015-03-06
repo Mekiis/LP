@@ -10,23 +10,11 @@ import UIKit
 
 class MasterViewController: UITableViewController {
     
-    var cocktails : [Cocktail]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        if let path = NSBundle.mainBundle().pathForResource("DrinkDirections", ofType: "plist"){
-            if let cocktailsArray = NSArray(contentsOfFile: path) as? [[String : String]] {
-                cocktails = [Cocktail]()
-                for dict in cocktailsArray{
-                    let name = dict["name"]!
-                    let ingredients = dict["ingredients"]!
-                    let directions = dict["directions"]!
-                    cocktails.append(Cocktail(name: name, ingredients: ingredients, directions: directions))
-                }
-            }
-        }
-        
+        CocktailDAO.getInstance().getDatas()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,17 +27,52 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cocktails.count
+        return CocktailDAO.getInstance().getDatas().count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CocktailCell") as  UITableViewCell
         
-        let cocktail = cocktails[indexPath.row]
+        let cocktail = CocktailDAO.getInstance().getDatas()[indexPath.row]
         cell.textLabel.text = cocktail.name
         
         return cell
     }
-
+    
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            CocktailDAO.getInstance().deleteData(CocktailDAO.getInstance().getDatas()[indexPath.row])
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "ToDetailCocktail"){
+            let svc = segue.destinationViewController as DetailCocktailViewController
+            let index = tableView.indexPathForCell(sender as UITableViewCell)!
+            svc.cocktail = CocktailDAO.getInstance().getDatas()[index.row]
+        } else if(segue.identifier == "ToAddCocktail"){
+            let svc = segue.destinationViewController as AddCocktailViewController
+            svc.completionHandler = { (result : CocktailDAO.Result) -> () in
+                var alert : UIAlertView = UIAlertView(title: "Results", message: "", delegate: nil, cancelButtonTitle: "Ok")
+                switch(result){
+                case .Saved:
+                    alert.message = "Data saved"
+                    self.tableView.reloadData()
+                case .Cancel:
+                    alert.message = "One or even field is empty"
+                }
+                alert.show()
+            }
+        }
+    }
+    
+    @IBAction func tmpSave(sender: AnyObject) {
+        CocktailDAO.getInstance().saveData()
+    }
 }
 
