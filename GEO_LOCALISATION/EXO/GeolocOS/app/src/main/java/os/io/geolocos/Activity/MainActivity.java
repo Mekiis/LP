@@ -1,5 +1,6 @@
 package os.io.geolocos.Activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Point;
@@ -7,7 +8,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,18 +17,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.jar.Attributes;
 
 import os.io.geolocos.Container.Coordinate;
 import os.io.geolocos.R;
-import os.io.geolocos.Container.SVGPoint;
+import os.io.geolocos.Converters;
+import os.io.geolocos.FilesManager;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -48,6 +49,7 @@ public class MainActivity extends ActionBarActivity {
     private Button UIVizualize;
 
     private int state = 0;
+    private int idSelected = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,30 +67,95 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
 
                 if (!UILatitudeSexa.getText().toString().equalsIgnoreCase("") && !UILongitudeSexa.getText().toString().equalsIgnoreCase("")) {
-                    coordinates.add(new Coordinate(UIId.getText().toString(), Double.parseDouble(UILatitudeDecimal.getText().toString()),
-                            Double.parseDouble(UILongitudeDecimal.getText().toString())));
-                    listToTable(coordinates);
+                    if(state == 0){
+                        coordinates.add(new Coordinate(UIId.getText().toString(), Double.parseDouble(UILatitudeDecimal.getText().toString()), UILatitudeSexa.getText().toString(),
+                                Double.parseDouble(UILongitudeDecimal.getText().toString()), UILongitudeSexa.getText().toString()));
+                        UILatitudeSexa.setText("");
+                        UILongitudeSexa.setText("");
+                        UIId.setText("");
+                        displayGUI(state, coordinates);
+                    } else if(state == 1){
+                        coordinates.set(idSelected, new Coordinate(UIId.getText().toString(), Double.parseDouble(UILatitudeDecimal.getText().toString()), UILatitudeSexa.getText().toString(),
+                                Double.parseDouble(UILongitudeDecimal.getText().toString()), UILongitudeSexa.getText().toString()));
+                        UILatitudeSexa.setText("");
+                        UILongitudeSexa.setText("");
+                        UIId.setText("");
+                        state = 0;
+                        displayGUI(state, coordinates);
+                    }
+                }
+
+            }
+        });
+
+        UIMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(state == 1){
+                    Coordinate c = coordinates.get(idSelected);
+                    coordinates.remove(idSelected);
+                    idSelected--;
+                    if(idSelected < 0)
+                        idSelected = 0;
+                    coordinates.add(idSelected, c);
+                    displayGUI(state, coordinates);
+                }
+            }
+        });
+
+        UIPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(state == 1) {
+                    Coordinate c = coordinates.get(idSelected);
+                    coordinates.remove(idSelected);
+                    idSelected++;
+                    if (idSelected > coordinates.size())
+                        idSelected = coordinates.size();
+                    coordinates.add(idSelected, c);
+                    displayGUI(state, coordinates);
+                }
+            }
+        });
+
+        UIDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (state == 1) {
+                    coordinates.remove(idSelected);
                     UILatitudeSexa.setText("");
                     UILongitudeSexa.setText("");
                     UIId.setText("");
+                    state = 0;
+                    displayGUI(state, coordinates);
                 }
+            }
+        });
 
+        UIUndo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (state == 1) {
+                    UILatitudeSexa.setText("");
+                    UILongitudeSexa.setText("");
+                    UIId.setText("");
+                    state = 0;
+                    displayGUI(state, coordinates);
+                }
             }
         });
 
         UIVizualize.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String svg = exportSVG(getMinScreenSize(), getMinScreenSize(), coordinates2SVGPoints(coordinates, getMinScreenSize(), getMinScreenSize()));
+                String svg = Converters.exportSVG(getMinScreenSize(), getMinScreenSize(), Converters.coordinates2SVGPoints(coordinates, getMinScreenSize(), getMinScreenSize()));
                 Intent i = new Intent(getApplicationContext(), SVGView.class);
                 i.putExtra(SVGView.SVG_KEY, svg);
                 startActivity(i);
             }
         });
 
-        listToTable(coordinates);
-
-        displayGUI(state);
+        displayGUI(state, coordinates);
     }
 
     private int getMinScreenSize() {
@@ -100,7 +167,7 @@ public class MainActivity extends ActionBarActivity {
         return (width > height ? height : width);
     }
 
-    private void displayGUI(int state){
+    private void displayGUI(int state, List<Coordinate> coordinates){
         if(state == 0){
             // No point selected
             UIDataModification.setVisibility(View.GONE);
@@ -112,6 +179,8 @@ public class MainActivity extends ActionBarActivity {
             UIUndo.setVisibility(View.VISIBLE);
             UIAddValue.setText("Modify");
         }
+
+        listToTable(coordinates);
     }
 
     private void initializeComponents() {
@@ -135,7 +204,7 @@ public class MainActivity extends ActionBarActivity {
             boolean isModifcated = false;
 
             public void afterTextChanged(Editable s) {
-                double decimal_latitude = SexaToDecimal(s.toString());
+                double decimal_latitude = Converters.SexaToDecimal(s.toString());
                 UILatitudeDecimal.setText(Double.toString(decimal_latitude));
 
                 if(!isModifcated){
@@ -167,7 +236,7 @@ public class MainActivity extends ActionBarActivity {
             boolean isModifcated = false;
 
             public void afterTextChanged(Editable s) {
-                double decimal_longitude = SexaToDecimal(s.toString());
+                double decimal_longitude = Converters.SexaToDecimal(s.toString());
                 UILongitudeDecimal.setText(Double.toString(decimal_longitude));
 
                 if(!isModifcated){
@@ -196,102 +265,68 @@ public class MainActivity extends ActionBarActivity {
         });
     }
 
-    private List<SVGPoint> coordinates2SVGPoints(List<Coordinate> coordinates, int width, int height) {
-        List<SVGPoint> points = new ArrayList<>();
-        double minWidth = Double.MAX_VALUE;
-        double maxWidth = 0;
-        double minHeight = Double.MAX_VALUE;
-        double maxHeight = 0;
-
-        for (Coordinate c : coordinates){
-            if(c.getLongitude() < minWidth)
-                minWidth = c.getLongitude();
-            if(c.getLongitude() > maxWidth)
-                maxWidth = c.getLongitude();
-            if(c.getLatitude() < minHeight)
-                minHeight = c.getLatitude();
-            if(c.getLatitude() > maxHeight)
-                maxHeight = c.getLatitude();
-        }
-
-        for (Coordinate c : coordinates){
-            double lat = (c.getLatitude() - minHeight) * height / (maxHeight - minHeight);
-            double lng = (c.getLongitude() - minWidth) * width / (maxWidth - minWidth);;
-            points.add(new SVGPoint(lat, lng));
-        }
-
-        return points;
-    }
-
-
-    private String exportSVG(int width, int height, List<SVGPoint> points) {
-        String svg = "<?xml version=\"1.0\" standalone=\"yes\"?>";
-        svg += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
-        svg += "<svg width=\""+width+"px\" height=\""+height+"px\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">";
-
-        for(int i = 0; i < points.size(); i++) {
-            svg += "<circle cx=\""+points.get(i).getX()+"\" cy=\""+points.get(i).getY()+"\"";
-            svg += " r=\""+points.get(i).rayon+"\" stroke=\""+points.get(i).strokeColor+"\" stroke-width=\""+points.get(i).strokeWidth+"\" fill=\""+points.get(i).fillColor+"\" />";
-        }
-        svg += "<rect x=\"0\" y=\"0\" width=\""+width+"\" height=\""+height+"\" style=\"stroke: #009900; stroke-width: 3; stroke-dasharray: 10 5; fill: none;\"/>";
-        svg += "</svg>";
-
-        return svg;
-    }
-
     private void listToTable(List<Coordinate> coordinates) {
         UITable.removeAllViews();
 
-        addToTable(UITable, new String[]{"Index", "Latitude", "Longitude"}, -1);
+        addToTable(UITable, new String[]{"Index", "Latitude", "Longitude"}, -1, -1);
 
+        int i = 0;
         for(Coordinate coordinate : coordinates){
-            addToTable(UITable, new String[]{coordinate.getId(), Double.toString(coordinate.getLatitude()), Double.toString(coordinate.getLongitude())}, -1);
+            addToTable(UITable, new String[]{coordinate.getId(), Double.toString(coordinate.getLatitude()), Double.toString(coordinate.getLongitude())}, -1, i);
+            i++;
         }
     }
 
-    private void addToTable(TableLayout table, String[] values, int color){
-        TableRow row;
+    private boolean displayDataFromCoordinate(int id){
+        boolean canDisplay = true;
+
+        if(id < coordinates.size() && id > -1){
+            UILatitudeSexa.setText(coordinates.get(id).getLatitudeSexa());
+            UILongitudeSexa.setText(coordinates.get(id).getLongitudeSexa());
+            UIId.setText(coordinates.get(id).getId());
+        } else {
+            canDisplay = false;
+        }
+
+        return canDisplay;
+    }
+
+    private void addToTable(TableLayout table, String[] values, int color, int tag){
+        final TableRow row;
         TableRow.LayoutParams set = new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        set.weight = 1;
         row = new TableRow(this);
+
+        row.setTag(tag);
+
+        row.setClickable(true);
+        row.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(displayDataFromCoordinate((int) v.getTag())){
+                    state = 1;
+                    idSelected = (int) v.getTag();
+                    displayGUI(state, coordinates);
+                }
+            }
+        });
 
         for(String s : values){
             TextView rowString = new TextView(this);
             rowString.setTextSize(20);
             rowString.setText(s);
-            row.addView(rowString);
+            row.addView(rowString, set);
         }
+
+        if(state == 1 && idSelected == tag)
+            row.setBackgroundColor(Color.GRAY);
+
+        TableRow.LayoutParams setTable = new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
         if(color != -1)
             row.setBackgroundColor(color);
-        UITable.addView(row, set);
+        table.addView(row, setTable);
     }
-
-    private double SexaToDecimal(String coordinates) {
-
-        double degrees = 0;
-        double minutes = 0;
-        double seconds = 0;
-
-        String[] coo = coordinates.split(" ");
-
-        if(coo.length > 1)
-            degrees = Double.parseDouble(coo[0]);
-
-        if(coo.length > 2)
-            minutes = Double.parseDouble(coo[1]);
-
-        if(coo.length > 3)
-            seconds = Double.parseDouble(coo[2]);
-
-        double decimal = -1;
-
-        decimal = degrees;
-        decimal += minutes / 60.0f;
-        decimal += seconds / 3600.0f;
-
-        return decimal;
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
