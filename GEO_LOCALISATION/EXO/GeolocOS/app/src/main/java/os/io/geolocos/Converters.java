@@ -12,13 +12,17 @@ import os.io.geolocos.Container.SVGPoint;
 public class Converters {
 
     public static List<SVGPoint> coordinates2SVGPoints(List<Coordinate> coordinates, int width, int height) {
+        List<Coordinate> coor = new ArrayList<>();
+        for (Coordinate c : coordinates){
+            coor.add(new Coordinate(c.getId(), c.getLatitude(), c.getLatitudeSexa(), c.getLongitude(), c.getLongitudeSexa()));
+        }
         List<SVGPoint> points = new ArrayList<>();
         double pointLeft = Double.MAX_VALUE;
         double pointRight = Double.MAX_VALUE * -1;
         double pointBottom = Double.MAX_VALUE;
         double pointTop = Double.MAX_VALUE * -1;
 
-        for (Coordinate c : coordinates){
+        for (Coordinate c : coor){
             if(c.getLongitude() < pointLeft)
                 pointLeft = c.getLongitude();
             if(c.getLongitude() > pointRight)
@@ -29,11 +33,53 @@ public class Converters {
                 pointTop = c.getLatitude();
         }
 
-        for (Coordinate c : coordinates){
-            double lat = (c.getLatitude() - pointBottom) * height / (pointTop - pointBottom);
-            double lng = (c.getLongitude() - pointLeft) * width / (pointRight - pointLeft);;
-            points.add(new SVGPoint(lat, lng));
+        double percent = 10.0;
+
+        // Add marges
+        coor.add(new Coordinate("M", pointBottom + ((pointBottom - pointTop) * percent / 100.0), "", pointLeft - ((pointRight - pointLeft) * percent / 100.0), ""));
+        coor.add(new Coordinate("M", pointBottom + ((pointBottom - pointTop) * percent / 100.0), "", pointRight + ((pointRight - pointLeft) * percent / 100.0), ""));
+        coor.add(new Coordinate("M", pointTop - ((pointBottom - pointTop) * percent / 100.0), "", pointLeft - ((pointRight - pointLeft) * percent / 100.0), ""));
+        coor.add(new Coordinate("M", pointTop - ((pointBottom - pointTop) * percent / 100.0), "", pointRight + ((pointRight - pointLeft) * percent / 100.0), ""));
+
+
+        pointLeft = Double.MAX_VALUE;
+        pointRight = Double.MAX_VALUE * -1;
+        pointBottom = Double.MAX_VALUE;
+        pointTop = Double.MAX_VALUE * -1;
+
+        for (Coordinate c : coor){
+            if(c.getLongitude() < pointLeft)
+                pointLeft = c.getLongitude();
+            if(c.getLongitude() > pointRight)
+                pointRight = c.getLongitude();
+            if(c.getLatitude() < pointBottom)
+                pointBottom = c.getLatitude();
+            if(c.getLatitude() > pointTop)
+                pointTop = c.getLatitude();
         }
+
+        double a = height / (pointBottom - pointTop);
+        double b = 0 - a * pointTop;
+
+        double e = width / (pointRight - pointLeft);
+        double f = 0 - e * pointLeft;
+
+        for(Coordinate c : coor){
+            double lat = a * c.getLatitude() + b;
+            double lng = e * c.getLongitude() + f;
+            if(c.getId().compareToIgnoreCase("M") == 0)
+                points.add(new SVGPoint("", lat, lng, "grey", 1, "grey", 5));
+            else
+                points.add(new SVGPoint(c.getId(), lat, lng));
+        }
+
+        /*
+        for (Coordinate c : coor){
+            double lat = (c.getLatitude() - pointBottom) * height / (pointTop - pointBottom);
+            double lng = (c.getLongitude() - pointLeft) * width / (pointRight - pointLeft);
+            points.add(new SVGPoint(c.getId(), lat, lng));
+        }
+        */
 
         return points;
     }
@@ -46,6 +92,7 @@ public class Converters {
         for(int i = 0; i < points.size(); i++) {
             svg += "<circle cx=\""+points.get(i).getX()+"\" cy=\""+points.get(i).getY()+"\"";
             svg += " r=\""+points.get(i).rayon+"\" stroke=\""+points.get(i).strokeColor+"\" stroke-width=\""+points.get(i).strokeWidth+"\" fill=\""+points.get(i).fillColor+"\" />";
+            svg += "<text x=\""+points.get(i).getX()+"\" y=\""+points.get(i).getY()+"\" fill=\"black\">"+points.get(i).getId()+"</text>";
         }
         svg += "<rect x=\"0\" y=\"0\" width=\""+width+"\" height=\""+height+"\" style=\"stroke: #009900; stroke-width: 3; stroke-dasharray: 10 5; fill: none;\"/>";
         svg += "</svg>";

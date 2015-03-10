@@ -1,9 +1,11 @@
 package os.io.geolocos.Container;
 
+import java.io.Serializable;
+
 /**
  * Created by iem on 10/02/15.
  */
-public class Coordinate {
+public class Coordinate implements Serializable{
 
     private String id = "";
     private double latitude;

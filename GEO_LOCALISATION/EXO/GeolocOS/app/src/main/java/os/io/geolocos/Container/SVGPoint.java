@@ -4,6 +4,7 @@ package os.io.geolocos.Container;
 public class SVGPoint{
     public int rayon = 10;
     public int strokeWidth = 1;
+    private String id = "";
     public String strokeColor = "black";
     public String fillColor = "red";
 
@@ -18,9 +19,23 @@ public class SVGPoint{
         return y;
     }
 
-    public SVGPoint(double x, double y) {
+    public SVGPoint(String id, double x, double y) {
         this.x = x;
-
         this.y = y;
+        this.id = id;
+    }
+
+    public SVGPoint(String id, double x, double y, String strokeColor, int strokeWidth, String fillColor, int rayon) {
+        this.x = x;
+        this.y = y;
+        this.id = id;
+        this.fillColor = fillColor;
+        this.strokeWidth = strokeWidth;
+        this.strokeColor = strokeColor;
+        this.rayon = rayon;
+    }
+
+    public String getId() {
+        return id;
     }
 }

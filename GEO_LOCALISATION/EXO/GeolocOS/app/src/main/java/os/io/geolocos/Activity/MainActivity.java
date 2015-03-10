@@ -22,13 +22,21 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
 import os.io.geolocos.Container.Coordinate;
 import os.io.geolocos.R;
 import os.io.geolocos.Converters;
-import os.io.geolocos.FilesManager;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -59,6 +67,7 @@ public class MainActivity extends ActionBarActivity {
         initializeComponents();
 
         coordinates = new ArrayList<>();
+        coordinates = readFromFile();
 
         setFieldSecurity();
 
@@ -83,6 +92,8 @@ public class MainActivity extends ActionBarActivity {
                         state = 0;
                         displayGUI(state, coordinates);
                     }
+
+                    writeToFile(coordinates);
                 }
 
             }
@@ -326,6 +337,44 @@ public class MainActivity extends ActionBarActivity {
         if(color != -1)
             row.setBackgroundColor(color);
         table.addView(row, setTable);
+    }
+
+    private void writeToFile(List<Coordinate> coordinates) {
+        Gson gson = new Gson();
+        String data = gson.toJson(coordinates);
+        try {
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput("config.txt", Context.MODE_PRIVATE));
+            outputStreamWriter.write(data); outputStreamWriter.close();
+        } catch (IOException e) {
+            Log.e("Exception", "File write failed: " + e.toString());
+        }
+    }
+
+    private List<Coordinate> readFromFile() {
+        String ret = "";
+        try { InputStream inputStream = openFileInput("config.txt");
+            if ( inputStream != null ) {
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+                String receiveString = "";
+                StringBuilder stringBuilder = new StringBuilder();
+                while ( (receiveString = bufferedReader.readLine()) != null ) {
+                    stringBuilder.append(receiveString);
+                } inputStream.close();
+                ret = stringBuilder.toString();
+            }
+        } catch (FileNotFoundException e) {
+            Log.e("login activity", "File not found: " + e.toString());
+        } catch (IOException e) {
+            Log.e("login activity", "Can not read file: " + e.toString());
+        }
+        Gson gson = new Gson();
+        List<Coordinate> coordinates = gson.fromJson(ret, new TypeToken<List<Coordinate>>() {}.getType());
+
+        if(coordinates != null)
+            return coordinates;
+        else
+            return new ArrayList<>();
     }
 
     @Override

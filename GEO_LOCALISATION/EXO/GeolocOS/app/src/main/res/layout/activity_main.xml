@@ -10,39 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/longitude_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Longitude"
-                android:layout_centerHorizontal="true"/>
-
-            <EditText
-                android:id="@+id/longitude_insert"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Hexa Coordonnées"
-                android:maxLength="8"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:layout_below="@+id/longitude_label"
-                android:inputType="number"/>
-
-            <TextView
-                android:id="@+id/longitude_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:layout_below="@+id/longitude_insert"
-                android:text="@string/decimal_default"/>
-
-        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -77,6 +44,41 @@
                 android:text="@string/decimal_default" />
 
         </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/longitude_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Longitude"
+                android:layout_centerHorizontal="true"/>
+
+            <EditText
+                android:id="@+id/longitude_insert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Hexa Coordonnées"
+                android:maxLength="8"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/longitude_label"
+                android:inputType="number"/>
+
+            <TextView
+                android:id="@+id/longitude_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/longitude_insert"
+                android:text="@string/decimal_default"/>
+
+        </RelativeLayout>
+
 
     </LinearLayout>
 
