@@ -8,6 +8,12 @@
 
 import Foundation
 
-struct Cocktail {
-    let name, ingredients, directions: String
+func == (lhs : Cocktail , rhs : Cocktail) -> Bool {
+    return lhs.name == rhs.name
+        && lhs.directions == rhs.directions
+        && lhs.ingredients == rhs.ingredients
+}
+
+struct Cocktail : Equatable {
+    let name, ingredients, directions : String
 }

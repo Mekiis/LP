@@ -15,12 +15,13 @@ class DetailCocktailViewController: UIViewController {
     @IBOutlet weak var ingredientsField: UITextView!
     
     var cocktail:Cocktail!
+    var needReload:Bool! = false
+    
+    var completionHandler:((Bool) ->())?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameField.text = cocktail.name
-        directionsField.text = cocktail.directions
-        ingredientsField.text = cocktail.ingredients
+        displayDatas()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,15 +29,28 @@ class DetailCocktailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func displayDatas(){
+        nameField.text = cocktail.name
+        directionsField.text = cocktail.directions
+        ingredientsField.text = cocktail.ingredients
     }
-    */
+    
+    override func viewWillDisappear(animated: Bool) {
+        completionHandler?(needReload)
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "ToModifyCocktail"){
+            let svc = segue.destinationViewController as ModifyCocktailViewController
+            svc.cocktail = cocktail
+            svc.completionHandler = { (needReload : Bool, newCocktail : Cocktail) -> () in
+                if(needReload){
+                    self.cocktail = newCocktail
+                    self.displayDatas()
+                    self.needReload = true
+                }
+            }
+        }
+    }
 
 }

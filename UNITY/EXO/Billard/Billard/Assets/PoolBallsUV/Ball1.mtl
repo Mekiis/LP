@@ -1,0 +1,21 @@
+#==================================================
+#Material list
+#This file has been created by PoseRay v3.12.2.456
+#3D model to POV-Ray/Moray Converter.
+#Author: FlyerX
+#Email: flyerx_2000@yahoo.com
+#Web: http://mysite.verizon.net/sfg0000/
+#==================================================
+ 
+#==================================================
+newmtl poolball1_material
+Ns 2.5
+Ka 0 0 0
+Kd 1 1 1
+Ks 0 0 0
+map_Kd PoolBalluv1.jpg
+d 1
+#r 0
+#blend 0
+#cell_hi
+ 

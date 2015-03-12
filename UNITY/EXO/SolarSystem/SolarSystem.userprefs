@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/MovePlanet.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../Billard/Billard/Assets/Ball.cs">
     <Files>
-      <File FileName="Assets/Script/MovePlanet.cs" Line="15" Column="4" />
-      <File FileName="Assets/MoveCamera.cs" Line="7" Column="2" />
+      <File FileName="../Billard/Billard/Assets/Ball.cs" Line="5" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
