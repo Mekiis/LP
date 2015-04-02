@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8384E901ACD77D6009FC930 /* TableLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8384E8F1ACD77D6009FC930 /* TableLocationsViewController.swift */; };
 		B848C0A21ACD231000329EDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B848C0A11ACD231000329EDD /* AppDelegate.swift */; };
 		B848C0A41ACD231000329EDD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B848C0A31ACD231000329EDD /* ViewController.swift */; };
 		B848C0A71ACD231000329EDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B848C0A51ACD231000329EDD /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B8384E8F1ACD77D6009FC930 /* TableLocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableLocationsViewController.swift; sourceTree = "<group>"; };
 		B848C09C1ACD231000329EDD /* Visits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Visits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B848C0A01ACD231000329EDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B848C0A11ACD231000329EDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				B848C0CD1ACD47A100329EDD /* Location.swift */,
 				B848C0D11ACD4D6B00329EDD /* Visits.xcdatamodeld */,
 				B848C0D41ACD59C900329EDD /* PinLocation.swift */,
+				B8384E8F1ACD77D6009FC930 /* TableLocationsViewController.swift */,
 			);
 			path = Visits;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				B848C0CB1ACD464600329EDD /* DataManager.swift in Sources */,
 				B848C0A41ACD231000329EDD /* ViewController.swift in Sources */,
 				B848C0C41ACD2AA900329EDD /* AddLocationViewController.swift in Sources */,
+				B8384E901ACD77D6009FC930 /* TableLocationsViewController.swift in Sources */,
 				B848C0D51ACD59C900329EDD /* PinLocation.swift in Sources */,
 				B848C0D31ACD4D6B00329EDD /* Visits.xcdatamodeld in Sources */,
 				B848C0A21ACD231000329EDD /* AppDelegate.swift in Sources */,
@@ -437,6 +441,7 @@
 				B848C0BD1ACD231000329EDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B848C0BE1ACD231000329EDD /* Build configuration list for PBXNativeTarget "VisitsTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +450,7 @@
 				B848C0C01ACD231000329EDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

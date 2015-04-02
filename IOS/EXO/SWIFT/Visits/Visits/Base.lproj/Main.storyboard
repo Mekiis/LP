@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--Add Location View Controller-->
+        <!--Chose a location-->
         <scene sceneID="pZF-5c-kby">
             <objects>
                 <viewController id="IdK-Xf-gNP" customClass="AddLocationViewController" customModule="Visits" customModuleProvider="target" sceneMemberID="viewController">
@@ -12,26 +12,8 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" id="uh9-QE-tcR">
-                                <rect key="frame" x="0.0" y="25" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Pick a location" id="lqF-wl-ibU">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Ypk-aC-Okq">
-                                            <connections>
-                                                <action selector="cancelLocation:" destination="IdK-Xf-gNP" id="tgT-en-wI3"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ZUp-g7-LtF">
-                                            <connections>
-                                                <action selector="saveLocation:" destination="IdK-Xf-gNP" id="ruc-mr-tjw"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="FIU-9S-c6Y">
-                                <rect key="frame" x="0.0" y="69" width="320" height="499"/>
+                                <rect key="frame" x="0.0" y="60" width="320" height="508"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -48,6 +30,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Chose a location" id="SHU-L9-rsN">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bfl-sp-raE">
+                            <connections>
+                                <action selector="cancelLocation:" destination="IdK-Xf-gNP" id="N2Z-lq-dwl"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="LqL-aO-2IE">
+                            <connections>
+                                <action selector="saveLocation:" destination="IdK-Xf-gNP" id="Cjv-Fi-LiZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="map" destination="FIU-9S-c6Y" id="BUq-Bc-A4f"/>
                         <outlet property="sliderRange" destination="rqW-oi-kqk" id="sE7-fu-f9S"/>
@@ -60,12 +54,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="313" y="1232"/>
+            <point key="canvasLocation" x="845" y="1232"/>
         </scene>
         <!--Locations-->
         <scene sceneID="qcW-fF-pGF">
             <objects>
-                <tableViewController id="aIc-4k-YV2" sceneMemberID="viewController">
+                <tableViewController id="aIc-4k-YV2" customClass="TableLocationsViewController" customModule="Visits" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zqS-kT-FFf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,10 +80,13 @@
                     <navigationItem key="navigationItem" title="Locations" id="YpW-ST-UrJ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Mbl-0D-Mnt">
                             <connections>
-                                <segue destination="IdK-Xf-gNP" kind="modal" id="f22-ht-5Gt"/>
+                                <segue destination="625-vX-nT6" kind="modal" id="f22-ht-5Gt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableLocations" destination="zqS-kT-FFf" id="JcJ-An-sm4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1RB-nO-h7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -110,6 +107,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgf-gf-wi8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-124.26666666666667" y="496.05333333333334"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XFF-A5-nf8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="625-vX-nT6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ygy-ER-tHM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IdK-Xf-gNP" kind="relationship" relationship="rootViewController" id="fEM-Un-QS2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1p5-cW-4Lm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="313" y="1232"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

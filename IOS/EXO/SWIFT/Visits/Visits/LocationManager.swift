@@ -21,22 +21,26 @@ class LocationManager : DataManager{
     }
     
     //MARK: Persistence
-    func createTaskForName(name : String?, whithTitle : String?, andCoordinate : CLLocationCoordinate2D)->Location?{
+    func createLocationForName(name : String?, withRange range : Double?, andCoordinate coor : CLLocationCoordinate2D?)->Location?{
         if let nameValue = name{
-            let entity = NSEntityDescription.entityForName("Location", inManagedObjectContext: manageObjectContext)
-            let location = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: manageObjectContext) as Location
-            
-            location.name = nameValue
-            
-            var error : NSError? = nil
-            
-            location.managedObjectContext?.save(&error)
-            
-            if error != nil{
-                println("Could not save context : \(error), \(error?.description)")
+            if let rangeValue = range{
+                if let coorValue = coor{
+                    let entity = NSEntityDescription.entityForName("Location", inManagedObjectContext: manageObjectContext)
+                    let location = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: manageObjectContext) as Location
+                    
+                    location.name = nameValue
+                    
+                    var error : NSError? = nil
+                    
+                    location.managedObjectContext?.save(&error)
+                    
+                    if error != nil{
+                        println("Could not save context : \(error), \(error?.description)")
+                    }
+                    
+                    return location
+                }
             }
-            
-            return location
         }
         
         return nil

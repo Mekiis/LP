@@ -15,7 +15,7 @@ class AddLocationViewController: UIViewController, CLLocationManagerDelegate, MK
     @IBOutlet weak var sliderRange: UISlider!
     
     var searchRadius: CLLocationDistance = 250
-    var pin : PinLocation?
+    var pin : MKPointAnnotation?
     var circle : MKCircle?
     var cllocationManager : CLLocationManager!
     
@@ -29,6 +29,7 @@ class AddLocationViewController: UIViewController, CLLocationManagerDelegate, MK
             cllocationManager.requestAlwaysAuthorization()
             cllocationManager.startUpdatingLocation()
         }
+        self.map.showsUserLocation = true
         self.map.delegate = self
     }
     
@@ -59,8 +60,10 @@ class AddLocationViewController: UIViewController, CLLocationManagerDelegate, MK
         let alert = UIAlertController(title: "Location name", message: "Add name for this location", preferredStyle: UIAlertControllerStyle.Alert)
         
         let saveAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.Default) { (_) -> Void in
-            let textField = alert.textFields![0] as UITextField
-            
+            if let unwrappedPin = self.pin {
+                let textField = alert.textFields![0] as UITextField
+                LocationManager.SharedManager.createLocationForName(textField.text, withRange : Double(self.sliderRange.value), andCoordinate : unwrappedPin.coordinate)
+            }
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
         
@@ -88,15 +91,13 @@ class AddLocationViewController: UIViewController, CLLocationManagerDelegate, MK
     func addPin(location: CLLocation){
         if self.pin != nil {
             self.map.removeAnnotation(pin)
+        } else {
+            pin = MKPointAnnotation()
         }
         
-        let coor = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let title = ""
-        let name = ""
-        // Todo Add a location name / Title
-        pin = PinLocation(title: title,
-            name: name,
-            coordinate: coor)
+        pin?.setCoordinate(CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
+        pin?.title = ""
+        pin?.subtitle = ""
         
         map.addAnnotation(pin)
     }

@@ -32,7 +32,7 @@ class DataManager {
     }
     
     init(){
-        let modelURL = NSBundle.mainBundle().URLForResource("ToDo", withExtension: "momd")!
+        let modelURL = NSBundle.mainBundle().URLForResource("Visits", withExtension: "momd")!
         
         manageObjectModel = NSManagedObjectModel(contentsOfURL: modelURL)!
         persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: manageObjectModel)
@@ -40,7 +40,7 @@ class DataManager {
         manageObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
         
         let documentURL = applicationDocumentDirectory()
-        let storeURL = documentURL.URLByAppendingPathComponent("ToDo.sqlite")
+        let storeURL = documentURL.URLByAppendingPathComponent("Visits.sqlite")
         let options = [NSMigratePersistentStoresAutomaticallyOption: true]
         
         var error: NSError? = nil

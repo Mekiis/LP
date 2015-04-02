@@ -8,16 +8,10 @@
 
 import Foundation
 import CoreData
-import MapKit
 
 class Location: NSManagedObject {
-    @NSManaged var title: String
     @NSManaged var name: String
-    @NSManaged var coordinate: CLLocationCoordinate2D
-    
-    func initialize(title: String, name: String, coordinate: CLLocationCoordinate2D) {
-        self.title = title
-        self.name = name
-        self.coordinate = coordinate
-    }
+    @NSManaged var range: Double
+    @NSManaged var latitude: Double
+    @NSManaged var longitude: Double
 }
