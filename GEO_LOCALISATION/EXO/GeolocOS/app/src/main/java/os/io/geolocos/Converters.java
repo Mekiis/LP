@@ -73,15 +73,35 @@ public class Converters {
                 points.add(new SVGPoint(c.getId(), lat, lng));
         }
 
-        /*
-        for (Coordinate c : coor){
-            double lat = (c.getLatitude() - pointBottom) * height / (pointTop - pointBottom);
-            double lng = (c.getLongitude() - pointLeft) * width / (pointRight - pointLeft);
-            points.add(new SVGPoint(c.getId(), lat, lng));
-        }
-        */
-
         return points;
+    }
+
+    public static String exportKML(List<Coordinate> points) {
+        String kml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+                "<kml xmlns=\"http://earth.google.com/kml/2.1\">\n" +
+                "\t<Document>\n" +
+                "\t\t<name>Exemple KML 3</name>\n";
+
+        for(int i = 0; i < points.size(); i++) {
+            kml += "\t\t<Placemark>";
+            kml += "\t\t\t<name>"+points.get(i).getId()+"</name>\n" +
+                    "\t\t\t<Style>\n" +
+                    "\t\t\t\t<IconStyle>\n" +
+                    "\t\t\t\t\t<Icon>\n" +
+                    "\t\t\t\t\t\t<href>http://maps.google.com/mapfiles/kml/shapes/homegardenbusiness.png</href>\n" +
+                    "\t\t\t\t\t</Icon>\n" +
+                    "\t\t\t\t</IconStyle>\n" +
+                    "\t\t\t</Style>\n" +
+                    "\t\t\t<Point>";
+            kml += "\t\t\t\t<coordinates>"+points.get(i).getLongitude()+","+points.get(i).getLatitude()+",0</coordinates>";
+            kml += "\t\t\t</Point>\n" +
+                    "\t\t</Placemark>";
+        }
+
+        kml += "\t</Document>\n" +
+                "</kml>";
+
+        return kml;
     }
 
     public static String exportSVG(int width, int height, List<SVGPoint> points) {

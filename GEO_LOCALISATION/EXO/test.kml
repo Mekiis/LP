@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+	<Document>
+		<name>Exemple KML 3</name>
+		<Placemark>			
+			<name>Paris</name>
+			<Style>
+				<IconStyle>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/shapes/homegardenbusiness.png</href>
+					</Icon>
+				</IconStyle>
+			</Style>
+			<Point>				
+				<coordinates>2.35,48.85,0</coordinates>			
+				</Point>
+		</Placemark>		
+		<Placemark>			
+			<name>Lyon</name>
+			<Style>
+				<IconStyle>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/shapes/homegardenbusiness.png</href>
+					</Icon>
+				</IconStyle>
+			</Style>
+			<Point>				
+				<coordinates>4.833333333333333,45.75,0</coordinates>			
+			</Point>
+		</Placemark>		
+		<Placemark>			
+		<name>Marseill</name>
+			<Style>
+				<IconStyle>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/shapes/homegardenbusiness.png</href>
+					</Icon>
+				</IconStyle>
+			</Style>
+			<Point>				
+				<coordinates>5.366666666666666,43.28333333333333,0</coordinates>			
+			</Point>
+		</Placemark>	
+	</Document>
+</kml>

@@ -159,7 +159,13 @@ public class MainActivity extends ActionBarActivity {
         UIVizualize.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Display display = getWindowManager().getDefaultDisplay();
+                Point screen = new Point();
+                display.getSize(screen);
+                int width = screen.x;
+                int height = screen.y;
                 String svg = Converters.exportSVG(getMinScreenSize(), getMinScreenSize(), Converters.coordinates2SVGPoints(coordinates, getMinScreenSize(), getMinScreenSize()));
+                Converters.exportKML(coordinates);
                 Intent i = new Intent(getApplicationContext(), SVGView.class);
                 i.putExtra(SVGView.SVG_KEY, svg);
                 startActivity(i);
