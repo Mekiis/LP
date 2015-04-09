@@ -12,5 +12,6 @@ import CoreData
 class Task: NSManagedObject {
 
     @NSManaged var name: String
+    @NSManaged var text: String
 
 }
