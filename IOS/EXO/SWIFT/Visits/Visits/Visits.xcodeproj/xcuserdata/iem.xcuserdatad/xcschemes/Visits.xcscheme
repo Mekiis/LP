@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B848C09B1ACD231000329EDD"
+               BlueprintIdentifier = "B830FB231AD56E4600397105"
                BuildableName = "Visits.app"
                BlueprintName = "Visits"
                ReferencedContainer = "container:Visits.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B848C0B01ACD231000329EDD"
+               BlueprintIdentifier = "B830FB3B1AD56E4600397105"
                BuildableName = "VisitsTests.xctest"
                BlueprintName = "VisitsTests"
                ReferencedContainer = "container:Visits.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B848C0B01ACD231000329EDD"
+               BlueprintIdentifier = "B830FB3B1AD56E4600397105"
                BuildableName = "VisitsTests.xctest"
                BlueprintName = "VisitsTests"
                ReferencedContainer = "container:Visits.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B848C09B1ACD231000329EDD"
+            BlueprintIdentifier = "B830FB231AD56E4600397105"
             BuildableName = "Visits.app"
             BlueprintName = "Visits"
             ReferencedContainer = "container:Visits.xcodeproj">
@@ -75,7 +75,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B848C09B1ACD231000329EDD"
+            BlueprintIdentifier = "B830FB231AD56E4600397105"
             BuildableName = "Visits.app"
             BlueprintName = "Visits"
             ReferencedContainer = "container:Visits.xcodeproj">
@@ -93,7 +93,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B848C09B1ACD231000329EDD"
+            BlueprintIdentifier = "B830FB231AD56E4600397105"
             BuildableName = "Visits.app"
             BlueprintName = "Visits"
             ReferencedContainer = "container:Visits.xcodeproj">

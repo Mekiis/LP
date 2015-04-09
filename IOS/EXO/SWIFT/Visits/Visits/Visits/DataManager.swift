@@ -1,8 +1,8 @@
 //
 //  DataManager.swift
-//  ToDo
+//  Todo
 //
-//  Created by iem on 01/04/2015.
+//  Created by iem on 02/04/2015.
 //  Copyright (c) 2015 iem. All rights reserved.
 //
 
@@ -10,14 +10,13 @@ import Foundation
 import CoreData
 
 class DataManager {
+    let managedObjectContext : NSManagedObjectContext
+    let persistentStore : NSPersistentStore?
+    let persistentStoreCoordinator : NSPersistentStoreCoordinator
+    let managedObjectModel : NSManagedObjectModel
     
-    let manageObjectContext: NSManagedObjectContext
-    let persistentStore: NSPersistentStore?
-    let persistentStoreCoordinator: NSPersistentStoreCoordinator
-    let manageObjectModel: NSManagedObjectModel
-    
-    class var SharedManager: DataManager {
-        struct Singleton{
+    class var SharedManager : DataManager {
+        struct Singleton {
             static let instance = DataManager()
         }
         
@@ -32,18 +31,20 @@ class DataManager {
     }
     
     init(){
-        let modelURL = NSBundle.mainBundle().URLForResource("Visits", withExtension: "momd")!
+        let modeURL = NSBundle.mainBundle().URLForResource("Visites", withExtension: "momd")!
         
-        manageObjectModel = NSManagedObjectModel(contentsOfURL: modelURL)!
-        persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: manageObjectModel)
-        manageObjectContext = NSManagedObjectContext()
-        manageObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
+        managedObjectModel = NSManagedObjectModel(contentsOfURL: modeURL)!
         
-        let documentURL = applicationDocumentDirectory()
-        let storeURL = documentURL.URLByAppendingPathComponent("Visits.sqlite")
-        let options = [NSMigratePersistentStoresAutomaticallyOption: true]
+        persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
         
-        var error: NSError? = nil
+        managedObjectContext = NSManagedObjectContext()
+        managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
+        
+        let documentUrl = applicationDocumentDirectory()
+        let storeURL = documentUrl.URLByAppendingPathComponent("Visites.sqlite")
+        let options = [NSMigratePersistentStoresAutomaticallyOption : true]
+        
+        var error : NSError? = nil
         persistentStore = persistentStoreCoordinator.addPersistentStoreWithType(
             NSSQLiteStoreType,
             configuration: nil,
@@ -51,17 +52,17 @@ class DataManager {
             options: options,
             error: &error)
         
-        if persistentStore == nil{
-            println("Error adding persistence store: \(error)")
+        if persistentStore == nil {
+            println("Error aborting persistent store: \(error)")
             abort()
         }
     }
     
     func saveContext(){
         var error: NSError? = nil
-        
-        if manageObjectContext.hasChanges && !manageObjectContext.save(&error){
-            println("Failed to save context: \(error), \(error?.userInfo)")
+        if managedObjectContext.hasChanges && !managedObjectContext.save(&error){
+            println("Failed to save context : \(error), \(error?.userInfo)")
         }
     }
+    
 }

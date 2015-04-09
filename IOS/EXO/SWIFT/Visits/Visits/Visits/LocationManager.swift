@@ -1,65 +1,64 @@
 //
-//  TaskManager.swift
-//  ToDo
+//  LocationManager.swift
+//  Visites
 //
-//  Created by iem on 01/04/2015.
+//  Created by iem on 08/04/2015.
 //  Copyright (c) 2015 iem. All rights reserved.
 //
 
 import Foundation
 import CoreData
-import MapKit
 
-class LocationManager : DataManager{
+class LocationManager {
     
-    override class var SharedManager: LocationManager {
-        struct Singleton{
-            static let instance = LocationManager()
-        }
-        
-        return Singleton.instance
+    var coreDataManager : DataManager?
+    init(coreDataManager : DataManager){
+        self.coreDataManager = coreDataManager
     }
     
-    //MARK: Persistence
-    func createLocationForName(name : String?, withRange range : Double?, andCoordinate coor : CLLocationCoordinate2D?)->Location?{
-        if let nameValue = name{
-            if let rangeValue = range{
-                if let coorValue = coor{
-                    let entity = NSEntityDescription.entityForName("Location", inManagedObjectContext: manageObjectContext)
-                    let location = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: manageObjectContext) as Location
-                    
-                    location.name = nameValue
-                    
-                    var error : NSError? = nil
-                    
-                    location.managedObjectContext?.save(&error)
-                    
-                    if error != nil{
-                        println("Could not save context : \(error), \(error?.description)")
-                    }
-                    
-                    return location
-                }
-            }
-        }
+    func createLocation(id: String!, name: String!, latitude: Double!, longitude: Double!, radius: Double!) {
         
-        return nil
-    }
-    
-    func loadData() -> [Location]? {
-        let fetchRequest = NSFetchRequest(entityName: "Location")
+        let entity = NSEntityDescription.entityForName("Location", inManagedObjectContext: coreDataManager!.managedObjectContext)
+        
+        let location = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManager!.managedObjectContext) as Location
+        
+        //println("Could you not fetch data : \(id), \(name), \(latitude), \(longitude), \(radius)")
+        
+        location.id = id
+        location.name = name
+        location.latitude = latitude
+        location.longitude = longitude
+        location.radius = radius
         
         var error : NSError? = nil
+        location.managedObjectContext?.save(&error)
         
-        if let results = manageObjectContext.executeFetchRequest(fetchRequest, error: &error) as? [Location]{
+        if(error != nil){
+            println("Could you not fetch data : \(error),  \(error?.description)")
+        }
+        
+    }
+    
+    func deleteLocation(location : Location?){
+        if let locationToDelete = location{
+            coreDataManager!.managedObjectContext.deleteObject(locationToDelete)
+            coreDataManager!.managedObjectContext.save(nil)
+        }
+    }
+    
+    func loadLocation() -> [Location]?{
+        
+        let fetchRequest = NSFetchRequest(entityName: "Location")
+        var error : NSError? = nil
+        
+        if let results = coreDataManager!.managedObjectContext.executeFetchRequest(fetchRequest, error: &error) as? [Location]{
             return results
         }
         
-        if error != nil{
-            println("Could not fetch data : \(error), \(error?.description)")
+        if error != nil {
+            println("Could you not fetch data : \(error),  \(error?.description)")
         }
         
         return nil
     }
-
 }
