@@ -107,7 +107,7 @@ public class Converters {
     public static String exportSVG(int width, int height, List<SVGPoint> points) {
         String svg = "<?xml version=\"1.0\" standalone=\"yes\"?>";
         svg += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
-        svg += "<svg width=\""+width+"px\" height=\""+height+"px\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">";
+        svg += "<svg x=\"0px\" y=\"0px\" width=\"100%\" height=\"100%\" viewBox=\"0 0 "+width+" "+height+"\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">";
 
         for(int i = 0; i < points.size(); i++) {
             svg += "<circle cx=\""+points.get(i).getX()+"\" cy=\""+points.get(i).getY()+"\"";

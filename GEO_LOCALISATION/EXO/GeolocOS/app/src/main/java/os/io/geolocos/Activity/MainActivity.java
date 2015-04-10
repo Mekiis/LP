@@ -1,13 +1,17 @@
 package os.io.geolocos.Activity;
 
-import android.content.Context;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
@@ -16,45 +20,49 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
 import os.io.geolocos.Container.Coordinate;
+import os.io.geolocos.FilesManager;
 import os.io.geolocos.R;
 import os.io.geolocos.Converters;
 
 
 public class MainActivity extends ActionBarActivity {
 
-    List<Coordinate> coordinates;
+    ArrayList<Coordinate> coordinates;
     private TextView UILatitudeDecimal;
     private TextView UILongitudeDecimal;
     private EditText UILongitudeSexa;
     private EditText UILatitudeSexa;
     private EditText UIId;
     private TableLayout UITable;
-    private Button UIAddValue;
-    private Button UIUndo;
-    private Button UIPlus;
-    private Button UIMinus;
-    private Button UIDelete;
+    private ImageButton UIAddValue;
+    private ImageButton UIUndo;
+    private ImageButton UIPlus;
+    private ImageButton UIMinus;
+    private ImageButton UIDelete;
     private LinearLayout UIDataModification;
-    private Button UIVizualize;
+    private Button UIVizualizeSVG;
+    private Button UIVizualizeKML;
 
     private int state = 0;
     private int idSelected = -1;
@@ -67,7 +75,7 @@ public class MainActivity extends ActionBarActivity {
         initializeComponents();
 
         coordinates = new ArrayList<>();
-        coordinates = readFromFile();
+        coordinates = readCoordinateFromFile();
 
         setFieldSecurity();
 
@@ -93,7 +101,7 @@ public class MainActivity extends ActionBarActivity {
                         displayGUI(state, coordinates);
                     }
 
-                    writeToFile(coordinates);
+                    writeCoordinateToFile(coordinates);
                 }
 
             }
@@ -156,19 +164,35 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-        UIVizualize.setOnClickListener(new View.OnClickListener() {
+        UIVizualizeSVG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Display display = getWindowManager().getDefaultDisplay();
-                Point screen = new Point();
-                display.getSize(screen);
-                int width = screen.x;
-                int height = screen.y;
-                String svg = Converters.exportSVG(getMinScreenSize(), getMinScreenSize(), Converters.coordinates2SVGPoints(coordinates, getMinScreenSize(), getMinScreenSize()));
-                Converters.exportKML(coordinates);
+
                 Intent i = new Intent(getApplicationContext(), SVGView.class);
-                i.putExtra(SVGView.SVG_KEY, svg);
+                i.putExtra(SVGView.SVG_KEY, coordinates);
                 startActivity(i);
+            }
+        });
+
+        UIVizualizeKML.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean installed = isAppInstalled("com.google.earth");
+                if(installed) {
+                    String kml = Converters.exportKML(coordinates);
+                    File file = null;
+                    try {
+                        file = new File(FilesManager.writeInFile(getApplicationContext(), kml, "KML"));
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        intent.setDataAndType(Uri.fromFile(file), "application/vnd.google-earth.kml+xml");
+                        intent.putExtra("com.google.earth.EXTRA.tour_feature_id", "my_track");
+                        startActivity(intent);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    showGoogleEarthDialog();
+                }
             }
         });
 
@@ -189,12 +213,12 @@ public class MainActivity extends ActionBarActivity {
             // No point selected
             UIDataModification.setVisibility(View.GONE);
             UIUndo.setVisibility(View.GONE);
-            UIAddValue.setText("Add");
+            UIAddValue.setImageResource(android.R.drawable.ic_menu_add);
         } else if(state == 1){
             // Point selected and try to modify
             UIDataModification.setVisibility(View.VISIBLE);
             UIUndo.setVisibility(View.VISIBLE);
-            UIAddValue.setText("Modify");
+            UIAddValue.setImageResource(R.drawable.ic_action_accept);
         }
 
         listToTable(coordinates);
@@ -204,12 +228,13 @@ public class MainActivity extends ActionBarActivity {
         UILatitudeSexa = (EditText) findViewById(R.id.latitude_insert);
         UILongitudeSexa = (EditText) findViewById(R.id.longitude_insert);
         UIId = (EditText) findViewById(R.id.id_insert);
-        UIAddValue = (Button) findViewById(R.id.btn_add);
-        UIMinus = (Button) findViewById(R.id.btn_minus);
-        UIDelete = (Button) findViewById(R.id.btn_delete);
-        UIPlus = (Button) findViewById(R.id.btn_plus);
-        UIUndo = (Button) findViewById(R.id.btn_undo);
-        UIVizualize = (Button) findViewById(R.id.btn_visualize);
+        UIAddValue = (ImageButton) findViewById(R.id.btn_add);
+        UIMinus = (ImageButton) findViewById(R.id.btn_minus);
+        UIDelete = (ImageButton) findViewById(R.id.btn_delete);
+        UIPlus = (ImageButton) findViewById(R.id.btn_plus);
+        UIUndo = (ImageButton) findViewById(R.id.btn_undo);
+        UIVizualizeSVG = (Button) findViewById(R.id.btn_visualize_svg);
+        UIVizualizeKML = (Button) findViewById(R.id.btn_visualize_kml);
         UILatitudeDecimal = (TextView) findViewById(R.id.latitude_value);
         UILongitudeDecimal = (TextView) findViewById(R.id.longitude_value);
         UITable = (TableLayout) findViewById(R.id.values_table);
@@ -222,16 +247,26 @@ public class MainActivity extends ActionBarActivity {
 
             public void afterTextChanged(Editable s) {
                 double decimal_latitude = Converters.SexaToDecimal(s.toString());
-                UILatitudeDecimal.setText(Double.toString(decimal_latitude));
+                UILatitudeDecimal.setText(String.format("%.2f", decimal_latitude));
 
                 if(!isModifcated){
                     isModifcated = true;
                     String stringTmp = s.toString().replace(" ", "");
                     String strFinal = "";
-                    for(int i = 0; i < stringTmp.length(); i++){
-                        if(i == 2 || i == 4)
+                    int nbChar = 0;
+                    int nbSpace = 0;
+                    for (int i = 0; i < stringTmp.length(); i++) {
+                        if (stringTmp.charAt(i) >= '0' && stringTmp.charAt(i) <= '9')
+                            nbChar++;
+
+                        if (nbChar == 3 && nbSpace < 2) {
                             strFinal += " ";
-                        strFinal += stringTmp.charAt(i);
+                            nbChar = 1;
+                            nbSpace++;
+                        }
+
+                        if (((stringTmp.charAt(i) >= '0' && stringTmp.charAt(i) <= '9') || stringTmp.charAt(i) == '-') && (nbChar <= 2 && nbSpace < 3))
+                            strFinal += stringTmp.charAt(i);
                     }
                     UILatitudeSexa.setText(strFinal);
                     UILatitudeSexa.setSelection(strFinal.length());
@@ -254,22 +289,33 @@ public class MainActivity extends ActionBarActivity {
 
             public void afterTextChanged(Editable s) {
                 double decimal_longitude = Converters.SexaToDecimal(s.toString());
-                UILongitudeDecimal.setText(Double.toString(decimal_longitude));
+                UILongitudeDecimal.setText(String.format("%.2f", decimal_longitude));
 
-                if(!isModifcated){
+                if(!isModifcated) {
                     isModifcated = true;
                     String stringTmp = s.toString().replace(" ", "");
                     String strFinal = "";
-                    for(int i = 0; i < stringTmp.length(); i++){
-                        if(i == 2 || i == 4)
+                    int nbChar = 0;
+                    int nbSpace = 0;
+                    for (int i = 0; i < stringTmp.length(); i++) {
+                        if (stringTmp.charAt(i) >= '0' && stringTmp.charAt(i) <= '9')
+                            nbChar++;
+
+                        if (nbChar == 3 && nbSpace < 2) {
                             strFinal += " ";
-                        strFinal += stringTmp.charAt(i);
+                            nbChar = 1;
+                            nbSpace++;
+                        }
+
+                        if (((stringTmp.charAt(i) >= '0' && stringTmp.charAt(i) <= '9') || stringTmp.charAt(i) == '-') && (nbChar <= 2 && nbSpace < 3))
+                            strFinal += stringTmp.charAt(i);
                     }
                     UILongitudeSexa.setText(strFinal);
                     UILongitudeSexa.setSelection(strFinal.length());
                 }
 
                 isModifcated = false;
+
             }
 
             public void beforeTextChanged(CharSequence s, int start,
@@ -294,6 +340,19 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
+    private boolean isAppInstalled(String uri) {
+        PackageManager pm = getPackageManager();
+        boolean app_installed;
+        try {
+            pm.getPackageInfo(uri, PackageManager.GET_ACTIVITIES);
+            app_installed = true;
+        }
+        catch (PackageManager.NameNotFoundException e) {
+            app_installed = false;
+        }
+        return app_installed;
+    }
+
     private boolean displayDataFromCoordinate(int id){
         boolean canDisplay = true;
 
@@ -311,7 +370,6 @@ public class MainActivity extends ActionBarActivity {
     private void addToTable(TableLayout table, String[] values, int color, int tag){
         final TableRow row;
         TableRow.LayoutParams set = new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        set.weight = 1;
         row = new TableRow(this);
 
         row.setTag(tag);
@@ -332,6 +390,7 @@ public class MainActivity extends ActionBarActivity {
             TextView rowString = new TextView(this);
             rowString.setTextSize(20);
             rowString.setText(s);
+            rowString.setLayoutParams(new TableRow.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
             row.addView(rowString, set);
         }
 
@@ -345,37 +404,36 @@ public class MainActivity extends ActionBarActivity {
         table.addView(row, setTable);
     }
 
-    private void writeToFile(List<Coordinate> coordinates) {
-        Gson gson = new Gson();
-        String data = gson.toJson(coordinates);
-        try {
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput("config.txt", Context.MODE_PRIVATE));
-            outputStreamWriter.write(data); outputStreamWriter.close();
-        } catch (IOException e) {
-            Log.e("Exception", "File write failed: " + e.toString());
-        }
+    private void showGoogleEarthDialog() {
+
+        AlertDialog.Builder downloadDialog = new AlertDialog.Builder(this);
+        downloadDialog.setTitle("Install Google Earth?");
+        downloadDialog.setMessage("This application requires Google Earth. Would you like to install it?");
+        downloadDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        try {
+                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.google.earth")));
+                        } catch (android.content.ActivityNotFoundException anfe) {
+                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.google.earth")));
+                        }
+                    }
+                });
+        downloadDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialogInterface, int i) {}
+                });
+        downloadDialog.show();
     }
 
-    private List<Coordinate> readFromFile() {
-        String ret = "";
-        try { InputStream inputStream = openFileInput("config.txt");
-            if ( inputStream != null ) {
-                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-                String receiveString = "";
-                StringBuilder stringBuilder = new StringBuilder();
-                while ( (receiveString = bufferedReader.readLine()) != null ) {
-                    stringBuilder.append(receiveString);
-                } inputStream.close();
-                ret = stringBuilder.toString();
-            }
-        } catch (FileNotFoundException e) {
-            Log.e("login activity", "File not found: " + e.toString());
-        } catch (IOException e) {
-            Log.e("login activity", "Can not read file: " + e.toString());
-        }
+    private void writeCoordinateToFile(List<Coordinate> coordinates) {
         Gson gson = new Gson();
-        List<Coordinate> coordinates = gson.fromJson(ret, new TypeToken<List<Coordinate>>() {}.getType());
+        String data = gson.toJson(coordinates);
+        FilesManager.writeToPrivateFile(getApplicationContext(), data, "config.txt");
+    }
+
+    private ArrayList<Coordinate> readCoordinateFromFile() {
+        String data = FilesManager.readFromPrivateFile(getApplicationContext(), "config.txt");
+        Gson gson = new Gson();
+        ArrayList<Coordinate> coordinates = gson.fromJson(data, new TypeToken<List<Coordinate>>() {}.getType());
 
         if(coordinates != null)
             return coordinates;

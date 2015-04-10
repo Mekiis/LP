@@ -7,6 +7,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.Button;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import os.io.geolocos.Container.Coordinate;
+import os.io.geolocos.Converters;
 import os.io.geolocos.R;
 import os.io.geolocos.Container.SVGPoint;
 
@@ -27,18 +29,32 @@ public class SVGView extends ActionBarActivity {
 
     public final static String SVG_KEY = "SVG_K";
 
+    private List<Coordinate> coordinates = new ArrayList<>();
     private String svgFile = "";
     private WebView UIWebView = null;
+    private boolean first = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view);
 
-        svgFile = getIntent().getStringExtra(SVG_KEY);
+        coordinates = (List<Coordinate>) getIntent().getSerializableExtra(SVG_KEY);
         UIWebView = (WebView) findViewById(R.id.wb_view);
-        if(svgFile != "")
-            UIWebView.loadData(svgFile, "text/html", "UTF-8");
+        UIWebView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                if(!first) {
+                    int min = Math.min(right + left, bottom + top);
+                    svgFile = Converters.exportSVG(min, min, Converters.coordinates2SVGPoints(coordinates, min, min));
+
+                    if(svgFile != "")
+                        UIWebView.loadData(svgFile, "text/html", "UTF-8");
+                    first = true;
+                }
+            }
+        });
+
     }
 
     @Override

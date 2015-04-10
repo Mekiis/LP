@@ -1,6 +1,8 @@
 package os.io.geolocos.Container;
 
 
+import java.io.Serializable;
+
 public class SVGPoint{
     public int rayon = 10;
     public int strokeWidth = 1;
