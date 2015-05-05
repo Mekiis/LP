@@ -6,9 +6,11 @@
 	<script src="js/html5.js"></script>
 	<![endif]-->
 	<link href='http://fonts.googleapis.com/css?family=Marck+Script' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="css/desktop.css" media="screen and (min-width: 800px)">
-	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width: 800px)">
-	
+	<link rel="stylesheet" type="text/css" href="css/desktop.css" media="(min-width: 800px)">
+	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="(max-width: 800px)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/dropdown.js"></script>
 	<title>Le marché du frais - Accueil</title>
 </head>
 <body>
@@ -32,23 +34,23 @@
 						<button id="search_button" >OK</button>
 					</form>
 						</li>
-				<li><a href="#" class="menu">Accueil</a></li>
-				<li><a href="#" class="menu">Catalogue</a>
-					<ul class="deroulant">
+				<li id="accueil"><a href="#" class="menu">Accueil</a></li>
+				<li id="menuCatalogue"><a href="#" class="menu">Catalogue</a>
+					<ul id="catalogueMore" class="deroulant">
 					<li><a href="#">Tous les produits</a></li>
 						<li><a href="#">Fruits</a></li>
 						<li><a href="#">Légumes</a></li>
 					</ul>
 				</li>
-				<li><a href="#" class="menu">Promotions</a>
-					<ul class="deroulant">
+				<li id="menuPromotion"><a href="#" class="menu">Promotions</a>
+					<ul id="promotionMore" class="deroulant">
 					<li><a href="#">Toutes nos promotions</a></li>
 						<li><a href="#">Fruits</a></li>
 						<li><a href="#">Légumes</a></li>
 					</ul>
 				</li>
-				<li><a href="#" class="menu">Nos Boutiques</a>
-					<ul class="deroulant">
+				<li id="menuBoutique"><a href="#" class="menu">Nos Boutiques</a>
+					<ul id="boutiqueMore" class="deroulant">
 						<li><a href="page3-1.htm">Où nous trouver ?</a></li>
 						<li><a href="page3-2.htm">Devenir franchisé</a></li>
 						</ul>

@@ -102,10 +102,11 @@ header
 	width:100%;
 }
 #title{
-	color : #B9121B;
+	color : #939292;
 	font-size: 10vw;
 	width:100%;
 	margin-bottom: 12px;
+    padding-left: 5px;
 }
 #top{
 	/*float: right;*/
@@ -151,6 +152,15 @@ header
 }
 
 /* MENUBAR */
+
+/* Permet rendre invisible les sous menus */
+#catalogueMore,
+#promotionMore,
+#boutiqueMore {
+    display: none;
+    background: #96b82f
+}
+
 .menuDeroulant,
 .menuDeroulant ul,
 .menuDeroulant li,
@@ -203,38 +213,11 @@ header
 	background: rgb(130, 161, 37);
 }
 
-.menuDeroulant ul li {
-	height: 0;
-	overflow: hidden;
-	padding: 0;
- 
-	-webkit-transition: height .25s ease .1s;
-	-moz-transition: height .25s ease .1s;
-	-o-transition: height .25s ease .1s;
-	-ms-transition: height .25s ease .1s;
-	transition: height .25s ease .1s;
-}
-
-.menuDeroulant ul li a {
-	width: 200px;
-	padding: 4px 0 4px 40px;
-	margin: 0;
-	border: none;
-}
-  
 .menuDeroulant li:first-child a { border-left: none; }
 .menuDeroulant li:last-child a{ border-right: none; }
 
-.menuDeroulant li:hover > a { background: rgb(150, 184, 47); }
-
 .menuDeroulant li:hover > ul { opacity: 1; }
 .menu li:hover > a { background: rgb(150, 184, 47); }
-
-.menuDeroulant li:hover > ul li {
-	height: 40px;
-	overflow: visible;
-	padding: 0;
-}
 
 .menuDeroulant ul li:last-child a { border: none; }
 
@@ -257,7 +240,7 @@ header
 	padding:0;
 	vertical-align:top;
 	width:100%;
-	display:none;
+	display:inline-block;
 }
 .offre{
 	vertical-align:top;
@@ -266,20 +249,21 @@ header
 	padding:0;
 	border:1px;
 	border-color:#edf0f0;
+	width:100%;
 }
 
 .offres_infos{
-	background-color:#e5ac12;
 	display:inline-block;
-	height:125px;
-	width:179px;
+	/*width:100%;*/
 	margin:0;
 	padding-top:20px;
+	padding-bottom:20px;
 	padding-left:15px;
 	font-size:25px;
 	}
-.offre:first-child .offres_infos{background-color:#89a927;}
-.offre:last-child .offres_infos{background-color:#f67c19;}
+#offres .offre{background-color:#e5ac12;}
+#offres .offre:first-child{background-color:#89a927;}
+#offres .offre:last-child{background-color:#f67c19;}
 .fruit{
 	font-family : Cambria;
 	color:#ffffff;
@@ -303,7 +287,7 @@ header
 	margin: 8px 0px;
 	}
 .offres_image{
-	display:inline-block;
+	display:none;
 	height:145px;
 	width:190px;
 	margin:0;
@@ -315,7 +299,7 @@ header
 	
 /* OFFRES SPECIALES */
 #offres_speciales{
-	width: 100%;
+	/*width: 100%;*/
 	background-color: #ebebeb;
 	text-align: center;
 	}
@@ -365,7 +349,7 @@ header
 	}
 	
 #offres_speciales #slider{
-	width: 846px;
+	/*width: 846px;*/
 	margin: 0px 0px 0px 326px;
 	padding: 10px 10px 10px 0px;
 	}
@@ -449,12 +433,13 @@ li a{
 	
 /* A NE PAS MANQUER! */
 #a_ne_pas_manquer{
-	width: 293px;
+	/*width: 100%;*/
 	border-left: none;
 	}
 	
 #a_ne_pas_manquer article{
 	margin: 20px 10px 20px 0px;
+	height: 85px;
 	}
 	
 #a_ne_pas_manquer article img{
@@ -494,13 +479,12 @@ li a{
 	
 /* NOUVEAUX PRODUITS */
 #nouveaux_produits {
-	width: 100%;
-	float:left;
+	/*width: 100%;*/
 	text-align:center;
 	}
 	
 #nouveaux_produits article{
-	width: 100%;
+	/*width: 100%;*/
 	/*display:inline-block;*/
 	margin: 15px;
 	}
@@ -554,8 +538,8 @@ li a{
 #nouveaux_produits #second_part{
 	display:inline-block;
 	border-top: 1px solid;
-	border-left: 1px solid;
 	border-color: #e7e7e7;
+	width:100%;
 	}
 	
 /* OFFRE DU MOMENT */
@@ -609,38 +593,63 @@ li a{
 #dernieres_infos_produits{
 	z-index: 12;
 	padding: 25px 0px;
-	}
-	
-#dernieres_infos_produits article{
-	display: inline-block;
-	width: 200px;
-	text-align: center;
-	vertical-align: top;
+	text-align:center;
 	}
 	
 #dernieres_infos_produits .title{
 	font-weight: bold;
 	}
 	
+#dernieres_infos_produits article{
+	align-items:center;
+	}
+
+@media (max-width: 470px) {
+	#dernieres_infos_produits article{
+		display: inline-block;
+		margin: auto;
+		text-align:left;
+		}
+}
+
 #dernieres_infos_produits article img{
 	border:1px solid;
 	border-color:#e7e7e7;
+	width:230px !important;
+	height:100% !important;
 	}
+
+@media (min-width: 470px) {
+	#dernieres_infos_produits article{
+		display: flex;
+		width: 470px;
+		margin: auto;
+		}
+		
+	#dernieres_infos_produits article:nth-child(odd){
+		flex-direction:row-reverse;
+		text-align:left;
+		}
+		
+	#dernieres_infos_produits article:nth-child(even) {
+		flex-direction:row;
+		text-align:right;
+		}
+		
+	#dernieres_infos_produits article:nth-child(odd) img {
+		margin-left:10px;
+		}
+		
+	#dernieres_infos_produits article:nth-child(even) img{
+		margin-right:10px;
+		}
+}
 	
-#dernieres_infos_produits article:first-child{
-	width: 500px;
-	text-align: left;
-	}
+
 	
-#dernieres_infos_produits article:first-child img{
-	float: left;
+#dernieres_infos_produits article div{
+	vertical-align:top;
 	width:230px;
-	}
-	
-#dernieres_infos_produits article:first-child div{
-	float: left;
-	width:230px;
-	margin-left: 20px;
 	}
 	
 	
