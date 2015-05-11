@@ -9,6 +9,7 @@ public class SVGPoint{
     private String id = "";
     public String strokeColor = "black";
     public String fillColor = "red";
+    public String tag = "";
 
     private double x;
     private double y;
@@ -21,13 +22,14 @@ public class SVGPoint{
         return y;
     }
 
-    public SVGPoint(String id, double x, double y) {
+    public SVGPoint(String id, double x, double y, String tag) {
         this.x = x;
         this.y = y;
         this.id = id;
+        this.tag = tag;
     }
 
-    public SVGPoint(String id, double x, double y, String strokeColor, int strokeWidth, String fillColor, int rayon) {
+    public SVGPoint(String id, double x, double y, String strokeColor, int strokeWidth, String fillColor, int rayon, String tag) {
         this.x = x;
         this.y = y;
         this.id = id;
@@ -35,6 +37,7 @@ public class SVGPoint{
         this.strokeWidth = strokeWidth;
         this.strokeColor = strokeColor;
         this.rayon = rayon;
+        this.tag = tag;
     }
 
     public String getId() {

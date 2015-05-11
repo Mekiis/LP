@@ -28,8 +28,10 @@ import os.io.geolocos.Container.SVGPoint;
 public class SVGView extends ActionBarActivity {
 
     public final static String SVG_KEY = "SVG_K";
+    private static final String SVG_KEY_LINE = "LINE";
 
     private List<Coordinate> coordinates = new ArrayList<>();
+    private List<Coordinate> lines = new ArrayList<>();
     private String svgFile = "";
     private WebView UIWebView = null;
     private boolean first = false;
@@ -40,13 +42,17 @@ public class SVGView extends ActionBarActivity {
         setContentView(R.layout.activity_view);
 
         coordinates = (List<Coordinate>) getIntent().getSerializableExtra(SVG_KEY);
+        lines = (List<Coordinate>) getIntent().getSerializableExtra(SVG_KEY_LINE);
         UIWebView = (WebView) findViewById(R.id.wb_view);
         UIWebView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
             @Override
             public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
                 if(!first) {
                     int min = Math.min(right + left, bottom + top);
-                    svgFile = Converters.exportSVG(min, min, Converters.coordinates2SVGPoints(coordinates, min, min));
+                    Converters.SVGDataContainer data = Converters.createSVGData(coordinates, min, min);
+                    data = Converters.coordinates2SVGPoints(coordinates, data, "P");
+                    data = Converters.coordinates2SVGPoints(coordinates, data, "L");
+                    svgFile = Converters.exportSVG(min, min, data.points);
 
                     if(svgFile != "")
                         UIWebView.loadData(svgFile, "text/html", "UTF-8");

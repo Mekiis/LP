@@ -211,6 +211,13 @@
             android:layout_height="wrap_content"
             android:text="Visualize in KML"/>
 
+        <Button
+            android:id="@+id/btn_visualize_path"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Visualize path"/>
+
     </LinearLayout>
 
 </RelativeLayout>

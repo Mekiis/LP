@@ -11,7 +11,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
@@ -25,23 +24,21 @@ import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import os.io.geolocos.Container.Coordinate;
 import os.io.geolocos.FilesManager;
+import os.io.geolocos.Path.Line;
+import os.io.geolocos.Path.Path;
 import os.io.geolocos.R;
 import os.io.geolocos.Converters;
 
@@ -63,6 +60,7 @@ public class MainActivity extends ActionBarActivity {
     private LinearLayout UIDataModification;
     private Button UIVizualizeSVG;
     private Button UIVizualizeKML;
+    private Button UIVizualizePath;
 
     private int state = 0;
     private int idSelected = -1;
@@ -84,14 +82,14 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
 
                 if (!UILatitudeSexa.getText().toString().equalsIgnoreCase("") && !UILongitudeSexa.getText().toString().equalsIgnoreCase("")) {
-                    if(state == 0){
+                    if (state == 0) {
                         coordinates.add(new Coordinate(UIId.getText().toString(), Double.parseDouble(UILatitudeDecimal.getText().toString()), UILatitudeSexa.getText().toString(),
                                 Double.parseDouble(UILongitudeDecimal.getText().toString()), UILongitudeSexa.getText().toString()));
                         UILatitudeSexa.setText("");
                         UILongitudeSexa.setText("");
                         UIId.setText("");
                         displayGUI(state, coordinates);
-                    } else if(state == 1){
+                    } else if (state == 1) {
                         coordinates.set(idSelected, new Coordinate(UIId.getText().toString(), Double.parseDouble(UILatitudeDecimal.getText().toString()), UILatitudeSexa.getText().toString(),
                                 Double.parseDouble(UILongitudeDecimal.getText().toString()), UILongitudeSexa.getText().toString()));
                         UILatitudeSexa.setText("");
@@ -174,6 +172,20 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+        UIVizualizePath.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), SVGView.class);
+                i.putExtra(SVGView.SVG_KEY, coordinates);
+
+                List<Line> lines = new Path().getPathFromPoints(coordinates, 1);
+                LinkedList<Coordinate> path = new Path().getPathBetweenPoints(coordinates, coordinates.get(0), coordinates.get(1), lines);
+                i.putExtra(SVGView.SVG_KEY, path);
+
+                startActivity(i);
+            }
+        });
+
         UIVizualizeKML.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -235,6 +247,7 @@ public class MainActivity extends ActionBarActivity {
         UIUndo = (ImageButton) findViewById(R.id.btn_undo);
         UIVizualizeSVG = (Button) findViewById(R.id.btn_visualize_svg);
         UIVizualizeKML = (Button) findViewById(R.id.btn_visualize_kml);
+        UIVizualizePath = (Button) findViewById(R.id.btn_visualize_path);
         UILatitudeDecimal = (TextView) findViewById(R.id.latitude_value);
         UILongitudeDecimal = (TextView) findViewById(R.id.longitude_value);
         UITable = (TableLayout) findViewById(R.id.values_table);

@@ -11,69 +11,95 @@ import os.io.geolocos.Container.SVGPoint;
  */
 public class Converters {
 
-    public static List<SVGPoint> coordinates2SVGPoints(List<Coordinate> coordinates, int width, int height) {
+    public static class SVGDataContainer{
+        public List<SVGPoint> points = null;
+
+        public Double pointLeft = Double.MAX_VALUE;
+        public Double pointRight = Double.MAX_VALUE * -1;
+        public Double pointBottom = Double.MAX_VALUE;
+        public Double pointTop = Double.MAX_VALUE * -1;
+
+        public double a;
+        public double b;
+
+        public double e;
+        public double f;
+    }
+
+    public static SVGDataContainer createSVGData(List<Coordinate> coordinates, int width, int height){
         List<Coordinate> coor = new ArrayList<>();
         for (Coordinate c : coordinates){
             coor.add(new Coordinate(c.getId(), c.getLatitude(), c.getLatitudeSexa(), c.getLongitude(), c.getLongitudeSexa()));
         }
-        List<SVGPoint> points = new ArrayList<>();
-        double pointLeft = Double.MAX_VALUE;
-        double pointRight = Double.MAX_VALUE * -1;
-        double pointBottom = Double.MAX_VALUE;
-        double pointTop = Double.MAX_VALUE * -1;
+
+        SVGDataContainer data = new SVGDataContainer();
+
+        data.pointLeft = Double.MAX_VALUE;
+        data.pointRight = Double.MAX_VALUE * -1;
+        data.pointBottom = Double.MAX_VALUE;
+        data.pointTop = Double.MAX_VALUE * -1;
 
         for (Coordinate c : coor){
-            if(c.getLongitude() < pointLeft)
-                pointLeft = c.getLongitude();
-            if(c.getLongitude() > pointRight)
-                pointRight = c.getLongitude();
-            if(c.getLatitude() < pointBottom)
-                pointBottom = c.getLatitude();
-            if(c.getLatitude() > pointTop)
-                pointTop = c.getLatitude();
+            if(c.getLongitude() < data.pointLeft)
+                data.pointLeft = c.getLongitude();
+            if(c.getLongitude() > data.pointRight)
+                data.pointRight = c.getLongitude();
+            if(c.getLatitude() < data.pointBottom)
+                data.pointBottom = c.getLatitude();
+            if(c.getLatitude() > data.pointTop)
+                data.pointTop = c.getLatitude();
         }
 
         double percent = 10.0;
 
         // Add marges
-        coor.add(new Coordinate("M", pointBottom + ((pointBottom - pointTop) * percent / 100.0), "", pointLeft - ((pointRight - pointLeft) * percent / 100.0), ""));
-        coor.add(new Coordinate("M", pointBottom + ((pointBottom - pointTop) * percent / 100.0), "", pointRight + ((pointRight - pointLeft) * percent / 100.0), ""));
-        coor.add(new Coordinate("M", pointTop - ((pointBottom - pointTop) * percent / 100.0), "", pointLeft - ((pointRight - pointLeft) * percent / 100.0), ""));
-        coor.add(new Coordinate("M", pointTop - ((pointBottom - pointTop) * percent / 100.0), "", pointRight + ((pointRight - pointLeft) * percent / 100.0), ""));
+        coor.add(new Coordinate("M", data.pointBottom + ((data.pointBottom - data.pointTop) * percent / 100.0), "", data.pointLeft - ((data.pointRight - data.pointLeft) * percent / 100.0), ""));
+        coor.add(new Coordinate("M", data.pointBottom + ((data.pointBottom - data.pointTop) * percent / 100.0), "", data.pointRight + ((data.pointRight - data.pointLeft) * percent / 100.0), ""));
+        coor.add(new Coordinate("M", data.pointTop - ((data.pointBottom - data.pointTop) * percent / 100.0), "", data.pointLeft - ((data.pointRight - data.pointLeft) * percent / 100.0), ""));
+        coor.add(new Coordinate("M", data.pointTop - ((data.pointBottom - data.pointTop) * percent / 100.0), "", data.pointRight + ((data.pointRight - data.pointLeft) * percent / 100.0), ""));
 
 
-        pointLeft = Double.MAX_VALUE;
-        pointRight = Double.MAX_VALUE * -1;
-        pointBottom = Double.MAX_VALUE;
-        pointTop = Double.MAX_VALUE * -1;
+        data.pointLeft = Double.MAX_VALUE;
+        data.pointRight = Double.MAX_VALUE * -1;
+        data.pointBottom = Double.MAX_VALUE;
+        data.pointTop = Double.MAX_VALUE * -1;
 
         for (Coordinate c : coor){
-            if(c.getLongitude() < pointLeft)
-                pointLeft = c.getLongitude();
-            if(c.getLongitude() > pointRight)
-                pointRight = c.getLongitude();
-            if(c.getLatitude() < pointBottom)
-                pointBottom = c.getLatitude();
-            if(c.getLatitude() > pointTop)
-                pointTop = c.getLatitude();
+            if(c.getLongitude() < data.pointLeft)
+                data.pointLeft = c.getLongitude();
+            if(c.getLongitude() > data.pointRight)
+                data.pointRight = c.getLongitude();
+            if(c.getLatitude() < data.pointBottom)
+                data.pointBottom = c.getLatitude();
+            if(c.getLatitude() > data.pointTop)
+                data.pointTop = c.getLatitude();
         }
 
-        double a = height / (pointBottom - pointTop);
-        double b = 0 - a * pointTop;
+        data.a = height / (data.pointBottom - data.pointTop);
+        data.b = 0 - data.a * data.pointTop;
 
-        double e = width / (pointRight - pointLeft);
-        double f = 0 - e * pointLeft;
+        data.e = width / (data.pointRight - data.pointLeft);
+        data.f = 0 - data.e * data.pointLeft;
+
+        return data;
+    }
+
+    public static SVGDataContainer coordinates2SVGPoints(List<Coordinate> coordinates, SVGDataContainer data, String tag) {
+        List<Coordinate> coor = new ArrayList<>();
+        for (Coordinate c : coordinates){
+            coor.add(new Coordinate(c.getId(), c.getLatitude(), c.getLatitudeSexa(), c.getLongitude(), c.getLongitudeSexa()));
+        }
 
         for(Coordinate c : coor){
-            double lat = a * c.getLatitude() + b;
-            double lng = e * c.getLongitude() + f;
+            double lat = data.a * c.getLatitude() + data.b;
+            double lng = data.e * c.getLongitude() + data.f;
             if(c.getId().compareToIgnoreCase("M") == 0)
-                points.add(new SVGPoint("", lat, lng, "grey", 1, "grey", 5));
+                data.points.add(new SVGPoint("", lat, lng, "grey", 1, "grey", 5, tag));
             else
-                points.add(new SVGPoint(c.getId(), lat, lng));
+                data.points.add(new SVGPoint(c.getId(), lat, lng, tag));
         }
 
-        return points;
+        return data;
     }
 
     public static String exportKML(List<Coordinate> points) {
@@ -110,10 +136,15 @@ public class Converters {
         svg += "<svg x=\"0px\" y=\"0px\" width=\"100%\" height=\"100%\" viewBox=\"0 0 "+width+" "+height+"\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">";
 
         for(int i = 0; i < points.size(); i++) {
-            svg += "<circle cx=\""+points.get(i).getX()+"\" cy=\""+points.get(i).getY()+"\"";
-            svg += " r=\""+points.get(i).rayon+"\" stroke=\""+points.get(i).strokeColor+"\" stroke-width=\""+points.get(i).strokeWidth+"\" fill=\""+points.get(i).fillColor+"\" />";
-            svg += "<text x=\""+points.get(i).getX()+"\" y=\""+points.get(i).getY()+"\" fill=\"black\">"+points.get(i).getId()+"</text>";
+            if(points.get(i).tag != "L"){
+                svg += "<circle cx=\""+points.get(i).getX()+"\" cy=\""+points.get(i).getY()+"\"";
+                svg += " r=\""+points.get(i).rayon+"\" stroke=\""+points.get(i).strokeColor+"\" stroke-width=\""+points.get(i).strokeWidth+"\" fill=\""+points.get(i).fillColor+"\" />";
+                svg += "<text x=\""+points.get(i).getX()+"\" y=\""+points.get(i).getY()+"\" fill=\"black\">"+points.get(i).getId()+"</text>";
+            } else if(i < points.size()-1) {
+                svg += "<line x1=\""+points.get(i).getX()+"\" y1=\""+points.get(i).getY()+"\" x2=\""+points.get(i+1).getX()+"\" y2=\""+points.get(i+1).getY()+"\" style=\"stroke:rgb(255,0,0);stroke-width:2\" />";
+            }
         }
+
         svg += "<rect x=\"0\" y=\"0\" width=\""+width+"\" height=\""+height+"\" style=\"stroke: #009900; stroke-width: 3; stroke-dasharray: 10 5; fill: none;\"/>";
         svg += "</svg>";
 
