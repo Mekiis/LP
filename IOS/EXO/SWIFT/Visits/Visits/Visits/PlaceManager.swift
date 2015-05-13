@@ -19,36 +19,37 @@ class PlaceManager {
     
     var places : [Place]?
     
-    func updatePlaces(places: [Place], inLocation location: Location){
-        if self.places == nil{
-            self.places = loadPlace()
-        }
-        for place in places{
-            //Add location in place
-            if let existingPlace = containPlace(place, inPlaces: self.places!){
-                var isInLocation : Bool = false
-                var allLocations : NSMutableSet = existingPlace.mutableSetValueForKey("locations")
-                for existingLocation in allLocations{
-                    if let locationValue = existingLocation as? Location{
-                        if locationValue == location{
-                            isInLocation = true
-                            break
-                        }
+    func updatePlaces(externalPlaces: [Place], inLocation location: Location){
+        
+        for place in externalPlaces{
+            var placeInDB : Place = getPlaceById(place.id)!
+
+            placeInDB.name = place.name
+            placeInDB.address = place.address
+            placeInDB.placeType = place.placeType
+            placeInDB.photoReference = place.photoReference
+            
+            placeInDB.picture = place.picture
+            placeInDB.mark = place.mark
+                    
+            var isInLocation : Bool = false
+            var allLocations : NSMutableSet = placeInDB.mutableSetValueForKey("locations")
+            for existingLocation in allLocations{
+                if let locationValue = existingLocation as? Location{
+                    if locationValue == location{
+                        isInLocation = true
+                        break
                     }
                 }
-                
-                if !isInLocation{
-                    allLocations.addObject(location)
-                    existingPlace.locations = allLocations
-                    existingPlace.managedObjectContext?.save(nil)
-                }
-            } else {
-                var allLocations : NSMutableSet = place.mutableSetValueForKey("locations")
-                allLocations.addObject(location)
-                place.locations = allLocations
-                savePlace(place)
             }
-            
+                    
+            if !isInLocation{
+                allLocations.addObject(location)
+                placeInDB.locations = allLocations
+            }
+                    
+            savePlace(place)
+        
             //Add place in location
             var allPlaces : NSMutableSet = location.mutableSetValueForKey("places")
             var isInPlace : Bool = false
@@ -65,6 +66,21 @@ class PlaceManager {
             }
         }
     }
+
+    func getPlacesForLocation(location: Location) -> [Place]?{
+        var fetchRequest = NSFetchRequest(entityName: "Place")
+        let resultPredicate = NSPredicate(format: "%@ IN locations", location)
+        fetchRequest.predicate = resultPredicate
+        
+        if let fetchResults = coreDataManager!.managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as? [NSManagedObject]{
+            if fetchResults.count != 0{
+                return fetchResults as? [Place]
+            }
+        }
+        
+        return nil
+
+    }
     
     func containPlace(place: Place, inPlaces places: [Place]) -> Place?{
         for placeValue in places{
@@ -75,6 +91,29 @@ class PlaceManager {
         return nil
     }
     
+    func updatePlace(place: Place){
+        var error : NSError? = nil
+        place.managedObjectContext?.save(&error)
+        
+        if(error != nil){
+            println("Cannot save data : \(error),  \(error?.description)")
+        }
+    }
+    
+    func getPlaceById(id : String) -> Place?{
+        var fetchRequest = NSFetchRequest(entityName: "Place")
+        let resultPredicate = NSPredicate(format: "id == %@", id)
+        fetchRequest.predicate = resultPredicate
+            
+        if let fetchResults = coreDataManager!.managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as? [NSManagedObject]{
+            if fetchResults.count != 0{
+                return fetchResults[0] as? Place
+            }
+        }
+        
+        return nil
+    }
+    
     func createPlace(rawPlaces : NSDictionary) -> Place{
         let entity = NSEntityDescription.entityForName("Place", inManagedObjectContext: coreDataManager!.managedObjectContext)
         
@@ -82,7 +121,7 @@ class PlaceManager {
         
         //println("Could you not fetch data : \(id), \(name), \(latitude), \(longitude), \(radius)")
         
-        place.id = rawPlaces["id"] as String
+        place.id = rawPlaces["place_id"] as String
         place.name = rawPlaces["name"] as String
         place.address = rawPlaces["vicinity"] as String
         
@@ -93,6 +132,8 @@ class PlaceManager {
         if let photos = rawPlaces["photos"] as? NSArray {
             let photo = photos.firstObject as NSDictionary
             place.photoReference = photo["photo_reference"] as NSString
+        }else{
+            place.photoReference = ""
         }
         
         var foundType = "restaurant"
@@ -112,27 +153,11 @@ class PlaceManager {
     }
     
     func savePlace(newPlace: Place) {
-        
-        let entity = NSEntityDescription.entityForName("Place", inManagedObjectContext: coreDataManager!.managedObjectContext)
-        
-        let place = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManager!.managedObjectContext) as Place
-        
-        place.id = newPlace.id
-        place.name = newPlace.name
-        place.address = newPlace.address
-        place.latitude = newPlace.latitude
-        place.longitude = newPlace.longitude
-        place.placeType = newPlace.placeType
-        place.photoReference = newPlace.photoReference
-        place.picture = newPlace.picture
-        place.mark = newPlace.mark
-        place.locations = newPlace.locations
-        
         var error : NSError? = nil
-        place.managedObjectContext?.save(&error)
+        newPlace.managedObjectContext?.save(&error)
         
         if(error != nil){
-            println("Could you not fetch data : \(error),  \(error?.description)")
+            println("Cannot save data : \(error),  \(error?.description)")
         }
         
     }
@@ -144,13 +169,10 @@ class PlaceManager {
 //        }
 //    }
     
-    func getPlacesByType(type : String)->[Place]{
-        if self.places == nil{
-            self.places = loadPlace()
-        }
-        
+    func getPlacesByType(type : String, inLocation : Location)->[Place]{
+       
         var filteredPlaces : [Place] = [Place]()
-        if let placesValues = self.places {
+        if let placesValues = getPlacesForLocation(inLocation) {
             for place in placesValues {
                 if place.placeType == type{
                     filteredPlaces.append(place)

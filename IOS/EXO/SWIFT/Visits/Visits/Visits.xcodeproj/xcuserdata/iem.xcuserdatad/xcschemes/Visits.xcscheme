@@ -34,6 +34,20 @@
                ReferencedContainer = "container:Visits.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B8A591151AFB981C0081F95D"
+               BuildableName = "SiteRateKitTests.xctest"
+               BlueprintName = "SiteRateKitTests"
+               ReferencedContainer = "container:Visits.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,6 +63,16 @@
                BlueprintIdentifier = "B830FB3B1AD56E4600397105"
                BuildableName = "VisitsTests.xctest"
                BlueprintName = "VisitsTests"
+               ReferencedContainer = "container:Visits.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B8A591151AFB981C0081F95D"
+               BuildableName = "SiteRateKitTests.xctest"
+               BlueprintName = "SiteRateKitTests"
                ReferencedContainer = "container:Visits.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -81,6 +105,12 @@
             ReferencedContainer = "container:Visits.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "-com.apple.CoreData.SQLDebug 1"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

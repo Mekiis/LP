@@ -16,7 +16,7 @@ class LocationManager {
         self.coreDataManager = coreDataManager
     }
     
-    func createLocation(id: String!, name: String!, latitude: Double!, longitude: Double!, radius: Double!) {
+    func createLocation(id: String!, name: String!, latitude: Double!, longitude: Double!, radius: Double!) -> Location {
         
         let entity = NSEntityDescription.entityForName("Location", inManagedObjectContext: coreDataManager!.managedObjectContext)
         
@@ -30,13 +30,17 @@ class LocationManager {
         location.longitude = longitude
         location.radius = radius
         
+        return location
+    }
+    
+    func addLocation(newLocation : Location){
         var error : NSError? = nil
-        location.managedObjectContext?.save(&error)
+        newLocation.managedObjectContext?.save(&error)
         
         if(error != nil){
-            println("Could you not fetch data : \(error),  \(error?.description)")
+            println("Cannot save data : \(error),  \(error?.description)")
         }
-        
+
     }
     
     func deleteLocation(location : Location?){
@@ -60,5 +64,11 @@ class LocationManager {
         }
         
         return nil
+    }
+    
+    func updateLocation(oldLocation : Location, withLocation newLocation: Location){
+        //TODO supprimer ref location dans toutes les places ?
+        deleteLocation(oldLocation)
+        addLocation(newLocation)
     }
 }

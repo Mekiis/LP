@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class TableViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -15,6 +16,7 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         self.locations = LocationManager(coreDataManager: DataManager.SharedManager).loadLocation()
+        locations!.sort({ $0.name.localizedCaseInsensitiveCompare($1.name) == NSComparisonResult.OrderedAscending })
         tableView.reloadData()
     }
 
@@ -56,15 +58,41 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
 
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
         if editingStyle == .Delete {
             // Delete the row from the data source
             if let locationsValues = locations{
                 LocationManager(coreDataManager: DataManager.SharedManager).deleteLocation(locationsValues[indexPath.row])
                 self.locations?.removeAtIndex(indexPath.row)
                 self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-                
+                self.tableView.reloadData()
             }
         }
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        var editNotesAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Edit") { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            
+            //methods
+            self.performSegueWithIdentifier("EditLocation", sender: tableView.cellForRowAtIndexPath(indexPath))
+            
+        }
+        
+        //change the background color of the swipe-to-edit
+        editNotesAction.backgroundColor = UIColor(red: 49.0/255.0, green: 91.0/255.0, blue: 181.0/255.0, alpha: 1)
+        
+        var deleteNotesAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete") { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            
+            if let locationsValues = self.locations{
+                LocationManager(coreDataManager: DataManager.SharedManager).deleteLocation(locationsValues[indexPath.row])
+                self.locations?.removeAtIndex(indexPath.row)
+                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            }
+
+            
+        }
+        
+        return [editNotesAction, deleteNotesAction]
     }
 
 
@@ -88,16 +116,41 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ChooseLocation"{
+        if segue.identifier == "ChooseLocation" || segue.identifier == "EditLocation"{
             
             let navCon = segue.destinationViewController as UINavigationController
             let clv = navCon.viewControllers[0] as ViewController
             
-            clv.completionHandler = {() -> () in
-                self.locations = LocationManager(coreDataManager: DataManager.SharedManager).loadLocation()
-                self.tableView.reloadData()
-                var alert : UIAlertView = UIAlertView(title: "Results", message: "Data saved", delegate: nil, cancelButtonTitle: "OK")
-                alert.show()
+            
+            
+            clv.action = Action.Add
+            
+            if segue.identifier == "EditLocation"{
+                if let cell = sender as? UITableViewCell{
+                    let indexPath = self.tableView.indexPathForCell(cell)!
+                    
+                    clv.pin = MKPointAnnotation()
+                    clv.pin!.setCoordinate(CLLocationCoordinate2D(latitude : locations![indexPath.row].latitude, longitude : locations![indexPath.row].longitude))
+                    clv.pin!.title = locations![indexPath.row].name
+                    clv.oldLocation = locations![indexPath.row]
+                    
+                    clv.action = Action.Edit
+                    clv.completionHandler = {() -> () in
+                        //self.locations?.removeAtIndex(indexPath.row)
+                        self.locations!.removeAll()
+                        self.locations = LocationManager(coreDataManager: DataManager.SharedManager).loadLocation()
+                        self.tableView.reloadData()
+                    }
+                }
+            } else {
+                clv.action = Action.Add
+                clv.completionHandler = {() -> () in
+                    self.locations = LocationManager(coreDataManager: DataManager.SharedManager).loadLocation()
+                    self.locations!.sort({
+                        $0.name.localizedCaseInsensitiveCompare($1.name) == NSComparisonResult.OrderedAscending
+                    })
+                    self.tableView.reloadData()
+                }
             }
         } else if segue.identifier == "GoToSeePlaces"{
             let pts = segue.destinationViewController as PlacesToSeeViewController
@@ -106,6 +159,6 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
             
         }
     }
-
+    
 
 }

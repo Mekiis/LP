@@ -11,6 +11,7 @@ import Foundation
 import CoreLocation
 import CoreData
 
+
 let acceptedTypes = ["restaurant", "bar", "museum", "park"]
 
 class Place : NSManagedObject{

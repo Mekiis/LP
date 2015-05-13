@@ -41,14 +41,12 @@ class GoogleDataProvider {
         if let results = json["results"] as? NSArray {
           for rawPlace:AnyObject in results {
             
-            var place = PlaceManager(coreDataManager: DataManager.SharedManager).createPlace(rawPlace as NSDictionary)
+            var place = PlaceManager(coreDataManager: DataManager.SharedManager).getPlaceById(rawPlace["place_id"] as String)
+            if place == nil {
+                place = PlaceManager(coreDataManager: DataManager.SharedManager).createPlace(rawPlace as NSDictionary)
+            }
             
-            placesArray.append(place)
-//            if let reference = place.photoReference {
-//              self.fetchPhotoFromReference(reference) { image in
-//                place.photo = image
-//              }
-//            }
+            placesArray.append(place!)
           }
         }
       }
@@ -58,33 +56,6 @@ class GoogleDataProvider {
     }
     placesTask.resume()
   }
-  
-  /*
-  func fetchDirectionsFrom(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D, completion: ((String?) -> Void)) -> ()
-  {
-    let urlString = "https://maps.googleapis.com/maps/api/directions/json?key=\(apiKey)&origin=\(from.latitude),\(from.longitude)&destination=\(to.latitude),\(to.longitude)&mode=walking"
-    
-    UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-    session.dataTaskWithURL(NSURL(string: urlString)!) {data, response, error in
-      UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-      var encodedRoute: String?
-      if let json = NSJSONSerialization.JSONObjectWithData(data, options:nil, error:nil) as? [String:AnyObject] {
-        if let routes = json["routes"] as AnyObject? as? [AnyObject] {
-          if let route = routes.first as? [String : AnyObject] {
-            if let polyline = route["overview_polyline"] as AnyObject? as? [String : String] {
-              if let points = polyline["points"] as AnyObject? as? String {
-                encodedRoute = points
-              }
-            }
-          }
-        }
-      }
-      dispatch_async(dispatch_get_main_queue()) {
-        completion(encodedRoute)
-      }
-    }.resume()
-  }
-    */
   
   
   func fetchPhotoFromReference(reference: String, completion: ((UIImage?) -> Void)) -> ()

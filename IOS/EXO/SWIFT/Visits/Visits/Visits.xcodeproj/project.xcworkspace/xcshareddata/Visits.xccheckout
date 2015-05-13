@@ -10,31 +10,31 @@
 	<string>Visits</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>1605CA01969EDF9ECA3FBA423C9838908A2D2310</key>
-		<string>https://github.com/FieryWeasel/LP.git</string>
+		<key>B5C2E6E1415378EA40F34267345BADC65C4700E4</key>
+		<string>https://github.com/Mekiis/LP.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iOS/Visits/Visits.xcodeproj</string>
+	<string>IOS/EXO/SWIFT/VISITS/Visits/Visits.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>1605CA01969EDF9ECA3FBA423C9838908A2D2310</key>
-		<string>../../../..</string>
+		<key>B5C2E6E1415378EA40F34267345BADC65C4700E4</key>
+		<string>../../../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/FieryWeasel/LP.git</string>
+	<string>https://github.com/Mekiis/LP.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1605CA01969EDF9ECA3FBA423C9838908A2D2310</string>
+	<string>B5C2E6E1415378EA40F34267345BADC65C4700E4</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1605CA01969EDF9ECA3FBA423C9838908A2D2310</string>
+			<string>B5C2E6E1415378EA40F34267345BADC65C4700E4</string>
 			<key>IDESourceControlWCCName</key>
-			<string>LP</string>
+			<string>COURS</string>
 		</dict>
 	</array>
 </dict>
