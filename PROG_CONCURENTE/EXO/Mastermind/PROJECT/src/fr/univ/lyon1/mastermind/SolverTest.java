@@ -26,8 +26,14 @@ public class SolverTest {
 	
 	@Test
 	public void testSolution() {
-		//TODO: à compléter
-		
+		testSolveCombinaison(Code.valueOf(RED,GREEN,PURPLE,BLUE));
+		testSolveCombinaison(Code.valueOf(RED));
+		testSolveCombinaison(Code.valueOf(RED,RED));
+	}
+	
+	private void testSolveCombinaison(Code code){
+		List<Code> sol = Solver.solve(new Scorer(code));
+		assertEquals(sol.get(sol.size()-1), code);
 	}
 	
 

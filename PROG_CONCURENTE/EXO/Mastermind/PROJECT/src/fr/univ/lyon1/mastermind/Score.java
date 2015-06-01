@@ -4,6 +4,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 public class Score {
+	private static ConcurrentMap<Integer,Score> map = new ConcurrentHashMap<>();
+	
 	private final int whiteCount;
 	private final int blackCount;
 	
@@ -11,7 +13,6 @@ public class Score {
 	// ConcurrentMap<Integer,Score> needs to compute unique key based on the blackCount and whiteCount
 	// blackCount and whiteCount belong to [0;code length]
 	// key = blackCount * (MAX_CODE_LENGTH * 2) + whiteCount
-	//TODO: à compléter
 	
 	private Score(int blackCount, int whiteCount) {
 		super();
@@ -28,7 +29,14 @@ public class Score {
 	}
 	
 	public static Score valueOf(int blackCount, int whiteCount) {
-		return new Score(blackCount, whiteCount);
+		int key = computeKey(blackCount, whiteCount);
+		
+		if(!map.containsKey(key)){
+			Score s = new Score(blackCount, whiteCount);
+			map.put(key, s);
+		}
+		
+		return map.get(key);
 	}
 
 	private static Integer computeKey(int blackCount, int whiteCount){
