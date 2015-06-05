@@ -37,6 +37,7 @@ public class Solver {
 	public static List<Code> solve(Scorer scorer) {
 		//Contains the list of codes leading to the solution
 		List<Code> solution = new ArrayList<>();
+		executor = Executors.newCachedThreadPool();
 
 		final int codeLength = scorer.getCodeLength();
 		if (codeLength > MAX_CODE_LENGTH) {
@@ -50,7 +51,7 @@ public class Solver {
 
 		Score winningScore = Score.valueOf(codeLength, 0);
 		boolean found = false;
-
+		
 		do {
 			// Add guess to the solution
 			solution.add(guess);
@@ -67,18 +68,26 @@ public class Solver {
 			} else {
 				// Remove the last guess from the untriedGuesses (optimization : remember the index)
 				untriedGuesses.remove(guess);
-				
+				final Code guessCode = Code.valueOf(guess.asArray());
 				//TODO: Evaluate concurrently untriedGuesses and pick the most interesting one
-				CompletionService<Score> completionService = new ExecutorCompletionService<Score>(executor);
-				for (final Code codeGuess : untriedGuesses)
-					completionService.submit(new Callable<Score>() { public Score call() { return Scorer.score(guess, codeGuess); } });
+				CompletionService<CodeMaxUncertainty> completionService = new ExecutorCompletionService<CodeMaxUncertainty>(executor);
+				for (final Code untriedGuess : untriedGuesses)
+					completionService.submit(new Callable<CodeMaxUncertainty>() { 
+						public CodeMaxUncertainty call() {
+							Score s = Scorer.score(guessCode, untriedGuess);
+							return new CodeMaxUncertainty(untriedGuess, s.getBlackCount() * (MAX_CODE_LENGTH * 2) + s.getWhiteCount()); 
+						} 
+					});
 				try {
 					//TODO: Pick the untried guess whose evaluation gives the lowest number
-					
+					int lowestNumber = score.getBlackCount() * (MAX_CODE_LENGTH * 2) + score.getWhiteCount();
 					for(int t = 0; t < untriedGuesses.size(); t++){
-						Future<Score> f = completionService.take();
-						Score scoreGet = f.get();
-						if(scoreGet.getBlackCount())
+						Future<CodeMaxUncertainty> f = completionService.take();
+						CodeMaxUncertainty codeGet = f.get();
+						if(codeGet.getAmbiguity() < lowestNumber){
+							lowestNumber = codeGet.getAmbiguity();
+							guess = codeGet.getCode();
+						}
 					}
 					
 				} catch (InterruptedException e) {
@@ -103,7 +112,20 @@ public class Solver {
 	}
 
 	private static void filterPossibleSecrets(List<Code> possibleSecrets, Code guess, Score score) {
-		//TODO: à implémenter
+		int valueScore = score.getBlackCount() * (MAX_CODE_LENGTH * 2) + score.getWhiteCount();
+		
+		Iterator<Code> iter = possibleSecrets.iterator();
+
+		while (iter.hasNext()) {
+		    Code code = iter.next();
+
+		    Score scorePossible = Scorer.score(guess, code);
+			int valueScorePossible = scorePossible.getBlackCount() * (MAX_CODE_LENGTH * 2) + scorePossible.getWhiteCount();
+			if(valueScorePossible > valueScore)
+			{
+				iter.remove();
+			}
+		}
 	}
 
 	static Code initialGuess(int codeLength) {
