@@ -9,27 +9,36 @@ public class Game extends AGame {
 	@Override
 	public boolean addScoreForPlayer(Player player){
 		boolean isGameFinished = false;
-		String previousScore = this.getPointsForPlayer(player);
 		Player otherPlayer = (player.equals(player1) ? player2 : player1);
-				
-		if(previousScore.equals("0"))
-			game.put(player, "15");
-		else if(previousScore.equals("15"))
-			game.put(player, "30");
-		else if(previousScore.equals("30"))
-			game.put(player, "40");
-		else if(previousScore.equals("40")){
-			if(this.getPointsForPlayer(otherPlayer).equals("40")){
-				game.put(player, "A");
-			} else if(this.getPointsForPlayer(otherPlayer).equals("A")){
-				game.put(otherPlayer, "30");
-			} else {
-				isGameFinished = true;
-			}
-		} else if(previousScore.equals("A"))
-			isGameFinished = true;
 		
-				
+		switch (this.getPointsForPlayer(player)){
+		case "0":
+			game.put(player, "15");
+			break;
+		case "15":
+			game.put(player, "30");
+			break;
+		case "30":
+			game.put(player, "40");
+			break;
+		case "40":
+			switch (this.getPointsForPlayer(otherPlayer)){
+			case "40": 
+				game.put(player, "A");
+				break;
+			case "A": 
+				game.put(otherPlayer, "40");
+				break;
+			default:
+				isGameFinished = true;
+				break;
+			}
+			break;
+		case "A":
+			isGameFinished = true;
+			break;
+		}
+		
 		return isGameFinished;
 	}
 }

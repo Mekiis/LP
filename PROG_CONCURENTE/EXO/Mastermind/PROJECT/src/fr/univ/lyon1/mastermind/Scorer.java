@@ -1,5 +1,7 @@
 package fr.univ.lyon1.mastermind;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -40,30 +42,15 @@ public class Scorer {
 	private static int matches(Code guess, Code secret) {
 		int matchesCount = 0;
 		
-		boolean[] matches = new boolean[guess.asArray().length];
-		
-		// Count black
-		for(int i = 0; i < guess.asArray().length; i++) {
-			if(guess.asArray()[i].compareTo(secret.asArray()[i]) == 0) {
-				matches[i] = true;
-				matchesCount++;
-			}	
-		}
-		
-		// Count white
-		for(int i = 0; i < guess.asArray().length; i++) {
-			if(guess.asArray()[i].compareTo(secret.asArray()[i]) != 0) {
-				for(int j = 0; j < secret.asArray().length; j++) {
-					if(!matches[j] && guess.asArray()[i].compareTo(secret.asArray()[j]) == 0){
-						matches[j] = true;
-						matchesCount++;
-						break;
-					}
+		List<Integer> removedIndex = new ArrayList<Integer>();
+		for(int i = 0;i<secret.length();i++){
+			for(int j = 0;j<guess.length();j++){
+				if(guess.asArray()[j] == secret.asArray()[i] && !(removedIndex.contains(i))){
+					matchesCount++;
+					removedIndex.add(i);
 				}
-				
-			}	
+			}
 		}
-		
 		return matchesCount;
 	}
 
